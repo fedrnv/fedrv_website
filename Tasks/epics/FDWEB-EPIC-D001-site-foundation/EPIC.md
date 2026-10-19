@@ -18,10 +18,10 @@ Deliver the reusable static site foundation, common design system, content model
 
 Functionality tasks:
 - [FDWEB-002](../../items/web/FDWEB-002-bootstrap-astro-site/TASK.md)
-- [FDWEB-003](../../items/web/FDWEB-003-define-design-system/TASK.md)
+- [FDWEB-003](../../items/design/FDWEB-003-define-design-system/TASK.md)
 - [FDWEB-004](../../items/web/FDWEB-004-project-content-model/TASK.md)
 - [FDWEB-005](../../items/web/FDWEB-005-build-homepage/TASK.md)
-- [FDWEB-006](../../items/web/FDWEB-006-accessibility-seo/TASK.md)
+- [FDWEB-006](../../items/quality/FDWEB-006-accessibility-seo/TASK.md)
 
 Targeted integration gate:
 - [FDWEB-007](../../items/quality/FDWEB-007-foundation-integration-gate/TASK.md)
