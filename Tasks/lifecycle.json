@@ -1,0 +1,22 @@
+{
+  "schema": "fdtasks-lifecycle/v1",
+  "version": "5.6",
+  "scope": "repository",
+  "project_id": "FDWEB",
+  "policy_path": "Tasks/tasks_file_structure_v5_6.md",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "history_path": "Tasks/LIFECYCLE_VERSION_HISTORY.md",
+  "project_profile_path": "Tasks/project-profile.json",
+  "adopted_at": "2026-10-19T12:00:00Z",
+  "adoption_task_id": "FDWEB-001",
+  "compatibility": {
+    "baseline_path": "Tasks/compatibility-baseline.json",
+    "legacy_task_schemas": [],
+    "legacy_event_schemas": [],
+    "material_event_schema": "fdtasks-event/v4",
+    "legacy_numeric_epics": [],
+    "preserve": [
+      "No prior task records existed at adoption."
+    ]
+  }
+}

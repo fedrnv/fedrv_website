@@ -1,0 +1,14 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-<UUID-or-ULID>",
+  "subject_id": "<PROJECT>-<ID>",
+  "event_type": "status_changed",
+  "created_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "actor": "actor",
+  "base_event_id": "EVT-previous-or-null",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Done",
+    "reason": "Observable material change"
+  }
+}

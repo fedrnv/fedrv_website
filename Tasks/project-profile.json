@@ -1,0 +1,53 @@
+{
+  "schema": "fdtasks-project-profile/v1",
+  "project_id": "FDWEB",
+  "id_prefix": "FDWEB",
+  "lifecycle_version": "5.6",
+  "areas": [
+    "deployment",
+    "design",
+    "governance",
+    "quality",
+    "web"
+  ],
+  "record_schemas": {
+    "task": [
+      "fdtasks-spec/v4"
+    ],
+    "epic": [
+      "fdtasks-epic/v4"
+    ],
+    "material_event": "fdtasks-event/v4",
+    "closure": "fdtasks-closure/v1",
+    "version_request": "fdtasks-version-request/v2"
+  },
+  "event_storage": {
+    "material": "events/*.json"
+  },
+  "projection_root": "Tasks/projections/generated",
+  "compatibility_baseline_path": "Tasks/compatibility-baseline.json",
+  "epic_identity": {
+    "new_development_pattern": "FDWEB-EPIC-D[0-9]{3}",
+    "process_epic": "FDWEB-EPIC-S001",
+    "maintenance_epic": "FDWEB-EPIC-S002",
+    "new_numeric_epics": "forbidden"
+  },
+  "verification": {
+    "medium_item": "diff_local_and_direct_changed_boundaries",
+    "development_epic_gate": "targeted_changed_areas_and_direct_interactions",
+    "automatic_dependent_invariant_canonical_expansion": false
+  },
+  "admission": {
+    "rule_sources": [
+      "root_AGENTS_and_DEVELOPMENT",
+      "applicable_path_AGENTS_and_DEVELOPMENT"
+    ],
+    "queued_revalidation": "before_dispatch_and_after_dependency_or_source_change"
+  },
+  "closure_location": "evidence/*-closure.json",
+  "limits": {
+    "active_primary_items_per_workspace": 1,
+    "active_worktrees_per_repository": 2,
+    "implementation_packets_per_item": 3
+  }
+}

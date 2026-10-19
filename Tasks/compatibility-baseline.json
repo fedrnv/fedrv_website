@@ -1,0 +1,19 @@
+{
+  "schema": "fdtasks-compatibility-baseline/v1",
+  "project_id": "FDWEB",
+  "version": "5.6",
+  "legacy": {
+    "task_specs": [],
+    "events": [],
+    "epics": [],
+    "handling": "No legacy FDTasks records existed at adoption."
+  },
+  "new_authoring": {
+    "task": "fdtasks-spec/v4",
+    "material_event": "fdtasks-event/v4",
+    "development_epics": "FDWEB-EPIC-Dnnn",
+    "corrections": "FDWEB-EPIC-S001",
+    "maintenance": "FDWEB-EPIC-S002"
+  },
+  "version_allocation": "Local closure/publication process only; never automated by hosted CI."
+}
