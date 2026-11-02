@@ -1,0 +1,62 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-81c4377c-4a55-46d5-9028-dd04885c7700",
+  "subject_id": "FDWEB-020",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T18:47:16.261Z",
+  "actor": "Codex",
+  "base_event_id": null,
+  "payload": {
+    "status_from": "Planned",
+    "status_to": "In Progress",
+    "reason": "Owner explicitly requested continuous sequential development until all tasks close; task handoffs remain durable without waiting for another user prompt.",
+    "source_sha": "d4ede682d406b253d72933d6a66b132f61073680",
+    "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "task_sha256": "d46f64610c3121fbbca670720445d2d9457ccd617b6864d0f746d6b544033ac2",
+    "rule_sources": {
+      "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+      "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+      "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+      "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+      "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+      "Tasks/items/quality/FDWEB-020-multilingual-portal-review/TASK.md": "d46f64610c3121fbbca670720445d2d9457ccd617b6864d0f746d6b544033ac2"
+    },
+    "dependencies": [
+      {
+        "id": "FDWEB-019",
+        "task_sha256": "cae205172c09774c963cc36eb13531d9f9f0e872ff105f8c4cd63bd5cfa7c3ac",
+        "event": {
+          "schema": "fdtasks-event/v4",
+          "event_id": "EVT-3ac1aa3a-2da5-4b1c-88b1-299e25171d96",
+          "subject_id": "FDWEB-019",
+          "event_type": "status_changed",
+          "created_at": "2026-11-02T18:47:16.181Z",
+          "actor": "Codex",
+          "base_event_id": "EVT-f2f72075-baff-4f36-aa37-6e5d0b57f308",
+          "payload": {
+            "status_from": "In Progress",
+            "status_to": "Done",
+            "reason": "Declared acceptance criteria have current local verification.",
+            "evidence": [
+              "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/2026-11-02T18-47-16-147Z-closure.json"
+            ],
+            "evidence_sha256": "6528e98bd1038787426693dc78d86113645fde133acf3b33dcfd0346007ef757"
+          }
+        }
+      }
+    ],
+    "atomicity": {
+      "outcomes": [
+        "Obtain an independent acceptance review of the frozen multilingual portal and its gate evidence."
+      ],
+      "packets": [
+        "One cohesive implementation and local verification packet"
+      ],
+      "independent_acceptance": false,
+      "boundary_reason": "Obtain an independent acceptance review of the frozen multilingual portal and its gate evidence."
+    },
+    "commands": [
+      "Independent source/candidate/evidence review; immutable REQUEST.md and RESULT.md"
+    ]
+  }
+}

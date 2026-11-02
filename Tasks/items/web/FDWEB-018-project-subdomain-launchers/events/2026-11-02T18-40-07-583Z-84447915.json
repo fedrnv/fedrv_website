@@ -1,0 +1,110 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-fcd2a12a-98d7-45a5-95d3-15a874449bc2",
+  "subject_id": "FDWEB-018",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T18:40:07.583Z",
+  "actor": "Codex",
+  "base_event_id": null,
+  "payload": {
+    "status_from": "Planned",
+    "status_to": "In Progress",
+    "reason": "Owner explicitly requested continuous sequential development until all tasks close; task handoffs remain durable without waiting for another user prompt.",
+    "source_sha": "d4ede682d406b253d72933d6a66b132f61073680",
+    "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "task_sha256": "08312768e1dac2b202f70ac28dc302f7d8c759ef9937b387a33c72c66741fb4d",
+    "rule_sources": {
+      "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+      "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+      "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+      "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+      "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+      "Tasks/items/web/FDWEB-018-project-subdomain-launchers/TASK.md": "08312768e1dac2b202f70ac28dc302f7d8c759ef9937b387a33c72c66741fb4d"
+    },
+    "dependencies": [
+      {
+        "id": "FDWEB-003",
+        "task_sha256": "66e83e6d3e328084e94370902c8203e69867321f0d7eca4364199d9c87f2736f",
+        "event": {
+          "schema": "fdtasks-event/v4",
+          "event_id": "EVT-b69c006d-450f-4f1d-9dac-6b23b137eda7",
+          "subject_id": "FDWEB-003",
+          "event_type": "status_changed",
+          "created_at": "2026-11-02T14:24:42.834Z",
+          "actor": "Codex",
+          "base_event_id": "EVT-6287a10d-76f3-4e29-9ea7-0c4e86e31107",
+          "payload": {
+            "status_from": "In Progress",
+            "status_to": "Done",
+            "reason": "Declared acceptance criteria have current local verification.",
+            "evidence": [
+              "Tasks/items/design/FDWEB-003-define-design-system/evidence/2026-11-02T14-24-42-810Z-closure.json"
+            ],
+            "evidence_sha256": "1a2a4bbcb54be6ce40e14c839c9e3033f130b76ac9dcd806f2c650b0efb738eb"
+          }
+        }
+      },
+      {
+        "id": "FDWEB-016",
+        "task_sha256": "aa7ee3598457da30801e5c9bf5c2e798f45ca7f38f73eaf9f02713eb96867010",
+        "event": {
+          "schema": "fdtasks-event/v4",
+          "event_id": "EVT-2db7a7d9-3228-471a-beb6-19b88f40ec07",
+          "subject_id": "FDWEB-016",
+          "event_type": "status_changed",
+          "created_at": "2026-11-02T18:37:02.568Z",
+          "actor": "Codex",
+          "base_event_id": "EVT-5484315b-051b-4ae3-b8c2-15c541a6f9ca",
+          "payload": {
+            "status_from": "In Progress",
+            "status_to": "Done",
+            "reason": "Declared acceptance criteria have current local verification.",
+            "evidence": [
+              "Tasks/items/web/FDWEB-016-browser-language-interface/evidence/2026-11-02T18-37-02-537Z-closure.json"
+            ],
+            "evidence_sha256": "7a84c7e4443da72d6c416b63c36e6857207085eaf24586f9456bb8e4990002c3"
+          }
+        }
+      },
+      {
+        "id": "FDWEB-017",
+        "task_sha256": "278a211a354c4058b4a03ca1e8dfc8262e4ccb6afb7ea39c3465d491365e23cf",
+        "event": {
+          "schema": "fdtasks-event/v4",
+          "event_id": "EVT-d3837e9e-3a74-4768-9e01-0829633d9bfc",
+          "subject_id": "FDWEB-017",
+          "event_type": "status_changed",
+          "created_at": "2026-11-02T18:40:07.464Z",
+          "actor": "Codex",
+          "base_event_id": "EVT-80978be4-44be-472c-b16c-d3b37d5d2ed5",
+          "payload": {
+            "status_from": "In Progress",
+            "status_to": "Done",
+            "reason": "Declared acceptance criteria have current local verification.",
+            "evidence": [
+              "Tasks/items/design/FDWEB-017-four-color-fd-brand/evidence/2026-11-02T18-40-07-440Z-closure.json"
+            ],
+            "evidence_sha256": "100d9866ba91e660bf881816a0223f4c78a47906aca0a30581cda1f24741fb12"
+          }
+        }
+      }
+    ],
+    "atomicity": {
+      "outcomes": [
+        "Let visitors open the five owner-specified project subdomains from recognizable header shortcuts."
+      ],
+      "packets": [
+        "One cohesive implementation and local verification packet"
+      ],
+      "independent_acceptance": false,
+      "boundary_reason": "Let visitors open the five owner-specified project subdomains from recognizable header shortcuts."
+    },
+    "commands": [
+      "npm run check",
+      "npm run build",
+      "npm run verify:portal",
+      "npm run verify:accessibility",
+      "npm run verify:browser"
+    ]
+  }
+}

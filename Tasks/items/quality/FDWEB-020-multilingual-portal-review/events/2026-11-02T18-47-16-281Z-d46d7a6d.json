@@ -1,0 +1,25 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-e07a317d-b1c0-43ad-8d8b-0fee7359ce83",
+  "subject_id": "FDWEB-020",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T18:47:16.281Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-81c4377c-4a55-46d5-9028-dd04885c7700",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Blocked",
+    "reason": "Implementation and local gate are complete; an independent person or authorized fresh model session must review the frozen candidate. Author session cannot self-accept.",
+    "request": "Tasks/epics/FDWEB-EPIC-D003-multilingual-portal/reviews/2026-11-02-interface/REQUEST.md",
+    "request_sha256": "16b7cc16d0473efa5ba45c62876c50ac269808f4a8f2f08d4a56ef46b17b09c4",
+    "checkpoint": {
+      "task_identity": "FDWEB-020",
+      "accepted_state": "FDWEB-016/017/018/019 Done",
+      "candidate": "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/2026-11-02-interface-candidate.json",
+      "candidate_sha256": "3e4be8d86339ca850af1c745aa8afc84bf5d701e708b1ea272a9fda20836a9a6",
+      "next_action": "Assign independent read-only reviewer, verify request hashes and write an immutable result.",
+      "resources": "Local Astro preview remains available at http://127.0.0.1:4321; one implementation workspace.",
+      "authority": "Owner-authorized interface changes complete. No independent-agent delegation or live deployment was performed."
+    }
+  }
+}

@@ -1,0 +1,10 @@
+---
+import site from '../data/fdupdate-site.json';
+import { updateMessages } from '../i18n/update';
+import '../styles/update.css';
+---
+<section class="update-overview" aria-label="FDUpdate">
+  <nav class="update-resources" aria-label={updateMessages.en['update.resources']} data-i18n-aria-label="update.resources" set:html={site.landing_nav} />
+  <div class="update-landing-content" set:html={site.landing_html} />
+  <div class="update-license" set:html={site.landing_footer} />
+</section>

@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Migrating FDOS to external FDUpdater · FDUpdate</title><meta name="description" content="FDUpdate Migrating FDOS to external FDUpdater documentation."><link rel="canonical" href="https://update.fedrv.de/docs/migration-fdos-to-fdupdater/"><link rel="stylesheet" href="/assets/site/site.css"><script src="/assets/site/site.js" defer></script></head><body><header><nav aria-label="Main"><a class="brand" href="/">FD<span>Update</span></a><a href="/docs/">Docs</a><a href="/docs/client-integration/">FDUpdater</a><a href="/docs/self-hosting/">Server</a><span class="nav-end"><a href="https://github.com/fedrnv/FDUpdate">GitHub</a><a class="button" href="/docs/getting-started/">Get started</a></span></nav></header><main class="docs-layout"><aside class="docs-nav"><input class="search" data-search aria-label="Search documentation" placeholder="Search docs"><div id="search-results" aria-live="polite"></div><a href="/docs/getting-started/">Getting started</a><a href="/docs/architecture/">Architecture</a><a href="/docs/client-integration/">Client integration</a><a href="/docs/application-managed-updates/">Application-managed updates</a><a href="/docs/enrollment/">Enrollment</a><a href="/docs/self-hosting/">Self-hosting</a><a href="/docs/operator-api/">Operator API</a><a href="/docs/security/">Security</a><a href="/docs/backup-and-recovery/">Backup and recovery</a><a href="/docs/versioning/">Versioning</a><a href="/docs/cot-integration/">COT integration</a><a href="/docs/license/">License</a><a href="/docs/contributing/">Contributing</a><a href="/docs/support/">Support</a><a href="/docs/architecture-release-storage-fdfiles-v2/">FDUpdate release storage architecture — FDFiles protected object interface</a><a href="/docs/architecture-release-storage-replication-v1/">FDUpdate release storage architecture — primary S3, future mirror, VPS latest-copy cache</a><a href="/docs/architecture-saas-foundations/">SaaS-ready foundations</a><a href="/docs/client-feedback/">Client feedback</a><a href="/docs/cot-notifications/">COT service notifications</a><a href="/docs/daf-validation-flow/">DAF validation publication and update flow</a><a href="/docs/enrollment-code-panel/">Enrollment codes and installation identities</a><a href="/docs/github-actions-publication/">GitHub Actions publication</a><a href="/docs/governance-open-source-publication-readiness/">Open-source publication readiness</a><a href="/docs/installation-accounts/">Installation Accounts</a><a href="/docs/installation-dashboard/">Installation dashboard</a><a href="/docs/migration-fdos-to-fdupdater/">Migrating FDOS to external FDUpdater</a><a href="/docs/migration-fdos-updater-baseline/">FDOS updater baseline inventory</a><a href="/docs/operations-public-route-baseline/">update.fedrv.de public route baseline</a><a href="/docs/packaging/">FDUpdater native packages</a><a href="/docs/plans-fdupdate-unified-distribution-fleet-plan/">FDUpdate unified release distribution and updater fleet — planned FDTasks D009</a><a href="/docs/public-update-catalog/">Public update catalog</a><a href="/docs/release-inventory-panel/">Release inventory panel</a><a href="/docs/release-publication/">Manual release publication</a><a href="/docs/release-retention/">Release retention</a><a href="/docs/repository-administration/">Repository administration</a><a href="/docs/runtime-operations/">FDUpdater runtime operations</a><a href="/docs/server-application-managed-flow/">Server flow for application-managed updates</a><a href="/docs/server-delivery-authorization/">Metadata and artifact delivery authorization</a><a href="/docs/server-deployment/">FDUpdate Server foundation deployment</a><a href="/docs/server-registry/">FDUpdate Server registry</a><a href="/docs/server-rollouts/">Server rollout policy</a><a href="/docs/server-self-update/">FDUpdate Server self-update</a><a href="/docs/unified-release-protocol/">Unified release protocol</a><a href="/docs/validation-stand-promotion/">Validation-stand promotion</a></aside><article class="prose"><h1>Migrating FDOS to external FDUpdater</h1>
+<p><code>FDUpdaterFdosMigration</code> converts the strict FDOS updater v1 configuration, current/previous slot metadata and idle engine state into a separate FDUpdater state root. It never edits or removes the FDOS root and never changes a service.</p>
+<p>Create an administrator-owned request outside both roots:</p>
+<pre><code>
+{
+
+  &quot;schema&quot;: 1,
+
+  &quot;legacy_config&quot;: &quot;ABSOLUTE_PATH_TO_FDOS_UPDATER_CONFIG&quot;,
+
+  &quot;state_root&quot;: &quot;ABSOLUTE_NEW_FDUPDATER_STATE_ROOT&quot;,
+
+  &quot;instance_id&quot;: &quot;fdos-installation-1&quot;,
+
+  &quot;architecture&quot;: &quot;x86_64&quot;,
+
+  &quot;updater_identity&quot;: &quot;FDUpdater.service&quot;,
+
+  &quot;application_identity&quot;: &quot;FDOS.application&quot;
+
+}
+
+</code></pre>
+<p>Stop FDOS_Updater, then run the explicit migration:</p>
+<pre><code>
+FDUpdaterFdosMigration migrate --request ABSOLUTE_REQUEST_JSON
+
+</code></pre>
+<p>The destination must not exist. The command opens and exclusively locks the existing <code>updater.lock</code>; a running updater or a missing lock file blocks migration without creating or modifying legacy state. The command also rejects an active transaction, unknown fields or schemas, unsupported components/platforms, inconsistent configuration, invalid trust material and any slot whose executable does not match its size and SHA-256. It builds the complete destination in a sibling temporary directory and publishes it with one non-overwriting atomic move. A rejected or interrupted migration therefore leaves both the requested destination absent and FDOS_Updater unchanged.</p>
+<p>The package contains:</p>
+<ul>
+<li><code>fdupdater-registry.json</code> with explicit <code>fdos/server</code>, <code>fdos/agent</code> and, when</li>
+<p>configured, <code>fdos/updater</code> registrations using the original service names;</p>
+</ul>
+<ul>
+<li>copied immutable current and previous executables plus their converted slot</li>
+<p>metadata and retained FDOS artifact-signature domain;</p>
+</ul>
+<ul>
+<li>one <code>transaction.json</code> per target with the legacy replay cursor and failed</li>
+<p>sequence, but no active transaction;</p>
+</ul>
+<ul>
+<li><code>fdos-trust.json</code> containing only the legacy public verification keys;</li>
+<li><code>fdos-compat.json</code> retaining polling, CA, pause and local health-command policy;</li>
+<li><code>fdos-migration.json</code>, a deterministic receipt bound to the source config/state</li>
+<p>hashes and migrated versions.</p>
+</ul>
+<p>Application data remains at its existing path. Keep the complete legacy root and FDOS_Updater service definition until FDUpdater health and rollback have been verified by the deployment procedure. Service activation belongs to the installer and is deliberately outside the conversion command.</p>
+<p>The later FDOS repository change should remove the in-process/workspace <code>fdos-updater</code> dependency and stop publishing application-owned updater commands. Its installer should provision FDUpdater independently, run this migration once, then switch the existing FDOS Server and Agent service ownership only after the migration receipt and FDUpdater health pass. FDOS UI actions should call the authenticated local FDUpdater API for status, check, apply, rollback, pause, resume and diagnostics using the <code>fdos</code> product and existing component names. If release publication temporarily keeps the strict FDOS v1 envelope, its compatibility provider must verify the retained original bytes in the distinct FDOS signature domain before giving normalized metadata to FDUpdater. The local state migration does not authenticate or authorize a new remote release. After rollout validation, FDOS can publish the product-neutral FDUpdate envelope and remove the legacy adapter in a separately versioned migration. The rollback procedure restores the original service definitions and legacy root without converting state back or deleting the FDUpdater package.</p></article></main><footer><span>FDUpdate 0.0.13.0 · Apache-2.0</span><span>Self-hosted today. Managed cloud is not currently offered.</span></footer></body></html>

@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "cf549758-2e66-4adb-9aa2-98f48964cea1",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D003",
+  "work_item_id": "FDWEB-016",
+  "summary": "Localize the static interface in English, German and Russian",
+  "verification": [
+    "Tasks/items/web/FDWEB-016-browser-language-interface/evidence/2026-11-02T18-37-02-537Z-closure.json"
+  ]
+}

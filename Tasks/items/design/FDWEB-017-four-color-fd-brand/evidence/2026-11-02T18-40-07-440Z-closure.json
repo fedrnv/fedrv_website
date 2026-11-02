@@ -1,0 +1,136 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "work_item_id": "FDWEB-017",
+  "created_at": "2026-11-02T18:40:07.441Z",
+  "source_sha": "d4ede682d406b253d72933d6a66b132f61073680",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "278a211a354c4058b4a03ca1e8dfc8262e4ccb6afb7ea39c3465d491365e23cf",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+    "Tasks/items/design/FDWEB-017-four-color-fd-brand/TASK.md": "278a211a354c4058b4a03ca1e8dfc8262e4ccb6afb7ea39c3465d491365e23cf"
+  },
+  "dependencies": [
+    {
+      "id": "FDWEB-003",
+      "task_sha256": "66e83e6d3e328084e94370902c8203e69867321f0d7eca4364199d9c87f2736f",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-b69c006d-450f-4f1d-9dac-6b23b137eda7",
+        "subject_id": "FDWEB-003",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:24:42.834Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-6287a10d-76f3-4e29-9ea7-0c4e86e31107",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/design/FDWEB-003-define-design-system/evidence/2026-11-02T14-24-42-810Z-closure.json"
+          ],
+          "evidence_sha256": "1a2a4bbcb54be6ce40e14c839c9e3033f130b76ac9dcd806f2c650b0efb738eb"
+        }
+      }
+    }
+  ],
+  "atomicity": {
+    "outcomes": [
+      "Present the site in dark gray, light blue, white and black with a readable FD browser icon."
+    ],
+    "packets": [
+      "One cohesive implementation and local verification packet"
+    ],
+    "independent_acceptance": false,
+    "boundary_reason": "Present the site in dark gray, light blue, white and black with a readable FD browser icon."
+  },
+  "candidate_files": {
+    "src/styles/global.css": "fcef81a4e449fcf136080b62d0243bf2dfa6169e51e049422db7c86b8f2acaff",
+    "src/pages/index.astro": "36750af8015dc01051d3de7833d773800678b4137b992c6e145d09b58bb3ee8d",
+    "public/favicon.svg": "f5f99b435192f5f8e5d660d03ca361107a72e2f5a9e5b16509763510207a623c",
+    "public/social-card.png": "2c06c1709c9cdbad5e459f863ac7770bb50ec74aa8385bfcc5f8ac2e38e32791",
+    "scripts/generate-social.mjs": "6d5521e97a66006a854a0cbe1e5e72094d029e54209f765b805aca0705dc7886",
+    "scripts/verify-brand.mjs": "f6c49fb39db4e9d9eedf9a56adc1c5237fd78dffc6adee7bb2b8aa3bbd6de900",
+    "package.json": "b199f5fa0908344b4e15c0a390572766719f6a59a11213ae1a6e511b0028d092",
+    "docs/design.md": "091e4eb0a575156db5e15a11282fe3e4f4fa582e5e7c2605ee52333f40c60b76"
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0"
+  },
+  "acceptance": {
+    "AC-01": "PASS: website CSS and generated sharing artwork use dark gray, light blue, white and black; original icon bytes match the prior foundation manifest and original Git text.",
+    "AC-02": "PASS: inspected FD favicon at 16/32/64px, new sharing PNG and desktop page; responsive/focus checks and axe checks pass at 360/1440px."
+  },
+  "commands": [
+    {
+      "command": "npm run generate:social",
+      "result": "PASS: generated and inspected 1200x630 PNG"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:brand",
+      "result": "PASS: four colors and preserved icon baseline"
+    },
+    {
+      "command": "npm run verify:accessibility",
+      "result": "PASS: 10 page/viewport combinations"
+    },
+    {
+      "command": "npm run verify:browser",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "visuals": [
+    {
+      "path": "Tasks/items/design/FDWEB-017-four-color-fd-brand/evidence/screenshots/404-1440.png",
+      "sha256": "7f07a2eda6de383a0520587d80793d2415761607fad39146df0017664e9c0fdf",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/design/FDWEB-017-four-color-fd-brand/evidence/screenshots/404-360.png",
+      "sha256": "c8821fa15b0838c3440ef4ccb1f88c07a31e1452f14e3d16b2f7237dc8044aad",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/design/FDWEB-017-four-color-fd-brand/evidence/screenshots/favicon.png",
+      "sha256": "b55f25a656742f141de669dbfeaf9d788ef07abef3f3224b952333340b1c0d8c",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/design/FDWEB-017-four-color-fd-brand/evidence/screenshots/home-1440.png",
+      "sha256": "9b993cbb014f936e83eebdd81382171d081aafa5ec89737bc9ce1cab96e80de9",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/design/FDWEB-017-four-color-fd-brand/evidence/screenshots/home-360.png",
+      "sha256": "657681058defb1ba5b8eacdddda1a0029663036294ec86abdf6445a44b8aa236",
+      "inspected": false
+    }
+  ],
+  "limitations": [
+    "Original product icons retain their original background colors as required by repository policy.",
+    "The first icon assertion compared CRLF checkout text to LF Git bytes; corrected the check to bind exact original working-tree bytes plus normalized Git text."
+  ],
+  "reviewer": "Codex author self-review; not independent Epic review",
+  "cleanup": "Temporary fixtures removed; dist and node_modules ignored; original icons unchanged.",
+  "checkpoint": {
+    "task_identity": "FDWEB-017",
+    "accepted_state": "Done",
+    "next_task": "FDWEB-018",
+    "next_action": "Read next task and parent, revalidate dependencies/rule sources, implement and verify.",
+    "authority": "Owner requested all tasks sequentially; external deployment still requires exact target and authorization.",
+    "resource_status": "One implementation workspace; no delegated agents."
+  }
+}

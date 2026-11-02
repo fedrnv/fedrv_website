@@ -17,6 +17,7 @@ export const projectSchema = z.object({
   purpose: text,
   status: z.enum(['planned', 'development', 'available', 'information']),
   draft: z.boolean().default(false),
+  detailsSource: z.literal('fdupdate-site').optional(),
   order: z.number().int().nonnegative().default(100),
   icon: z.enum(['/icons/fd-update.svg', '/icons/fd-storage.svg', '/icons/fd-agent.svg', '/icons/fd-remote-desktop.svg', '/icons/fd-vpn.svg']).optional(),
   capabilities: z.array(text).default([]),

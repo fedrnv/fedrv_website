@@ -1,0 +1,399 @@
+{
+  "schema": "fdweb-source-preservation/v1",
+  "captured_at": "2026-11-02T18:50:22.391Z",
+  "source_url": "https://update.fedrv.de/",
+  "source_manifest": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/manifest.json",
+  "source_manifest_sha256": "44bdeef3e9c99ecbf532072868d3f38e6d4309fc38259178fc5873d649a7baf9",
+  "landing": {
+    "route": "/update",
+    "result": "PASS",
+    "verification": "Native browser DOM text equality for original main, navigation, footer and complete command example."
+  },
+  "documents": [
+    {
+      "source_url": "https://update.fedrv.de/docs/",
+      "local_route": "/update/docs",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/client-integration/",
+      "local_route": "/update/docs/client-integration",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/client-integration/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/self-hosting/",
+      "local_route": "/update/docs/self-hosting",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/self-hosting/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/getting-started/",
+      "local_route": "/update/docs/getting-started",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/getting-started/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/application-managed-updates/",
+      "local_route": "/update/docs/application-managed-updates",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/application-managed-updates/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/security/",
+      "local_route": "/update/docs/security",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/security/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/architecture/",
+      "local_route": "/update/docs/architecture",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/architecture/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/enrollment/",
+      "local_route": "/update/docs/enrollment",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/enrollment/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/operator-api/",
+      "local_route": "/update/docs/operator-api",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/operator-api/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/backup-and-recovery/",
+      "local_route": "/update/docs/backup-and-recovery",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/backup-and-recovery/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/versioning/",
+      "local_route": "/update/docs/versioning",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/versioning/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/cot-integration/",
+      "local_route": "/update/docs/cot-integration",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/cot-integration/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/license/",
+      "local_route": "/update/docs/license",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/license/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/contributing/",
+      "local_route": "/update/docs/contributing",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/contributing/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/support/",
+      "local_route": "/update/docs/support",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/support/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/architecture-release-storage-fdfiles-v2/",
+      "local_route": "/update/docs/architecture-release-storage-fdfiles-v2",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/architecture-release-storage-fdfiles-v2/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/architecture-release-storage-replication-v1/",
+      "local_route": "/update/docs/architecture-release-storage-replication-v1",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/architecture-release-storage-replication-v1/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/architecture-saas-foundations/",
+      "local_route": "/update/docs/architecture-saas-foundations",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/architecture-saas-foundations/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/client-feedback/",
+      "local_route": "/update/docs/client-feedback",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/client-feedback/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/cot-notifications/",
+      "local_route": "/update/docs/cot-notifications",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/cot-notifications/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/daf-validation-flow/",
+      "local_route": "/update/docs/daf-validation-flow",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/daf-validation-flow/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/enrollment-code-panel/",
+      "local_route": "/update/docs/enrollment-code-panel",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/enrollment-code-panel/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/github-actions-publication/",
+      "local_route": "/update/docs/github-actions-publication",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/github-actions-publication/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/governance-open-source-publication-readiness/",
+      "local_route": "/update/docs/governance-open-source-publication-readiness",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/governance-open-source-publication-readiness/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/installation-accounts/",
+      "local_route": "/update/docs/installation-accounts",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/installation-accounts/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/installation-dashboard/",
+      "local_route": "/update/docs/installation-dashboard",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/installation-dashboard/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/migration-fdos-to-fdupdater/",
+      "local_route": "/update/docs/migration-fdos-to-fdupdater",
+      "source_kind": "website",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/docs/migration-fdos-to-fdupdater/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/migration-fdos-updater-baseline/",
+      "local_route": "/update/docs/migration-fdos-updater-baseline",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/migration-fdos-updater-baseline/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/operations-public-route-baseline/",
+      "local_route": "/update/docs/operations-public-route-baseline",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/operations-public-route-baseline/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/packaging/",
+      "local_route": "/update/docs/packaging",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/packaging/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/plans-fdupdate-unified-distribution-fleet-plan/",
+      "local_route": "/update/docs/plans-fdupdate-unified-distribution-fleet-plan",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/plans-fdupdate-unified-distribution-fleet-plan/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/public-update-catalog/",
+      "local_route": "/update/docs/public-update-catalog",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/public-update-catalog/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/release-inventory-panel/",
+      "local_route": "/update/docs/release-inventory-panel",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/release-inventory-panel/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/release-publication/",
+      "local_route": "/update/docs/release-publication",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/release-publication/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/release-retention/",
+      "local_route": "/update/docs/release-retention",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/release-retention/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/repository-administration/",
+      "local_route": "/update/docs/repository-administration",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/repository-administration/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/runtime-operations/",
+      "local_route": "/update/docs/runtime-operations",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/runtime-operations/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/server-application-managed-flow/",
+      "local_route": "/update/docs/server-application-managed-flow",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/server-application-managed-flow/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/server-delivery-authorization/",
+      "local_route": "/update/docs/server-delivery-authorization",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/server-delivery-authorization/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/server-deployment/",
+      "local_route": "/update/docs/server-deployment",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/server-deployment/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/server-registry/",
+      "local_route": "/update/docs/server-registry",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/server-registry/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/server-rollouts/",
+      "local_route": "/update/docs/server-rollouts",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/server-rollouts/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/server-self-update/",
+      "local_route": "/update/docs/server-self-update",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/server-self-update/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/unified-release-protocol/",
+      "local_route": "/update/docs/unified-release-protocol",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/unified-release-protocol/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    },
+    {
+      "source_url": "https://update.fedrv.de/docs/validation-stand-promotion/",
+      "local_route": "/update/docs/validation-stand-promotion",
+      "source_kind": "repository",
+      "source_file": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/recovered/docs/validation-stand-promotion/index.html",
+      "result": "PASS",
+      "verification": "Original versus local DOM article/code equality; no horizontal overflow and no selected axe violations at 360/1440px."
+    }
+  ],
+  "totals": {
+    "live_successful_pages": 23,
+    "repository_recovered_documents": 23,
+    "local_documentation_pages": 45,
+    "static_site_pages": 50
+  },
+  "recovery_source": {
+    "name": "fedrnv/FDUpdate",
+    "commit": "b9aaed996f80b311330bb21301184e69ae8f6897",
+    "version": "0.0.13.0",
+    "note": "23 unavailable live documentation routes were recovered from this pinned canonical source. Captured successful HTML is retained unchanged, including documents differing from the current repository.",
+    "live_landing_version": "0.0.13.0",
+    "available_document_comparison": {
+      "exact_article_matches": 19,
+      "differing_live_articles_preserved": [
+        "/docs/getting-started/",
+        "/docs/architecture/"
+      ]
+    }
+  },
+  "limits": [
+    "The 23 HTTP 503 responses are preserved; their documentation was recovered from the pinned repository rather than represented as a successful live fetch.",
+    "Copied technical documents remain in English; landing/shared UI support EN/DE/RU.",
+    "Package artifacts and authenticated APIs are outside this information-preservation migration."
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "work_item_id": "FDWEB-016",
+  "created_at": "2026-11-02T18:37:02.538Z",
+  "source_sha": "d4ede682d406b253d72933d6a66b132f61073680",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "aa7ee3598457da30801e5c9bf5c2e798f45ca7f38f73eaf9f02713eb96867010",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+    "Tasks/items/web/FDWEB-016-browser-language-interface/TASK.md": "aa7ee3598457da30801e5c9bf5c2e798f45ca7f38f73eaf9f02713eb96867010"
+  },
+  "dependencies": [
+    {
+      "id": "FDWEB-004",
+      "task_sha256": "e6b6dbc715f68e5c75281c66a1b9bfcef537187c45d78890c704948c4ae28ae2",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-e8d44c48-8af0-4901-b872-854ffee57661",
+        "subject_id": "FDWEB-004",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:31:38.269Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-ae07bf61-fb5b-4ad1-8536-1607a744aa42",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-004-project-content-model/evidence/2026-11-02T14-31-38-236Z-closure.json"
+          ],
+          "evidence_sha256": "515cb6b6f3687d38ba90b36c365a35f7e1e1368f2142cdc26a0a129e06a0de94"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-005",
+      "task_sha256": "ead151fe361ced4a700b0f4394ebfc2f9cb85debac6835e71f96035f12d7931f",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-e420740f-aea1-474b-805e-2e5bda22cee5",
+        "subject_id": "FDWEB-005",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:35:16.379Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-e3c32c2e-3e74-4782-86ed-2e0272aae6bf",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-005-build-homepage/evidence/2026-11-02T14-35-16-352Z-closure.json"
+          ],
+          "evidence_sha256": "e355672616754c3becfef7bd58c50f8a0c1980639030c9ca622502f2a6c6420b"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-006",
+      "task_sha256": "1e5bed8f97edcaea51a8a2e2096494a9cff5778e890611814c96bc2675f1005e",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-d9352d3f-132c-4929-b36b-8a82b1182523",
+        "subject_id": "FDWEB-006",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:42:32.529Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-25d9b724-2572-4199-887e-8d67cc11f6b0",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/quality/FDWEB-006-accessibility-seo/evidence/2026-11-02T14-42-32-499Z-closure.json"
+          ],
+          "evidence_sha256": "90115b044ff82fc7b2c75035eda9d6b07147904095f6af4bf6d9a407648d4fff"
+        }
+      }
+    }
+  ],
+  "atomicity": {
+    "outcomes": [
+      "Deliver the complete existing interface in the browser language, with English fallback, without a server requirement."
+    ],
+    "packets": [
+      "One cohesive implementation and local verification packet"
+    ],
+    "independent_acceptance": false,
+    "boundary_reason": "Deliver the complete existing interface in the browser language, with English fallback, without a server requirement."
+  },
+  "candidate_files": {
+    "src/i18n/messages.ts": "ae13a1d2649d055fd3b2be945079b23a6861e1fa0b9ce8139ace18953854bf2c",
+    "src/i18n/client.ts": "413c60e801ea5ece4e72529b1d16fb8e8010de95bf8b59b8dc6989a219ef0b2e",
+    "src/i18n/projects.ts": "b7c7d9dad2171c8b5f6b04832be01b7d264eec5b6247fd9eff170799d90a3338",
+    "src/lib/project-schema.ts": "ac16afe3bf717e2f55795d3d7b0db0a1636b33221e4d2d467cadae65b8dc2e8b",
+    "src/layouts/SiteLayout.astro": "c09007084d795a95e4b0572fbc97c0db8d14a4fbcbd869fdbca99053806f0930",
+    "src/pages/index.astro": "88e969d4434ff6c9feadae4c9958f598db4dc906017a54d470d544fb901f9911",
+    "src/pages/[slug].astro": "26366f2b03d3528248c3a4f62527506d46529229c66c5ea78312000aba8dbec0",
+    "src/pages/404.astro": "92960c57d28481c178536576fb282dd8b4766cb2852b2c6bc0b09c9b95b50a23",
+    "src/components/TranslatedText.astro": "f4721a354b7da56beb196c048c2c22f7e79aa75ff8bb8098601c8a41cfebe5ed",
+    "src/components/StatusBadge.astro": "c68bc4224063e043fb241eb23093ac838128ea615d59d07f03643f1137e1595b",
+    "src/components/Breadcrumbs.astro": "8998db76265aa4efc0d7f299d2b24199c74e56be2ba9ba4dca9c415e84511fe4",
+    "src/components/ProjectMedia.astro": "f270e19eb3f1f13fd87da4b1fa26bc883b3c6c36b24872020b043c133e6db0fc",
+    "src/components/ProductCard.astro": "17412c7f6a86b4f786009613da27cd096a12800e062635cc55125eb19f09db80",
+    "src/components/ProjectCard.astro": "27beabc420739c4a854e361c808b30ef0b70c0c06bf4aced7ef385c832a8526a",
+    "src/content/projects/cot.md": "362309375f76aeab3d825906d823e1e3ba8ff6539e805ca74b6b97df9088f85c",
+    "src/content/projects/update.md": "6466c4d8a717d1b120d4d03f2beac773c914c4289c2745eec7dd4efed2de7a20",
+    "src/content/projects/storage.md": "07d3114a0d8963aa7084285a0c30cb772e8ba933d5fc071d351697d96049c0a0",
+    "src/styles/global.css": "2dc17e48e02c8f39b865f82add73188fcd46d7c73bd5f0521680faefcfec16b3",
+    "scripts/verify-languages.mjs": "590e91603418d27648dbeeb5e21cd397f9b0eafb45fb417f26189cfc85849aef",
+    "scripts/verify-site.mjs": "f290f8a6487416afd9ebc485c8a96bbefb5f70ee956adafeca674bfae4167722",
+    "scripts/verify-home.mjs": "61ffcac2485087edc3292377f866d7903f9d3042d87885a8bc6fda820c6d02a9",
+    "scripts/verify-browser.mjs": "2eec762698c12238e5e1bf121b5e37c6adf680dc351e2bc0a69f5953d578e3f3",
+    "scripts/verify-bootstrap.mjs": "cc3826edb7b23b3c75e5f231448fdb4254cd8b10b53f946671e1fb91bff8b53b",
+    "scripts/verify-content.mjs": "f91d366b0e403c9d25ccd42be5e73aa536169781f677528db554e1a36456e447",
+    "astro.config.mjs": "7996a278021d79beda5c8506e276c3995aa9abc3b2970fa4ede95b15132a3457",
+    "package.json": "565597d33f4a082268f51e0a657a4e73fcd544070f2d701d07211d8dd3d2caac",
+    "docs/languages.md": "f02583bc3566f88752d1c683791811949ecd808b06be829741b8ee31d601095c",
+    "README.md": "ec5a8b33e89d968e3c945a5b227558a3bee54e2face32cdfd5e927f6f677f374"
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0"
+  },
+  "acceptance": {
+    "AC-01": "PASS: primary EN/DE/RU, de-AT/ru-RU variants, unsupported primary with supported secondary, missing language and English fallback verified in Chromium.",
+    "AC-02": "PASS: all five pages, metadata, attributes and project summaries translate; manual preference survives navigation, denied storage is tolerated, and no-JS HTML is English."
+  },
+  "commands": [
+    {
+      "command": "npm run check",
+      "result": "PASS: zero diagnostics"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS: static routes with one bounded local language module"
+    },
+    {
+      "command": "npm run verify:languages",
+      "result": "PASS: language/metadata, fallback, manual selection, storage restriction, no-JS and 360/1440px checks"
+    },
+    {
+      "command": "npm run verify:site",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:content",
+      "result": "PASS: positive and negative real builds"
+    },
+    {
+      "command": "npm run verify:bootstrap",
+      "result": "PASS: English shell and original icons"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "visuals": [
+    {
+      "path": "Tasks/items/web/FDWEB-016-browser-language-interface/evidence/screenshots/de-1440.png",
+      "sha256": "e6bca9cb8a4d0873fabb60d479f705610a43dfbc75b6884252163aa672d1521b",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-016-browser-language-interface/evidence/screenshots/de-360.png",
+      "sha256": "47e0b96bae9eff9f7de6a8cb16dabb799f191b185d765c2374596cb11a68c52c",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-016-browser-language-interface/evidence/screenshots/en-1440.png",
+      "sha256": "06ef87e8169aa5e39478681336eaa1d627f7d936d163f52e98029f7dacb36695",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-016-browser-language-interface/evidence/screenshots/en-360.png",
+      "sha256": "651309c3a443934446634d2299de9896d890bf0ee334783a224564bc48e49d50",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-016-browser-language-interface/evidence/screenshots/ru-1440.png",
+      "sha256": "a2548e6b5cebd3b58f9d7721f5f94119d735ffdf93ca6295286b0df96200120f",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-016-browser-language-interface/evidence/screenshots/ru-360.png",
+      "sha256": "bbd781165c84f0377382f119bf29f6e6a6c3afa47c2b1d3e2acf536c28f2c329",
+      "inspected": false
+    }
+  ],
+  "limitations": [
+    "Static indexing uses English HTML; browser localization does not create locale-specific URLs.",
+    "Product detail sections introduced by later tasks need their own translated source; no unsupported new capabilities added."
+  ],
+  "reviewer": "Codex author self-review; not independent Epic review",
+  "cleanup": "Temporary fixtures removed; dist and node_modules ignored; original icons unchanged.",
+  "checkpoint": {
+    "task_identity": "FDWEB-016",
+    "accepted_state": "Done",
+    "next_task": "FDWEB-017",
+    "next_action": "Read next task and parent, revalidate dependencies/rule sources, implement and verify.",
+    "authority": "Owner requested all tasks sequentially; external deployment still requires exact target and authorization.",
+    "resource_status": "One implementation workspace; no delegated agents."
+  }
+}

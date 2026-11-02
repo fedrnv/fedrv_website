@@ -1,0 +1,184 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "work_item_id": "FDWEB-009",
+  "created_at": "2026-11-02T19:09:18.949Z",
+  "source_sha": "d4ede682d406b253d72933d6a66b132f61073680",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "c24cb0d11703c5a83d1186a5046e4bb660bfc5c7a96cb1c654c2516e27b37200",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+    "Tasks/items/web/FDWEB-009-fdupdate-page/TASK.md": "c24cb0d11703c5a83d1186a5046e4bb660bfc5c7a96cb1c654c2516e27b37200"
+  },
+  "dependencies": [
+    {
+      "id": "FDWEB-004",
+      "task_sha256": "e6b6dbc715f68e5c75281c66a1b9bfcef537187c45d78890c704948c4ae28ae2",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-e8d44c48-8af0-4901-b872-854ffee57661",
+        "subject_id": "FDWEB-004",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:31:38.269Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-ae07bf61-fb5b-4ad1-8536-1607a744aa42",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-004-project-content-model/evidence/2026-11-02T14-31-38-236Z-closure.json"
+          ],
+          "evidence_sha256": "515cb6b6f3687d38ba90b36c365a35f7e1e1368f2142cdc26a0a129e06a0de94"
+        }
+      }
+    }
+  ],
+  "atomicity": {
+    "outcomes": [
+      "Publish an accurate /update overview that explains FDUpdate and links to its separate portal."
+    ],
+    "packets": [
+      "One cohesive implementation and verification packet"
+    ],
+    "independent_acceptance": false,
+    "boundary_reason": "The work delivers one independently acceptable result: Publish an accurate /update overview that explains FDUpdate and links to its separate portal."
+  },
+  "candidate_files": {
+    ".gitattributes": "732ea148bcf7aaf53009cbf33f7a688305d8dc2838996bdd6b3ca476f584d346",
+    "src/data/fdupdate-source.json": "6656189c2171d8a75e7af69e03ed56e551f8e4138ea2f999c0be0b9d2d00a763",
+    "src/data/fdupdate-site.json": "8ceb82de6d8604beff2050f49197418be5b3dc6e1e89fe6f91bb8163637835ef",
+    "src/i18n/update.ts": "3c54b97f938172d41db44b7f3212452ae6c89d4e971203d47f68dd54eba8d729",
+    "src/components/UpdateOverview.astro": "8ddcfb2f2755907fc438563979608de68ccfd2594cdbe1758d4341a3f577461c",
+    "src/lib/update-site.ts": "4679abb82ef2a5fbecdf078d568c204e51ef69233f544ab494fa9083419a0c30",
+    "src/lib/project-schema.ts": "68ca7f211d07a118ce8ba49edcfb869c7f8cfde9433386a21af53cea1c522411",
+    "src/content/projects/update.md": "72c98154972bc94225a055298f446ad82a2272cb3ab9a124ae965baf076f0454",
+    "src/pages/[slug].astro": "3793eef5021c79d3a29241688d7a7eb391d195ddb9d6a9ad6c584f7528a4bead",
+    "src/pages/update/docs/[...slug].astro": "be3b71f95610b6a67a8f198934bc9a6a866d6a40f51cbc057c9832c90ab49f77",
+    "src/pages/sitemap.xml.ts": "95fa6764788f7b53d3f1d1564eeb1b04a33c1522c53bcafaca97e055fd7da140",
+    "src/styles/update.css": "ab97809f59ba6fb42e2426aea50169604fbda3b28066dd5ae84dfb8bfd3fb241",
+    "scripts/import-update.mjs": "f472acf785633bf0249711678bd46cebd236da6929975b52602774fd2238c15f",
+    "scripts/verify-update.mjs": "79b6969977901589a7fbfd7b267299145fad2eab8e510535b1d33187ddf6962f",
+    "package.json": "e3c6ffef0ef8e888e97259bec385dcce00d8176843db325c585eb07a41ca9e5e",
+    "README.md": "e6ac63640c5006b8e3de7480da3a93800f4ded1ec0f9bf7b1d625bd1ad72298f",
+    "docs/fdupdate-migration.md": "d282b2a35ec4c65bebd6db271a4472c5cf490259a90c70f88a6e1ae85f9d8d2a",
+    "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/source-2026-11-02/manifest.json": "44bdeef3e9c99ecbf532072868d3f38e6d4309fc38259178fc5873d649a7baf9",
+    "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/2026-11-02-source-coverage.json": "ba9be25a7929c883001277b0a3ef81ff9759d700b46a7db4edfe8db0d3719225"
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0"
+  },
+  "acceptance": {
+    "AC-01": "PASS: copied current FDUpdate source and preserved internal-service/no-managed-cloud boundaries; canonical fallback documents are marked with their repository provenance.",
+    "AC-02": "PASS: /update renders in the shared current interface, retains the verified source portal and remaps documentation links to local copies.",
+    "AC-03": "PASS: immutable capture of successful source HTML/assets and HTTP failures; 45 locally rendered documents with per-file hashes, pinned fallback Markdown/HTML and browser text/code equality.",
+    "AC-04": "PASS: shared four-color style/header/footer, localized EN/DE/RU landing, inspected desktop/mobile visuals and all 45 documents tested at both widths."
+  },
+  "commands": [
+    {
+      "command": "Capture public first-party source pages/assets; reconstruct unavailable documents from pinned canonical source",
+      "result": "PASS: 23 live pages plus 23 recovered documents, all provenance recorded"
+    },
+    {
+      "command": "npm run import:update",
+      "result": "PASS: verified hashes and offline deterministic regeneration"
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS: 46 files; zero diagnostics"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS: 50 static pages"
+    },
+    {
+      "command": "npm run verify:update",
+      "result": "PASS: full source text/code equality, source hashes, all documentation routes, 90 document accessibility/viewport scenarios and localized landing"
+    },
+    {
+      "command": "npm run verify:site",
+      "result": "PASS: 50 unique heads, all local routes/assets and sitemap"
+    },
+    {
+      "command": "npm run verify:languages",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:accessibility",
+      "result": "PASS: 30 shared-page language/viewport scenarios"
+    },
+    {
+      "command": "npm run verify:brand",
+      "result": "PASS: current palette and unchanged product icons"
+    },
+    {
+      "command": "node Tasks/tools/verify-ledger.mjs",
+      "result": "PASS"
+    },
+    {
+      "command": "git check-attr text -- captured source index.html",
+      "result": "PASS: text unset to preserve exact evidence bytes across checkouts"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS; checkout line-ending notices only"
+    }
+  ],
+  "visuals": [
+    {
+      "path": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/screenshots/docs-client-integration-1440.png",
+      "sha256": "20720b6b6cf42c5ded50bdaf9e56caf64ac26b2844d20fc8718abaabee992657",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/screenshots/docs-enrollment-code-panel-1440.png",
+      "sha256": "69e43ae43b106b0d36f8434039c7e175568de87c4b53bfdae353de564c8ada29",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/screenshots/docs-index-1440.png",
+      "sha256": "9f6f10ca0584ea82fb58cf5f6a46b1912cf7fd45c05004f9ada5c8506d93c331",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/screenshots/update-1440.png",
+      "sha256": "1132608d4f2611be75b162eaf3da4505de433ac4d1e5cdd6cbb6a1b238ef8476",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/screenshots/update-360.png",
+      "sha256": "758484598feb3bde8b73fb63bd162c0ab5755b80664b4bce8bddf4101357971c",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/screenshots/update-de-360.png",
+      "sha256": "321d47c7cad5c89b3f451da1fa2b658a57a3bbbac65b0806a1f0641faaa3fe8c",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/screenshots/update-ru-360.png",
+      "sha256": "5ced3f2d90f6024f0ecc1a184ad7f13f08feee4fba248209ec017179aa63d4dc",
+      "inspected": true
+    }
+  ],
+  "limitations": [
+    "Source documentation HTML contained nonconforming list continuations and nonfocusable scrolling code; fixed imported markup while verifying every text/code block remains intact.",
+    "23 live documentation URLs returned HTTP 503; recovered copies are explicitly identified as canonical repository material.",
+    "This is a local preserved copy and restyled page; no production deployment or source website mutation occurred."
+  ],
+  "reviewer": "Codex author self-review; not independent Epic review",
+  "cleanup": "Temporary fixtures removed; dist and node_modules ignored; original icons unchanged.",
+  "checkpoint": {
+    "task_identity": "FDWEB-009",
+    "accepted_state": "Done",
+    "next_task": "Owner may review the preserved /update page and redesign the external landing; outstanding independent Epic reviews remain open.",
+    "next_action": "Read next task and parent, revalidate dependencies/rule sources, implement and verify.",
+    "authority": "Owner requested all tasks sequentially; external deployment still requires exact target and authorization.",
+    "resource_status": "One implementation workspace; no delegated agents."
+  }
+}

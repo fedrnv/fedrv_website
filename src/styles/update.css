@@ -1,0 +1,41 @@
+.update-overview { padding-top: 2rem; }
+.update-resources { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; padding-block: 1rem 2.5rem; font-size: .9rem; }
+.update-resources .nav-end { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
+.update-overview .hero { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+.update-overview .hero h2 { font-size: clamp(2rem, 4vw, 3.75rem); }
+.update-overview .lede { max-width: 48rem; font-size: 1.15rem; color: var(--muted); }
+.update-overview .terminal { min-width: 0; padding: 1.5rem; border: 1px solid var(--black); border-radius: var(--radius); background: var(--dark-gray); color: var(--white); }
+.update-overview .terminal-title { color: var(--light-blue); font-size: .85rem; margin-bottom: 1.5rem; }
+.update-overview .terminal pre { margin: 0; overflow-x: auto; font-size: .85rem; }
+.update-overview .strip { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-block: 2.5rem; padding: 1.5rem; border-block: 1px solid var(--line); font-size: .85rem; }
+.update-overview .strip > span { max-width: 100%; }
+.update-overview .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.update-overview .card { min-width: 0; padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius); }
+.update-overview .card p { color: var(--muted); }
+.update-overview .card a { font-size: .9rem; }
+.update-overview .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; counter-reset: update-step; }
+.update-overview .flow > div { padding-top: 1rem; border-top: 3px solid var(--light-blue); font-size: .9rem; counter-increment: update-step; }
+.update-overview .flow > div::before { content: '0' counter(update-step); display: block; font-size: .75rem; font-weight: 650; margin-bottom: .75rem; }
+.update-overview .callout { border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; }
+.update-overview .button.ghost { background: var(--white); color: var(--black); }
+.update-overview .button.ghost:hover { background: var(--light-blue); }
+.update-license, .update-document-source { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1.5rem; font-size: .8rem; color: var(--muted); }
+.update-doc-tools { display: flex; flex-wrap: wrap; gap: 1rem 2rem; font-size: .85rem; margin-bottom: 1.5rem; }
+.update-document-navigation { border: 1px solid var(--line); border-radius: .5rem; padding: 1rem; margin-bottom: 1.5rem; }
+.update-document-navigation summary { cursor: pointer; font-weight: 600; }
+.update-document-navigation nav { max-height: 24rem; overflow-y: auto; margin-top: 1rem; padding: .5rem; }
+.update-document-navigation ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem 2rem; padding-left: 1.25rem; }
+.update-document-note { font-size: .8rem; color: var(--muted); }
+.update-document { max-width: 100%; min-width: 0; margin-block: 2.5rem; }
+.update-document h1 { font-size: clamp(2rem, 4vw, 3.5rem); }
+.update-document p, .update-document li { max-width: 54rem; }
+.update-document pre { max-width: 100%; padding: 1.25rem; overflow-x: auto; background: var(--dark-gray); color: var(--white); border-radius: .5rem; font-size: .85rem; }
+.update-document :not(pre) > code { overflow-wrap: anywhere; }
+.update-document .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.update-document .card { padding: 1.5rem; border: 1px solid var(--line); border-radius: .75rem; text-decoration: none; }
+.update-document .card h2 { margin-top: 0; font-size: 1.25rem; }
+@media (max-width: 760px) {
+  .update-overview .hero, .update-overview .grid, .update-overview .flow, .update-document .grid, .update-document-navigation ul { grid-template-columns: 1fr; }
+  .update-overview .hero { gap: 1.5rem; }
+  .update-overview .callout { padding: 1.5rem; }
+}

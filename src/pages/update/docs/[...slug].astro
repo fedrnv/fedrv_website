@@ -1,0 +1,32 @@
+---
+import type { InferGetStaticPropsType } from 'astro';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { updateDocuments } from '../../../lib/update-site';
+import site from '../../../data/fdupdate-site.json';
+import { updateMessages } from '../../../i18n/update';
+import '../../../styles/update.css';
+export async function getStaticPaths() {
+  return (await updateDocuments()).map(document => ({ params: { slug: document.slug || undefined }, props: { document } }));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { document } = Astro.props;
+const sourceKey = document.source_kind === 'repository' ? 'update.sourceRepository' : 'update.sourceWebsite';
+---
+<SiteLayout title={`${document.title} · FDUpdate`} description={document.description} pageMessages={updateMessages}>
+  <div class="update-doc-tools">
+    <a href="/update" data-i18n="update.back">{updateMessages.en['update.back']}</a>
+    <a href="/update/docs" data-i18n="update.docsLabel">{updateMessages.en['update.docsLabel']}</a>
+  </div>
+  <details class="update-document-navigation">
+    <summary data-i18n="update.docsLabel">{updateMessages.en['update.docsLabel']}</summary>
+    <nav aria-label={updateMessages.en['update.docsLabel']} data-i18n-aria-label="update.docsLabel">
+      <ul>{site.docs.filter(page => page.slug).map(page => <li><a href={page.path} aria-current={page.path === document.path ? 'page' : undefined}>{page.title}</a></li>)}</ul>
+    </nav>
+  </details>
+  <p class="update-document-note"><span data-i18n="update.docsNote">{updateMessages.en['update.docsNote']}</span></p>
+  <article class="update-document prose" lang="en" set:html={document.html} />
+  <div class="update-document-source">
+    <span>{document.footer}</span>
+    <span><span data-i18n={sourceKey}>{updateMessages.en[sourceKey]}</span> · <time datetime={site.captured_at}>{site.captured_at.slice(0, 10)}</time></span>
+  </div>
+</SiteLayout>

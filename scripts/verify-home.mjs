@@ -16,7 +16,7 @@ await withBrowser(async ({ navigate, evaluate }) => {
     assert.equal(await evaluate('document.querySelector("h1").textContent'), name);
   }
   await navigate(base + '/');
-  assert(await evaluate('Boolean(document.querySelector("#approach [data-i18n=\"approach.p2\"]"))'));
+  assert(await evaluate(`Boolean(document.querySelector('#approach [data-i18n="approach.p2"]'))`));
   assert.equal(await evaluate('document.querySelector(".portal-note a").href'), 'https://update.fedrv.de/');
 });
 console.log('PASS: three content-driven cards navigate to matching project pages; human-led approach and verified portal link');

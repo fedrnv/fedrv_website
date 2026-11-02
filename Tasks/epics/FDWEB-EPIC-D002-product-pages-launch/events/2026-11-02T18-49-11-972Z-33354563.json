@@ -1,0 +1,14 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-33741186-c1e1-4dc8-a13e-c404d0fc6361",
+  "subject_id": "FDWEB-EPIC-D002",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T18:49:11.972Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-335adc38-6e59-4b19-a069-5b548441f76f",
+  "payload": {
+    "status_from": "Planned",
+    "status_to": "Active",
+    "reason": "Owner-prioritized FDWEB-009 migration; other Epic acceptance prerequisites preserved."
+  }
+}

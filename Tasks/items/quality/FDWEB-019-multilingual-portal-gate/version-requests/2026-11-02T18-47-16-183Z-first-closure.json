@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "adf042f9-4edd-46a5-9924-f969a6cff39d",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D003",
+  "work_item_id": "FDWEB-019",
+  "summary": "Verify the multilingual portal interface as an integrated static candidate",
+  "verification": [
+    "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/2026-11-02T18-47-16-147Z-closure.json"
+  ]
+}

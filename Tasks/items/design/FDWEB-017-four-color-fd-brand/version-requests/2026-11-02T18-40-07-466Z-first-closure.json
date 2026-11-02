@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "894c7771-a2a9-461d-b09a-ebd85699f6d0",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D003",
+  "work_item_id": "FDWEB-017",
+  "summary": "Apply the four-color FEDRV identity and FD favicon",
+  "verification": [
+    "Tasks/items/design/FDWEB-017-four-color-fd-brand/evidence/2026-11-02T18-40-07-440Z-closure.json"
+  ]
+}

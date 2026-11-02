@@ -1,0 +1,65 @@
+{
+  "schema": "fdweb-gate-matrix/v1",
+  "subject_id": "FDWEB-019",
+  "candidate": "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/2026-11-02-interface-candidate.json",
+  "candidate_sha256": "3e4be8d86339ca850af1c745aa8afc84bf5d701e708b1ea272a9fda20836a9a6",
+  "result": "PASS",
+  "criteria": {
+    "FDWEB-016/AC-01": {
+      "result": "PASS",
+      "command": "npm run verify:languages",
+      "scenarios": "Primary EN/DE/RU; regional variants; unsupported primary with supported secondary; absent language; English fallback."
+    },
+    "FDWEB-016/AC-02": {
+      "result": "PASS",
+      "commands": [
+        "npm run check",
+        "npm run build",
+        "npm run verify:languages",
+        "npm run verify:site"
+      ],
+      "scenarios": "Five current routes and all translated text/attributes/metadata, manual selection, restricted session storage and no-JS English."
+    },
+    "FDWEB-017/AC-01": {
+      "result": "PASS",
+      "commands": [
+        "npm run verify:brand",
+        "npm run verify:accessibility"
+      ],
+      "scenarios": "Exactly four website color literals, original icon baseline preserved and contrast passes in all supported languages."
+    },
+    "FDWEB-017/AC-02": {
+      "result": "PASS",
+      "commands": [
+        "npm run verify:brand",
+        "npm run verify:browser"
+      ],
+      "scenarios": "FD favicon inspected at 16/32/64px, sharing artwork inspected, desktop/mobile focus and layout reviewed."
+    },
+    "FDWEB-018/AC-01": {
+      "result": "PASS",
+      "command": "npm run verify:portal",
+      "scenarios": "Five exact owner-provided subdomain destinations and localized accessible link names."
+    },
+    "FDWEB-018/AC-02": {
+      "result": "PASS",
+      "commands": [
+        "npm run verify:portal",
+        "npm run verify:accessibility",
+        "npm run verify:browser"
+      ],
+      "scenarios": "Original matching icons/labelled monograms, >=44px targets, all five links reachable by Tab, no horizontal overflow."
+    }
+  },
+  "checks": {
+    "typecheck": "39 files; zero errors/warnings/hints",
+    "build": "5 static pages plus sitemap/robots",
+    "accessibility": "5 routes x 3 languages x 2 widths; no axe violations in selected WCAG A/AA and best-practice rules",
+    "ledger": "24 records and 9 original discussion mirrors resolve"
+  },
+  "limitations": [
+    "Independent review is a separate task; this author gate does not close it.",
+    "Existing product icons intentionally preserve original colors.",
+    "Subdomain links are owner-provided; no uptime, login or production publication acceptance claimed."
+  ]
+}

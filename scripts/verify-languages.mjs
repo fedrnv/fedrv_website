@@ -32,6 +32,12 @@ await withBrowser(async ({ send, navigate, evaluate, screenshot }) => {
   assert.equal(await evaluate('document.documentElement.lang'), 'de');
   await navigate(base + '/update');
   assert.equal(await evaluate('document.documentElement.lang'), 'de', 'Manual selection survives navigation');
+  const blocked = await send('Page.addScriptToEvaluateOnNewDocument', { source: "Object.defineProperty(navigator,'language',{get:()=> 'ru-RU'});Object.defineProperty(navigator,'languages',{get:()=> ['ru-RU']});Object.defineProperty(window,'sessionStorage',{get(){throw new Error('Storage unavailable')}});" });
+  await navigate(base + '/');
+  assert.equal(await evaluate('document.documentElement.lang'), 'ru', 'Storage restrictions do not prevent automatic selection');
+  await evaluate("document.querySelector('#language').value='en';document.querySelector('#language').dispatchEvent(new Event('change',{bubbles:true}))");
+  assert.equal(await evaluate('document.documentElement.lang'), 'en');
+  await send('Page.removeScriptToEvaluateOnNewDocument', { identifier: blocked.identifier });
   await send('Emulation.setScriptExecutionDisabled', { value: true });
   await navigate(base + '/');
   assert.equal(await evaluate('document.documentElement.lang'), 'en');

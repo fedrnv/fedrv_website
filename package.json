@@ -22,7 +22,11 @@
     "generate:social": "node scripts/generate-social.mjs",
     "verify:clean": "node scripts/verify-clean.mjs",
     "verify:browser-lifecycle": "node scripts/verify-browser-lifecycle.mjs",
-    "verify:languages": "node scripts/verify-languages.mjs"
+    "verify:languages": "node scripts/verify-languages.mjs",
+    "verify:brand": "node scripts/verify-brand.mjs",
+    "verify:portal": "node scripts/verify-portal.mjs",
+    "import:update": "node scripts/import-update.mjs",
+    "verify:update": "node scripts/verify-update.mjs"
   },
   "dependencies": {
     "astro": "6.3.8"

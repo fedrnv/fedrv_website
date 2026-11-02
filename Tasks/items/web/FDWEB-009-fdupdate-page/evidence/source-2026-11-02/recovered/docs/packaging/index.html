@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FDUpdater native packages · FDUpdate</title><meta name="description" content="FDUpdate FDUpdater native packages documentation."><link rel="canonical" href="https://update.fedrv.de/docs/packaging/"><link rel="stylesheet" href="/assets/site/site.css"><script src="/assets/site/site.js" defer></script></head><body><header><nav aria-label="Main"><a class="brand" href="/">FD<span>Update</span></a><a href="/docs/">Docs</a><a href="/docs/client-integration/">FDUpdater</a><a href="/docs/self-hosting/">Server</a><span class="nav-end"><a href="https://github.com/fedrnv/FDUpdate">GitHub</a><a class="button" href="/docs/getting-started/">Get started</a></span></nav></header><main class="docs-layout"><aside class="docs-nav"><input class="search" data-search aria-label="Search documentation" placeholder="Search docs"><div id="search-results" aria-live="polite"></div><a href="/docs/getting-started/">Getting started</a><a href="/docs/architecture/">Architecture</a><a href="/docs/client-integration/">Client integration</a><a href="/docs/application-managed-updates/">Application-managed updates</a><a href="/docs/enrollment/">Enrollment</a><a href="/docs/self-hosting/">Self-hosting</a><a href="/docs/operator-api/">Operator API</a><a href="/docs/security/">Security</a><a href="/docs/backup-and-recovery/">Backup and recovery</a><a href="/docs/versioning/">Versioning</a><a href="/docs/cot-integration/">COT integration</a><a href="/docs/license/">License</a><a href="/docs/contributing/">Contributing</a><a href="/docs/support/">Support</a><a href="/docs/architecture-release-storage-fdfiles-v2/">FDUpdate release storage architecture — FDFiles protected object interface</a><a href="/docs/architecture-release-storage-replication-v1/">FDUpdate release storage architecture — primary S3, future mirror, VPS latest-copy cache</a><a href="/docs/architecture-saas-foundations/">SaaS-ready foundations</a><a href="/docs/client-feedback/">Client feedback</a><a href="/docs/cot-notifications/">COT service notifications</a><a href="/docs/daf-validation-flow/">DAF validation publication and update flow</a><a href="/docs/enrollment-code-panel/">Enrollment codes and installation identities</a><a href="/docs/github-actions-publication/">GitHub Actions publication</a><a href="/docs/governance-open-source-publication-readiness/">Open-source publication readiness</a><a href="/docs/installation-accounts/">Installation Accounts</a><a href="/docs/installation-dashboard/">Installation dashboard</a><a href="/docs/migration-fdos-to-fdupdater/">Migrating FDOS to external FDUpdater</a><a href="/docs/migration-fdos-updater-baseline/">FDOS updater baseline inventory</a><a href="/docs/operations-public-route-baseline/">update.fedrv.de public route baseline</a><a href="/docs/packaging/">FDUpdater native packages</a><a href="/docs/plans-fdupdate-unified-distribution-fleet-plan/">FDUpdate unified release distribution and updater fleet — planned FDTasks D009</a><a href="/docs/public-update-catalog/">Public update catalog</a><a href="/docs/release-inventory-panel/">Release inventory panel</a><a href="/docs/release-publication/">Manual release publication</a><a href="/docs/release-retention/">Release retention</a><a href="/docs/repository-administration/">Repository administration</a><a href="/docs/runtime-operations/">FDUpdater runtime operations</a><a href="/docs/server-application-managed-flow/">Server flow for application-managed updates</a><a href="/docs/server-delivery-authorization/">Metadata and artifact delivery authorization</a><a href="/docs/server-deployment/">FDUpdate Server foundation deployment</a><a href="/docs/server-registry/">FDUpdate Server registry</a><a href="/docs/server-rollouts/">Server rollout policy</a><a href="/docs/server-self-update/">FDUpdate Server self-update</a><a href="/docs/unified-release-protocol/">Unified release protocol</a><a href="/docs/validation-stand-promotion/">Validation-stand promotion</a></aside><article class="prose"><h1>FDUpdater native packages</h1>
+<p>FDUpdater packages are built offline from the two release binaries and checked-in installer sources. The builder writes deterministic <code>.tar.gz</code> for Linux and <code>.zip</code> for Windows. Every payload has a strict manifest and SHA-256 inventory. Packages contain no credential, private key, product registration, application data or pre-authorized target.</p>
+<p>Build the native binaries and one package from the repository root:</p>
+<pre><code>
+cargo +1.98.0 build --release --locked -p fdupdater -p fdupdater-bootstrap
+
+node scripts/package-fdupdater.mjs --platform windows --architecture x86_64 --version 0.1.0 --fdupdater target/release/FDUpdater.exe --bootstrap target/release/FDUpdaterBootstrap.exe --output dist
+
+</code></pre>
+<p>Use <code>--platform linux</code> and extensionless binary paths on Linux. Building identical inputs twice produces byte-identical archives on the same platform. Release publication must authenticate the archive separately; the embedded hashes detect damage but are not a release signature.</p>
+<p>After extraction, run the installer from an elevated PowerShell on Windows:</p>
+<pre><code>
+./install.ps1 install
+
+./install.ps1 status
+
+./install.ps1 upgrade
+
+./install.ps1 repair
+
+./install.ps1 uninstall
+
+</code></pre>
+<p>Run the corresponding commands as root on a systemd Linux host:</p>
+<pre><code>
+./install.sh install
+
+./install.sh status
+
+./install.sh upgrade
+
+./install.sh repair
+
+./install.sh uninstall
+
+</code></pre>
+<p>Installation creates the automatic <code>FDUpdater</code> service under the virtual Windows service identity <code>NT SERVICE\FDUpdater</code> or the non-root Linux account <code>fdupdater</code>. The binary directory is administrator-owned and read-only to the service. Only the state directory is service-writable. The configuration directory is readable by the service and contains a placeholder-only template. Before <code>install</code>, an administrator must create the strict <code>FDUpdater.json</code>, credentials, public trust and product registrations described in <a href="/docs/runtime-operations/">runtime-operations.md</a>. Installation fails closed when that production configuration is absent and passes its absolute path to systemd or SCM.</p>
+<p>Upgrade stages and self-tests both binaries before stopping the service. Failure restores the prior current/previous layout and attempts to restart the prior service. Repair replaces owned binaries and service policy without changing state or configuration. Uninstall deletes the service definition and binary root while retaining configuration, state and recovery data. Application roots are never an installer argument and are never traversed. Removing retained state is a separate administrator action outside the package command.</p>
+<p>The documented native acceptance command is the manual-only GitHub workflow <code>FDUpdater native package acceptance</code> (<code>workflow_dispatch</code>). Its Linux and Windows jobs build each archive twice and generate ephemeral signing material outside the package. They install into unique native roots, apply a signed release through the installed CLI, force and recover an interrupted transaction, verify boot-style restart, corrupt and repair the owned updater binary, upgrade it, uninstall it, and compare state, recovery and external application-data canaries. No fixture private key enters either package. The same scenarios can be run from a repository checkout on clean hosts with:</p>
+<pre><code>
+cargo +1.98.0 build --release --locked -p fdupdater --example native_fixture
+
+sudo bash packaging/linux/native-acceptance.sh ABSOLUTE_EXPANDED_PACKAGE_ROOT &quot;$PWD/target/release/examples/native_fixture&quot;
+
+powershell -File packaging/windows/native-acceptance.ps1 -PackageRoot ABSOLUTE_EXPANDED_PACKAGE_ROOT -FixtureTool &quot;$PWD/target/release/examples/native_fixture.exe&quot;
+
+</code></pre></article></main><footer><span>FDUpdate 0.0.13.0 · Apache-2.0</span><span>Self-hosted today. Managed cloud is not currently offered.</span></footer></body></html>

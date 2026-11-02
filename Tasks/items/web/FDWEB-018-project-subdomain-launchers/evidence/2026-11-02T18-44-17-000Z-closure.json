@@ -1,0 +1,198 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "work_item_id": "FDWEB-018",
+  "created_at": "2026-11-02T18:44:17.001Z",
+  "source_sha": "d4ede682d406b253d72933d6a66b132f61073680",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "08312768e1dac2b202f70ac28dc302f7d8c759ef9937b387a33c72c66741fb4d",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+    "Tasks/items/web/FDWEB-018-project-subdomain-launchers/TASK.md": "08312768e1dac2b202f70ac28dc302f7d8c759ef9937b387a33c72c66741fb4d"
+  },
+  "dependencies": [
+    {
+      "id": "FDWEB-003",
+      "task_sha256": "66e83e6d3e328084e94370902c8203e69867321f0d7eca4364199d9c87f2736f",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-b69c006d-450f-4f1d-9dac-6b23b137eda7",
+        "subject_id": "FDWEB-003",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:24:42.834Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-6287a10d-76f3-4e29-9ea7-0c4e86e31107",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/design/FDWEB-003-define-design-system/evidence/2026-11-02T14-24-42-810Z-closure.json"
+          ],
+          "evidence_sha256": "1a2a4bbcb54be6ce40e14c839c9e3033f130b76ac9dcd806f2c650b0efb738eb"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-016",
+      "task_sha256": "aa7ee3598457da30801e5c9bf5c2e798f45ca7f38f73eaf9f02713eb96867010",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-2db7a7d9-3228-471a-beb6-19b88f40ec07",
+        "subject_id": "FDWEB-016",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T18:37:02.568Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-5484315b-051b-4ae3-b8c2-15c541a6f9ca",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-016-browser-language-interface/evidence/2026-11-02T18-37-02-537Z-closure.json"
+          ],
+          "evidence_sha256": "7a84c7e4443da72d6c416b63c36e6857207085eaf24586f9456bb8e4990002c3"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-017",
+      "task_sha256": "278a211a354c4058b4a03ca1e8dfc8262e4ccb6afb7ea39c3465d491365e23cf",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-d3837e9e-3a74-4768-9e01-0829633d9bfc",
+        "subject_id": "FDWEB-017",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T18:40:07.464Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-80978be4-44be-472c-b16c-d3b37d5d2ed5",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/design/FDWEB-017-four-color-fd-brand/evidence/2026-11-02T18-40-07-440Z-closure.json"
+          ],
+          "evidence_sha256": "100d9866ba91e660bf881816a0223f4c78a47906aca0a30581cda1f24741fb12"
+        }
+      }
+    }
+  ],
+  "atomicity": {
+    "outcomes": [
+      "Let visitors open the five owner-specified project subdomains from recognizable header shortcuts."
+    ],
+    "packets": [
+      "One cohesive implementation and local verification packet"
+    ],
+    "independent_acceptance": false,
+    "boundary_reason": "Let visitors open the five owner-specified project subdomains from recognizable header shortcuts."
+  },
+  "candidate_files": {
+    "src/components/ProjectLaunchers.astro": "6b54d54c4c65c751f4931f9e264f8deee6c34d90a23929a1b2dea341c9e55e0e",
+    "src/layouts/SiteLayout.astro": "bb8c9dc894c477bbd897b6f6b1e01d6e54d19deba552414f399cae7230138a89",
+    "src/i18n/messages.ts": "7425599fff08c5f3621624341adf525f6727e067e7e9f548ea46d0223cb2a8be",
+    "src/styles/global.css": "2bc193c456cbc75d87b2674f72e227198c5baabe4ea81229dc0d7539ea69b77a",
+    "scripts/verify-portal.mjs": "73e687e6e42f7baf274b94d651c07238558b1767a49eb6511236c638d28843a4",
+    "scripts/verify-home.mjs": "2ebb5af70a8f0453d2cdff39d0d173f73184c1742db22d6dc6bfb911d36da67b",
+    "scripts/verify-accessibility.mjs": "1bc8a31b96f2c827bf14aa69bc4c5950f86f9d1d888997b1be39185457341798",
+    "package.json": "b343c33bf1c43fd2ffd2e56110cbb153ea211d4323b756f324175ee2ded20a66",
+    "README.md": "b73c92ef13b55476968ac4a53135eaa9fe91855e8f13f8efcfc30061350f25f3",
+    "docs/verification.md": "2ed38af79626c057081cb5cc8a5e3d2e5164445e489237ab6c31e811c45611b7",
+    "docs/portal-navigation.md": "33a247fa9afbe7de4cda78bab0b89ea2033d54043fd31d3825e1d9ddb55203e4",
+    "public/icons/fd-update.svg": "8fef5afd86ea1a0e8e51f992620e33cbf56767af92de09313bc0937b3ee83544",
+    "public/icons/fd-storage.svg": "2b183b4801454cd5ab82d3638cc634145b9303b9740963db1df055ca5b7554c4"
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0"
+  },
+  "acceptance": {
+    "AC-01": "PASS: five exact HTTPS destinations, all visible project names and localized accessible names in EN/DE/RU. Local description-card routes are unchanged.",
+    "AC-02": "PASS: FDUpdate uses its original U SVG; FDFiles uses its verified identical original S SVG; COT/T/OS monograms cover unavailable icons. All five links have >=44px targets, visible keyboard focus and no overflow at 360/1440px in three languages."
+  },
+  "commands": [
+    {
+      "command": "npm run check",
+      "result": "PASS: zero diagnostics"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:portal",
+      "result": "PASS: all languages, exact links, actual images, target sizes and keyboard reachability"
+    },
+    {
+      "command": "npm run verify:accessibility",
+      "result": "PASS: five routes x three languages x two widths"
+    },
+    {
+      "command": "npm run verify:browser",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:home",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:site",
+      "result": "PASS"
+    },
+    {
+      "command": "Compare FDFiles source SVG with existing site SVG",
+      "result": "PASS: matching original text after checkout line-ending normalization"
+    }
+  ],
+  "visuals": [
+    {
+      "path": "Tasks/items/web/FDWEB-018-project-subdomain-launchers/evidence/screenshots/de-1440.png",
+      "sha256": "b2b67c32b131862f00cb4ac1feb4b9bec2f0508fc6ee185943178ae24dd993ab",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-018-project-subdomain-launchers/evidence/screenshots/de-360.png",
+      "sha256": "bea372486d5cbb88b16a094e5bb3ab92c52ff0c8ca029a22d1accd1a8d605dd2",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-018-project-subdomain-launchers/evidence/screenshots/en-1440.png",
+      "sha256": "a0f309ce4dad72a6352909818975e61112c8919ab2b31abb12e655cf5609e649",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-018-project-subdomain-launchers/evidence/screenshots/en-360.png",
+      "sha256": "62eac1ce6fe245f84fd751bf30262563cc8c014cbcd712951cd09e84a3d20405",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-018-project-subdomain-launchers/evidence/screenshots/ru-1440.png",
+      "sha256": "9a5ef7af04f59f4cb4c63eac5b2d93c85d9422f05f7f54fb1c69c2e31e4eeebb",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-018-project-subdomain-launchers/evidence/screenshots/ru-360.png",
+      "sha256": "84d18442a824c69e045f2bf7e2d0997d2a7ec87367c0bebe08f3e85ac30b2d18",
+      "inspected": true
+    }
+  ],
+  "limitations": [
+    "Project URLs are owner-provided destinations; tests do not assert service uptime or perform authenticated external actions.",
+    "COT/FDTasks/FDOS have labelled monograms because no matching local icons were provided."
+  ],
+  "reviewer": "Codex author self-review; not independent Epic review",
+  "cleanup": "Temporary fixtures removed; dist and node_modules ignored; original icons unchanged.",
+  "checkpoint": {
+    "task_identity": "FDWEB-018",
+    "accepted_state": "Done",
+    "next_task": "FDWEB-019",
+    "next_action": "Read next task and parent, revalidate dependencies/rule sources, implement and verify.",
+    "authority": "Owner requested all tasks sequentially; external deployment still requires exact target and authorization.",
+    "resource_status": "One implementation workspace; no delegated agents."
+  }
+}

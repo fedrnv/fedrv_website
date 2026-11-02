@@ -6,6 +6,7 @@ purpose: Помочь разработчикам организовать упр
 status: development
 order: 1
 icon: /icons/fd-update.svg
+detailsSource: fdupdate-site
 translations:
   en:
     summary: "Application updates: signed release verification, installation and recovery of the previous version."

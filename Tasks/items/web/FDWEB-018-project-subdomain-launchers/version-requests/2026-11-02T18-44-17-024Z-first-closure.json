@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "cf125112-b383-400c-8368-dbe27f85d580",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D003",
+  "work_item_id": "FDWEB-018",
+  "summary": "Add five project shortcuts to the site header",
+  "verification": [
+    "Tasks/items/web/FDWEB-018-project-subdomain-launchers/evidence/2026-11-02T18-44-17-000Z-closure.json"
+  ]
+}

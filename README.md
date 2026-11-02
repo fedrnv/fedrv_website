@@ -1,6 +1,6 @@
 # FEDRV.DE
 
-Static Russian-language website for FEDRV projects, built with Astro and TypeScript. Product pages and the final home page are tracked in the canonical [Tasks ledger](Tasks/README.md).
+Static English/German/Russian website for FEDRV projects, built with Astro and TypeScript. Browser language selects the interface; unsupported languages use English. See [language behavior and checks](docs/languages.md). Product pages are tracked in the canonical [Tasks ledger](Tasks/README.md).
 
 ## CLI quick start
 
@@ -33,3 +33,7 @@ Task acceptance runs locally. Deployment is manual and belongs to FDWEB-012; a s
 The current home page uses three project records and the shared project template. Run `npm run verify:home` against preview to follow all three cards. See [content authoring](docs/content.md), [source baseline](docs/content-sources.md) and [design verification](docs/design.md). FDStorage remains explicitly limited pending current project evidence.
 
 See [local verification](docs/verification.md) for metadata/link checks (`npm run verify:site`), accessibility checks (`npm run verify:accessibility`) and the keyboard/visual checklist. Pages include canonical and Open Graph metadata, local sharing artwork and favicon; sitemap/robots are generated from the collection. The 404 page is excluded from indexing.
+
+The header includes COT, FDUpdate, FDFiles, FDTasks and FDOS shortcuts to the owner-specified subdomains. See [portal navigation](docs/portal-navigation.md) for icon provenance and `npm run verify:portal`. The current visual identity uses dark gray, light blue, white and black, with an **FD** favicon.
+
+FDUpdate information is preserved at `/update` with 45 local documentation pages under `/update/docs`. The [migration record](docs/fdupdate-migration.md) documents the immutable source snapshot, canonical recovery of unavailable documents and offline `npm run import:update` / `npm run verify:update` commands.

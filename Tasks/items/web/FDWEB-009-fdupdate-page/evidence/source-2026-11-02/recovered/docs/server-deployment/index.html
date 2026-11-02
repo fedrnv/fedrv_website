@@ -1,0 +1,204 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FDUpdate Server foundation deployment · FDUpdate</title><meta name="description" content="FDUpdate FDUpdate Server foundation deployment documentation."><link rel="canonical" href="https://update.fedrv.de/docs/server-deployment/"><link rel="stylesheet" href="/assets/site/site.css"><script src="/assets/site/site.js" defer></script></head><body><header><nav aria-label="Main"><a class="brand" href="/">FD<span>Update</span></a><a href="/docs/">Docs</a><a href="/docs/client-integration/">FDUpdater</a><a href="/docs/self-hosting/">Server</a><span class="nav-end"><a href="https://github.com/fedrnv/FDUpdate">GitHub</a><a class="button" href="/docs/getting-started/">Get started</a></span></nav></header><main class="docs-layout"><aside class="docs-nav"><input class="search" data-search aria-label="Search documentation" placeholder="Search docs"><div id="search-results" aria-live="polite"></div><a href="/docs/getting-started/">Getting started</a><a href="/docs/architecture/">Architecture</a><a href="/docs/client-integration/">Client integration</a><a href="/docs/application-managed-updates/">Application-managed updates</a><a href="/docs/enrollment/">Enrollment</a><a href="/docs/self-hosting/">Self-hosting</a><a href="/docs/operator-api/">Operator API</a><a href="/docs/security/">Security</a><a href="/docs/backup-and-recovery/">Backup and recovery</a><a href="/docs/versioning/">Versioning</a><a href="/docs/cot-integration/">COT integration</a><a href="/docs/license/">License</a><a href="/docs/contributing/">Contributing</a><a href="/docs/support/">Support</a><a href="/docs/architecture-release-storage-fdfiles-v2/">FDUpdate release storage architecture — FDFiles protected object interface</a><a href="/docs/architecture-release-storage-replication-v1/">FDUpdate release storage architecture — primary S3, future mirror, VPS latest-copy cache</a><a href="/docs/architecture-saas-foundations/">SaaS-ready foundations</a><a href="/docs/client-feedback/">Client feedback</a><a href="/docs/cot-notifications/">COT service notifications</a><a href="/docs/daf-validation-flow/">DAF validation publication and update flow</a><a href="/docs/enrollment-code-panel/">Enrollment codes and installation identities</a><a href="/docs/github-actions-publication/">GitHub Actions publication</a><a href="/docs/governance-open-source-publication-readiness/">Open-source publication readiness</a><a href="/docs/installation-accounts/">Installation Accounts</a><a href="/docs/installation-dashboard/">Installation dashboard</a><a href="/docs/migration-fdos-to-fdupdater/">Migrating FDOS to external FDUpdater</a><a href="/docs/migration-fdos-updater-baseline/">FDOS updater baseline inventory</a><a href="/docs/operations-public-route-baseline/">update.fedrv.de public route baseline</a><a href="/docs/packaging/">FDUpdater native packages</a><a href="/docs/plans-fdupdate-unified-distribution-fleet-plan/">FDUpdate unified release distribution and updater fleet — planned FDTasks D009</a><a href="/docs/public-update-catalog/">Public update catalog</a><a href="/docs/release-inventory-panel/">Release inventory panel</a><a href="/docs/release-publication/">Manual release publication</a><a href="/docs/release-retention/">Release retention</a><a href="/docs/repository-administration/">Repository administration</a><a href="/docs/runtime-operations/">FDUpdater runtime operations</a><a href="/docs/server-application-managed-flow/">Server flow for application-managed updates</a><a href="/docs/server-delivery-authorization/">Metadata and artifact delivery authorization</a><a href="/docs/server-deployment/">FDUpdate Server foundation deployment</a><a href="/docs/server-registry/">FDUpdate Server registry</a><a href="/docs/server-rollouts/">Server rollout policy</a><a href="/docs/server-self-update/">FDUpdate Server self-update</a><a href="/docs/unified-release-protocol/">Unified release protocol</a><a href="/docs/validation-stand-promotion/">Validation-stand promotion</a></aside><article class="prose"><h1>FDUpdate Server foundation deployment</h1>
+<p>FDU-017 provides the first supported server foundation: one <code>linux/amd64</code> host, Docker Engine with the Compose v2 plugin, Eclipse hawkBit 1.1.0, MariaDB 11.4 and an nginx TLS/mTLS edge. All three images are pinned by immutable registry digest. Only the edge publishes a host port. hawkBit, its Management API, MariaDB and the artifact directory remain private.</p>
+<p>The foundation is deliberately sealed. <code>/healthz</code> is the only anonymous route. <code>/operator-ready</code> returns 204 only with a client certificate signed by the configured operator CA. Every other route returns 401 until the FDUpdate gateway implemented by later Epic 002 tasks owns device and operator authorization. Do not publish hawkBit directly.</p>
+<h2>Trusted public TLS</h2>
+<p>After public DNS points at the host and inbound TCP 80/443 is allowed, expose the edge with a trusted ACME certificate through the deployment CLI:</p>
+<pre><code>
+sudo ./server/deploy/fdupdate-server public-tls \
+
+  --install-root /opt/fdupdate-server \
+
+  --config-root /etc/fdupdate-server \
+
+  --data-root /var/lib/fdupdate-server \
+
+  --server-name update.example.com \
+
+  --acme-email operations@example.com
+
+</code></pre>
+<p>The command obtains an ECDSA certificate with Certbot's standalone HTTP-01 listener, changes only the edge binding to <code>0.0.0.0:443</code>, recreates the edge and installs a renewal deploy hook. The hook atomically copies renewed transport material and recreates the edge; hawkBit and MariaDB remain unpublished. Omitting <code>--acme-email</code> uses Certbot's explicit no-email registration mode.</p>
+<h2>Host prerequisites</h2>
+<ul>
+<li>A dedicated x86-64 Linux host with a current Docker Engine and Compose v2.</li>
+<li><code>bash</code>, GNU coreutils, <code>curl</code> and OpenSSL.</li>
+<li>Root access for configuration creation and lifecycle changes.</li>
+<li>Host firewall policy for the selected listener. The generated configuration</li>
+<p>binds <code>127.0.0.1:8443</code>; changing it to <code>0.0.0.0</code> is an explicit operator action.</p>
+</ul>
+<p>Executable releases, configuration and durable data use separate roots:</p>
+<pre><code>
+/opt/fdupdate-server          versioned compose/nginx releases and current/previous links
+
+/etc/fdupdate-server          deployment.env, runtime secrets and TLS/mTLS material
+
+/var/lib/fdupdate-server      MariaDB and immutable artifact bytes
+
+</code></pre>
+<p>Release-signing keys never belong in any of these runtime containers. The TLS and operator CA keys created below are transport identity material. They remain in the root-only host configuration directory and are not mounted into containers except for the server TLS key itself; replace the acceptance PKI under your operational CA before exposing a production listener.</p>
+<h2>Clean install</h2>
+<p>From an exact repository checkout, create the private configuration and validate the candidate before starting containers:</p>
+<pre><code>
+sudo ./server/deploy/fdupdate-server init-config \
+
+  --config-root /etc/fdupdate-server \
+
+  --server-name updates.example.internal
+
+
+
+sudo ./server/deploy/fdupdate-server validate \
+
+  --config-root /etc/fdupdate-server \
+
+  --data-root /var/lib/fdupdate-server
+
+
+
+sudo ./server/deploy/fdupdate-server install \
+
+  --release-id fdu-017-hawkbit-1.1.0 \
+
+  --install-root /opt/fdupdate-server \
+
+  --config-root /etc/fdupdate-server \
+
+  --data-root /var/lib/fdupdate-server
+
+</code></pre>
+<p><code>init-config</code> fails if the destination already exists. It creates random MariaDB and hawkBit credentials, enables only per-target DDI authentication, disables the gateway-wide token, anonymous downloads, DMF and Swagger, and creates a private acceptance PKI. The Compose deployment waits for every health probe. A failed clean install removes the active link and stops its partial services while keeping the release directory for diagnosis.</p>
+<p>Run the live acceptance path on the same host:</p>
+<pre><code>
+sudo ./server/deploy/fdupdate-server acceptance \
+
+  --install-root /opt/fdupdate-server \
+
+  --config-root /etc/fdupdate-server \
+
+  --data-root /var/lib/fdupdate-server
+
+</code></pre>
+<p>This checks all three running services, verifies the edge certificate, proves that unauthenticated device/admin/operator requests receive 401, proves that an operator client certificate reaches the mTLS diagnostic, and confirms that hawkBit and MariaDB have no published host ports.</p>
+<h2>GitHub publisher gateway</h2>
+<p>Build the gateway locally from the reviewed source, prepare a JSON array of exact publisher registrations, and install the binary through the deployment CLI:</p>
+<pre><code>
+cargo build --release --locked -p fdupdate-github-publisher --bin fdupdate-publisher-gateway
+
+sudo ./server/deploy/fdupdate-server install-publisher-gateway \
+
+  --install-root /opt/fdupdate-server \
+
+  --config-root /etc/fdupdate-server \
+
+  --data-root /var/lib/fdupdate-server \
+
+  --gateway-binary &quot;$PWD/target/release/fdupdate-publisher-gateway&quot; \
+
+  --registrations-file &quot;$PWD/publisher-registrations.json&quot;
+
+</code></pre>
+<p>The command creates an unprivileged <code>fdupdate-gateway</code> service account, generates the raw 32-byte release-signing seed on the host, copies the private hawkBit credential into a service-specific root-owned directory, writes the exact runtime configuration and installs a hardened systemd unit. The service binds only to the private Docker host-gateway address used by the edge. nginx exposes only the exact <code>/v1/publishers/{publisher-id}/releases</code> route through the trusted HTTPS edge. Signing material, hawkBit credentials, registrations, request state and audit stay outside executable releases. The configuration and data roots grant the service group traverse-only access; its readable and writable permissions stop at the dedicated publisher configuration, secret and data paths. Before every service start, a root-only systemd preparation step resolves hawkBit's current address on the internal Compose network and atomically refreshes the gateway configuration. Server upgrade and rollback restart the gateway after container recreation, so no Management API port is published on the host. The installer sets hawkBit's artifact and multipart limits to 512 MB and 513 MB, matching the bounded gateway request contract, and recreates hawkBit only when those settings first change. hawkBit independently enforces a 512 MiB artifact limit and a 2 GiB tenant artifact-storage quota. Its upload staging tmpfs is bounded to 768 MB so one maximum-size artifact can be processed without using the container root filesystem.</p>
+<p>The public web runtime serves a stored server-signed release document only at <code>/manifests/PROJECT_KEY/RELEASE_ID</code>. It first resolves an exact public repository publication and verifies the persisted signed payload digest. Private, unknown or mismatched releases return no document. Signed artifact URLs continue to use the digest-bound <code>/downloads/PROJECT_KEY/RELEASE_ID/SHA256</code> route.</p>
+<p>Install or refresh the repository panel after FDUpdater is configured with the managed <code>fdupdate-server-host/fdupdate-server/bundle</code> target. COT must already serve its authenticated application API on a literal loopback IP. Place the FDUpdate application credential in a root-owned regular file with mode <code>0400</code> or <code>0600</code>; pass its path, never its value, to the deployment CLI:</p>
+<pre><code>
+cargo build --release --locked -p fdupdate-web
+
+sudo ./server/deploy/fdupdate-server install-web \
+
+  --install-root /opt/fdupdate-server \
+
+  --config-root /etc/fdupdate-server \
+
+  --data-root /var/lib/fdupdate-server \
+
+  --web-binary &quot;$PWD/target/release/fdupdate-web&quot; \
+
+  --fdupdater-config /etc/fdupdater/FDUpdater.json \
+
+  --cot-service-endpoint http://127.0.0.1:8080/ \
+
+  --cot-service-credential-file /etc/cot/fdupdate-service-credential
+
+</code></pre>
+<p>The installer validates the loopback endpoint and exact managed target, then copies the reader and operator credentials into the root-owned web secret area. It also validates the COT credential as one bounded visible-ASCII token and copies it atomically into that protected area. <code>web.json</code> contains only the literal endpoint and protected destination path, never the credential. Missing, partial, non-loopback, query/fragment-bearing, symlinked, empty, over-broad or unreadable COT input stops before service activation. Re-running <code>install-web</code> revalidates and refreshes the same protected binding before restarting the web service; infrastructure upgrade and rollback retain the configuration/secret roots outside executable releases.</p>
+<p>The web portal and public device gateway run as distinct <code>fdupdate-web</code> and <code>fdupdate-device-gateway</code> users with dedicated primary groups and secret trees. Only both users' membership in <code>fdupdate-account-authority</code> is shared. The web runtime owns <code>data/web</code> (<code>2750</code>); the Installation Account document is <code>fdupdate-web:fdupdate-account-authority</code> mode <code>0640</code>, while administrator and self-service documents remain web-only mode <code>0600</code>. The separately provisioned <code>data/account-authority/installation-accounts.lock</code> is <code>root:fdupdate-account-authority</code> mode <code>0660</code> inside a non-writable directory. This lets the gateway hold a shared lock and read the current account document during delegated enrollment, but not create, replace or remove web state. Web administrator, COT, FDUpdater and copied device-operator credentials remain in <code>web-secrets</code>, which the device identity cannot traverse or read. Re-running either installer reasserts these owners and modes; executable upgrade and rollback retain the separated data/configuration roots.</p>
+<p>Two non-secret data groups remain separate from account authority: <code>fdupdate-repository-runtime</code> permits only publisher and web to replace repository registry documents, while <code>fdupdate-release-readers</code> permits web and device to read publisher release state/artifacts. Neither group grants access to publisher, web or device secret directories, and the device systemd namespace exposes the release store read-only.</p>
+<p>When migrating an installation created before these identities were separated, run <code>install-web</code> first and immediately refresh <code>install-device-gateway</code> with the reviewed current binary/products input. The web step moves the durable files to their new owner and fails delegated enrollment closed until the device unit is refreshed. The device installer refuses an old-owner web directory instead of silently breaking the running web service. Fresh installations may install the device gateway first; it prepares an empty protected web directory and the web installer then creates the account document.</p>
+<p>The panel service can read those copies but cannot write FDUpdater state or run deployment commands. <strong>Check for server updates</strong> sends an exact-target <code>check</code>; <strong>Install server update</strong> appears for a pending release and sends <code>apply</code>. FDUpdater retains download, signature verification, caching, activation, health checking and rollback authority.</p>
+<h2>Upgrade and rollback</h2>
+<p>An infrastructure release carries <code>FDUPDATE_SCHEMA_COMPATIBILITY=hawkbit-1.1.0-mariadb-v1</code>. Upgrade and rollback stop before switching versions when this value differs. Database-changing upgrades require the consistent backup/restore and migration procedure owned by FDU-023.</p>
+<p>For a compatible candidate checkout:</p>
+<pre><code>
+sudo ./server/deploy/fdupdate-server upgrade \
+
+  --release-id candidate-2 \
+
+  --install-root /opt/fdupdate-server \
+
+  --config-root /etc/fdupdate-server \
+
+  --data-root /var/lib/fdupdate-server
+
+</code></pre>
+<p>The CLI validates and copies the candidate, atomically switches <code>current</code>, waits for health, and records <code>previous</code>. If startup fails, it atomically restores the old configuration and waits for the old services to become healthy. An explicit compatible rollback uses:</p>
+<pre><code>
+sudo ./server/deploy/fdupdate-server rollback \
+
+  --install-root /opt/fdupdate-server \
+
+  --config-root /etc/fdupdate-server \
+
+  --data-root /var/lib/fdupdate-server
+
+</code></pre>
+<p>Inspect current container state without changing it:</p>
+<pre><code>
+sudo ./server/deploy/fdupdate-server status \
+
+  --install-root /opt/fdupdate-server \
+
+  --config-root /etc/fdupdate-server \
+
+  --data-root /var/lib/fdupdate-server
+
+</code></pre>
+<h2>Public site activation and rollback</h2>
+<p>The edge mounts the stable read-only <code>DATA_ROOT/site</code> directory and resolves its atomic <code>current</code> pointer inside the container. Build a deterministic site package, then activate it through the HTTPS origin that users reach:</p>
+<pre><code>
+node scripts/package-public-site.mjs
+
+sudo /opt/fdupdate-server/current/fdupdate-site activate \
+
+  dist/site-package/fdupdate-site-VERSION-REVISION.tar \
+
+  /var/lib/fdupdate-server \
+
+  https://update.example.com
+
+</code></pre>
+<p>For a private CA, pass its PEM file as the final argument. The helper verifies the package and its file manifest before promotion, switches <code>current</code> atomically, then downloads <code>/site-manifest.sha256</code> with caches disabled and compares it byte for byte. A mismatch or unavailable edge restores and verifies the prior pointer. Only a successful verification advances <code>previous</code>.</p>
+<p>Rollback uses the same live identity check and failure recovery:</p>
+<pre><code>
+sudo /opt/fdupdate-server/current/fdupdate-site rollback \
+
+  /var/lib/fdupdate-server \
+
+  https://update.example.com
+
+</code></pre>
+<p>The stable parent mount is required. After upgrading from a release that mounted <code>site/current</code> directly, recreate the edge once with the new Compose definition; later site promotions do not require container recreation.</p>
+<p>Local repository checks use Node.js and do not run in GitHub Actions:</p>
+<pre><code>
+node server/deploy/validate.mjs
+
+node --test server/deploy/tests/deployment.test.mjs
+
+bash server/deploy/tests/site-lifecycle.sh
+
+</code></pre>
+<p>On a clean dedicated Linux verification host, the complete disposable acceptance path runs with one command:</p>
+<pre><code>
+sudo ./server/deploy/tests/host-acceptance.sh
+
+</code></pre>
+<p>It refuses to run when an <code>fdupdate-server</code> Compose project already exists. It uses a uniquely generated <code>/var/tmp/fdupdate-acceptance.*</code> root, verifies native atomic symlink transitions, clean deployment, TLS/mTLS denial boundaries, healthy upgrade, explicit rollback and automatic recovery from an invalid nginx upgrade. Its trap removes only that guarded root and its Compose containers, networks and volumes. Digest-pinned image layers remain in the host cache for audit or the later production installation.</p></article></main><footer><span>FDUpdate 0.0.13.0 · Apache-2.0</span><span>Self-hosted today. Managed cloud is not currently offered.</span></footer></body></html>

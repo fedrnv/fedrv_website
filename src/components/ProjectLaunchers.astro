@@ -1,0 +1,17 @@
+---
+import { t } from '../i18n/messages';
+const projects = [
+  { id: 'cot', name: 'COT', url: 'https://cot.fedrv.de/', mark: 'COT' },
+  { id: 'update', name: 'FDUpdate', url: 'https://update.fedrv.de/', icon: '/icons/fd-update.svg' },
+  { id: 'files', name: 'FDFiles', url: 'https://files.fedrv.de/', icon: '/icons/fd-storage.svg' },
+  { id: 'tasks', name: 'FDTasks', url: 'https://tasks.fedrv.de/', mark: 'T' },
+  { id: 'fdos', name: 'FDOS', url: 'https://fdos.fedrv.de/', mark: 'OS' },
+] as const;
+---
+<nav class="project-launchers" aria-label={t('projectNavigation')} data-i18n-aria-label="projectNavigation">
+  {projects.map(project => <a class="project-shortcut" href={project.url} title={new URL(project.url).hostname} aria-label={t(`launcher.${project.id}`)} data-i18n-aria-label={`launcher.${project.id}`}>
+    {'icon' in project ? <img class="product-icon launcher-icon" src={project.icon} alt="" width="40" height="40" /> :
+      <span class="product-icon launcher-icon monogram" aria-hidden="true">{project.mark}</span>}
+    <span class="launcher-name">{project.name}</span>
+  </a>)}
+</nav>

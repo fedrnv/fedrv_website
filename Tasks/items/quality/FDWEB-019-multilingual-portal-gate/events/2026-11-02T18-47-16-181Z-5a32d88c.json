@@ -1,0 +1,18 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-3ac1aa3a-2da5-4b1c-88b1-299e25171d96",
+  "subject_id": "FDWEB-019",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T18:47:16.181Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-f2f72075-baff-4f36-aa37-6e5d0b57f308",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Done",
+    "reason": "Declared acceptance criteria have current local verification.",
+    "evidence": [
+      "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/2026-11-02T18-47-16-147Z-closure.json"
+    ],
+    "evidence_sha256": "6528e98bd1038787426693dc78d86113645fde133acf3b33dcfd0346007ef757"
+  }
+}

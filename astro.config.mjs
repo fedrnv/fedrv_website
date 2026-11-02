@@ -6,4 +6,5 @@ export default defineConfig({
   cacheDir: process.env.FDWEB_CACHE_DIR || './.astro',
   trailingSlash: 'never',
   devToolbar: { enabled: false },
+  vite: { build: { assetsInlineLimit: 0 } },
 });

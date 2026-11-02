@@ -44,10 +44,10 @@ for (const language of ['en', 'de', 'ru'] as const) {
 </SiteLayout>
 <style>
   .hero { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: 5rem; align-items: center; padding-block: 1rem 3rem; }
-  h1 :global(.hero-accent) { color: var(--accent); }
+  h1 :global(.hero-accent) { color: var(--black); text-decoration: underline; text-decoration-color: var(--light-blue); text-decoration-thickness: .09em; text-underline-offset: .12em; }
   .hero .lead { max-width: 36rem; font-size: 1.15rem; }
   .hero-note { border-left: 1px solid var(--line); padding-left: 2.5rem; color: var(--muted); font-size: .95rem; }
-  .note-number { display: block; font-size: 5rem; font-weight: 650; letter-spacing: -.07em; color: #61799c; line-height: 1; margin-bottom: 1.75rem; }
+  .note-number { display: inline-block; padding: .5rem 1rem .75rem; background: var(--dark-gray); border-radius: .75rem; font-size: 5rem; font-weight: 650; letter-spacing: -.07em; color: var(--light-blue); line-height: 1; margin-bottom: 1.75rem; }
   .note-heading { color: var(--ink); font-size: 1.1rem; font-weight: 600; margin-bottom: .75rem; }
   .note-rule { height: 1px; background: var(--line); margin-block: 1.75rem; }
   .note-small { font-size: .8rem; margin: 0; }

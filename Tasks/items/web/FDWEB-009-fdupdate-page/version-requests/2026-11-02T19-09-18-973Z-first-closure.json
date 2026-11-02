@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "345ea1aa-65ed-4d81-8fb7-98b34c5c21da",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D002",
+  "work_item_id": "FDWEB-009",
+  "summary": "Write the FDUpdate project page",
+  "verification": [
+    "Tasks/items/web/FDWEB-009-fdupdate-page/evidence/2026-11-02T19-09-18-948Z-closure.json"
+  ]
+}

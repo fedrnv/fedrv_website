@@ -1,0 +1,256 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "work_item_id": "FDWEB-019",
+  "created_at": "2026-11-02T18:47:16.148Z",
+  "source_sha": "d4ede682d406b253d72933d6a66b132f61073680",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "cae205172c09774c963cc36eb13531d9f9f0e872ff105f8c4cd63bd5cfa7c3ac",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+    "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/TASK.md": "cae205172c09774c963cc36eb13531d9f9f0e872ff105f8c4cd63bd5cfa7c3ac"
+  },
+  "dependencies": [
+    {
+      "id": "FDWEB-016",
+      "task_sha256": "aa7ee3598457da30801e5c9bf5c2e798f45ca7f38f73eaf9f02713eb96867010",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-2db7a7d9-3228-471a-beb6-19b88f40ec07",
+        "subject_id": "FDWEB-016",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T18:37:02.568Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-5484315b-051b-4ae3-b8c2-15c541a6f9ca",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-016-browser-language-interface/evidence/2026-11-02T18-37-02-537Z-closure.json"
+          ],
+          "evidence_sha256": "7a84c7e4443da72d6c416b63c36e6857207085eaf24586f9456bb8e4990002c3"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-017",
+      "task_sha256": "278a211a354c4058b4a03ca1e8dfc8262e4ccb6afb7ea39c3465d491365e23cf",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-d3837e9e-3a74-4768-9e01-0829633d9bfc",
+        "subject_id": "FDWEB-017",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T18:40:07.464Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-80978be4-44be-472c-b16c-d3b37d5d2ed5",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/design/FDWEB-017-four-color-fd-brand/evidence/2026-11-02T18-40-07-440Z-closure.json"
+          ],
+          "evidence_sha256": "100d9866ba91e660bf881816a0223f4c78a47906aca0a30581cda1f24741fb12"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-018",
+      "task_sha256": "08312768e1dac2b202f70ac28dc302f7d8c759ef9937b387a33c72c66741fb4d",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-45effd2c-687a-41bf-aa83-f6e4282cf11b",
+        "subject_id": "FDWEB-018",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T18:44:17.022Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-fcd2a12a-98d7-45a5-95d3-15a874449bc2",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-018-project-subdomain-launchers/evidence/2026-11-02T18-44-17-000Z-closure.json"
+          ],
+          "evidence_sha256": "48c3b6953ffa8d33a9643179932742ee0681e8ba8b5081480d0837543496fb79"
+        }
+      }
+    }
+  ],
+  "atomicity": {
+    "outcomes": [
+      "Verify language selection, four-color identity and project entry shortcuts together on one frozen candidate."
+    ],
+    "packets": [
+      "One cohesive implementation and local verification packet"
+    ],
+    "independent_acceptance": false,
+    "boundary_reason": "Verify language selection, four-color identity and project entry shortcuts together on one frozen candidate."
+  },
+  "candidate_files": {
+    "src/components/Breadcrumbs.astro": "8998db76265aa4efc0d7f299d2b24199c74e56be2ba9ba4dca9c415e84511fe4",
+    "src/components/Button.astro": "2dcee16d0939ef9e8b80ef4af744a2d443d56420396bf88581464bee0e423f0e",
+    "src/components/ComponentPreview.astro": "e5d5f36faaca2a7a8b43a90193dbb3069b16837c1546ad8f8dcaa2297e8f45e2",
+    "src/components/ExternalLinks.astro": "66d803f41e0845f8e4f100b9b52930f2cdef91c10dfceddf8bc5e313bd961bd8",
+    "src/components/ProductCard.astro": "17412c7f6a86b4f786009613da27cd096a12800e062635cc55125eb19f09db80",
+    "src/components/ProjectCard.astro": "27beabc420739c4a854e361c808b30ef0b70c0c06bf4aced7ef385c832a8526a",
+    "src/components/ProjectLaunchers.astro": "6b54d54c4c65c751f4931f9e264f8deee6c34d90a23929a1b2dea341c9e55e0e",
+    "src/components/ProjectMedia.astro": "f270e19eb3f1f13fd87da4b1fa26bc883b3c6c36b24872020b043c133e6db0fc",
+    "src/components/StatusBadge.astro": "c68bc4224063e043fb241eb23093ac838128ea615d59d07f03643f1137e1595b",
+    "src/components/TranslatedText.astro": "f4721a354b7da56beb196c048c2c22f7e79aa75ff8bb8098601c8a41cfebe5ed",
+    "src/content/projects/cot.md": "362309375f76aeab3d825906d823e1e3ba8ff6539e805ca74b6b97df9088f85c",
+    "src/content/projects/foundation-fixture.md": "e8ad0831c2d5294deaced26ac6d9a88285fd418efe2b9367b0d052725fa18d38",
+    "src/content/projects/storage.md": "07d3114a0d8963aa7084285a0c30cb772e8ba933d5fc071d351697d96049c0a0",
+    "src/content/projects/update.md": "6466c4d8a717d1b120d4d03f2beac773c914c4289c2745eec7dd4efed2de7a20",
+    "src/content.config.ts": "c2911cf6c0bb85f4bc30cdc7afecb976911744fb9a78dffbb5c85232c56f7440",
+    "src/i18n/client.ts": "413c60e801ea5ece4e72529b1d16fb8e8010de95bf8b59b8dc6989a219ef0b2e",
+    "src/i18n/messages.ts": "7425599fff08c5f3621624341adf525f6727e067e7e9f548ea46d0223cb2a8be",
+    "src/i18n/projects.ts": "b7c7d9dad2171c8b5f6b04832be01b7d264eec5b6247fd9eff170799d90a3338",
+    "src/layouts/SiteLayout.astro": "bb8c9dc894c477bbd897b6f6b1e01d6e54d19deba552414f399cae7230138a89",
+    "src/lib/project-schema.ts": "ac16afe3bf717e2f55795d3d7b0db0a1636b33221e4d2d467cadae65b8dc2e8b",
+    "src/lib/projects.ts": "fe58284256ac19f7d93d870cc74497a15d620a8a3ad1a0272fc2a89bb9921c97",
+    "src/pages/404.astro": "92960c57d28481c178536576fb282dd8b4766cb2852b2c6bc0b09c9b95b50a23",
+    "src/pages/index.astro": "36750af8015dc01051d3de7833d773800678b4137b992c6e145d09b58bb3ee8d",
+    "src/pages/robots.txt.ts": "6f256bb3ff201b1c6783fe49d919871e1de41ec76fbb50dede65854cd03899fd",
+    "src/pages/sitemap.xml.ts": "52f5ffbb63e03854f9910559e394a34441f74e764c46c65f8d430b50238397d6",
+    "src/pages/[slug].astro": "26366f2b03d3528248c3a4f62527506d46529229c66c5ea78312000aba8dbec0",
+    "src/styles/global.css": "2bc193c456cbc75d87b2674f72e227198c5baabe4ea81229dc0d7539ea69b77a",
+    "public/favicon.svg": "f5f99b435192f5f8e5d660d03ca361107a72e2f5a9e5b16509763510207a623c",
+    "public/icons/fd-agent.svg": "f50e8d066e492f987b5617e07bfe381e4939ab26c1977a6d877a07f162f3347b",
+    "public/icons/fd-remote-desktop.svg": "e93de963a571e3669edee6d8b3e7c866180d8867ad7bf2e446aef33105f3e5de",
+    "public/icons/fd-storage.svg": "2b183b4801454cd5ab82d3638cc634145b9303b9740963db1df055ca5b7554c4",
+    "public/icons/fd-update.svg": "8fef5afd86ea1a0e8e51f992620e33cbf56767af92de09313bc0937b3ee83544",
+    "public/icons/fd-vpn.svg": "c5f706bc0f3fc0517d8d7bcd7bac51aba6cdc570df126f3cc48c4c68e8ef29da",
+    "public/social-card.png": "2c06c1709c9cdbad5e459f863ac7770bb50ec74aa8385bfcc5f8ac2e38e32791",
+    "scripts/browser.mjs": "b58931348962ce96f8bf441dc68fead13df3ba5cc05bc05f8185f9e114538a45",
+    "scripts/generate-social.mjs": "6d5521e97a66006a854a0cbe1e5e72094d029e54209f765b805aca0705dc7886",
+    "scripts/verify-accessibility.mjs": "1bc8a31b96f2c827bf14aa69bc4c5950f86f9d1d888997b1be39185457341798",
+    "scripts/verify-bootstrap.mjs": "cc3826edb7b23b3c75e5f231448fdb4254cd8b10b53f946671e1fb91bff8b53b",
+    "scripts/verify-brand.mjs": "f6c49fb39db4e9d9eedf9a56adc1c5237fd78dffc6adee7bb2b8aa3bbd6de900",
+    "scripts/verify-browser-lifecycle.mjs": "d38a4d3e453e229db7a466e4fa1ebacbce5d915cb0e6bbbb8a7462d1e924d952",
+    "scripts/verify-browser.mjs": "2eec762698c12238e5e1bf121b5e37c6adf680dc351e2bc0a69f5953d578e3f3",
+    "scripts/verify-clean.mjs": "491332b44c4092172e8e38b0796c1cac9c23c87acba7ec3cd02b26a2f87231a8",
+    "scripts/verify-content.mjs": "f91d366b0e403c9d25ccd42be5e73aa536169781f677528db554e1a36456e447",
+    "scripts/verify-home.mjs": "2ebb5af70a8f0453d2cdff39d0d173f73184c1742db22d6dc6bfb911d36da67b",
+    "scripts/verify-languages.mjs": "590e91603418d27648dbeeb5e21cd397f9b0eafb45fb417f26189cfc85849aef",
+    "scripts/verify-portal.mjs": "73e687e6e42f7baf274b94d651c07238558b1767a49eb6511236c638d28843a4",
+    "scripts/verify-site.mjs": "f290f8a6487416afd9ebc485c8a96bbefb5f70ee956adafeca674bfae4167722",
+    "docs/content-sources.md": "4021f12eb7dce28e43042ca7482e51bf420b8eb335c0494e678688a7c31cd848",
+    "docs/content.md": "9da0204750fcd2fa38f36cc9d263bec995afcf2375756b528d191da1ada7f479",
+    "docs/design.md": "091e4eb0a575156db5e15a11282fe3e4f4fa582e5e7c2605ee52333f40c60b76",
+    "docs/languages.md": "f02583bc3566f88752d1c683791811949ecd808b06be829741b8ee31d601095c",
+    "docs/portal-navigation.md": "33a247fa9afbe7de4cda78bab0b89ea2033d54043fd31d3825e1d9ddb55203e4",
+    "docs/verification.md": "2ed38af79626c057081cb5cc8a5e3d2e5164445e489237ab6c31e811c45611b7",
+    "package.json": "b343c33bf1c43fd2ffd2e56110cbb153ea211d4323b756f324175ee2ded20a66",
+    "package-lock.json": "8fc327e00cfd2e3e9d8a30790a040006326b40e6f341d94c9f2a4842a751a02f",
+    "astro.config.mjs": "7996a278021d79beda5c8506e276c3995aa9abc3b2970fa4ede95b15132a3457",
+    "tsconfig.json": "dc9ab377cf2b9561b35f615a8fc674d7bf5fd4d6781a90d09e169344a501641e",
+    "README.md": "b73c92ef13b55476968ac4a53135eaa9fe91855e8f13f8efcfc30061350f25f3",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    ".npmrc": "3b88d1057add6f92ec23dc22dd017e312ded13a042deb0ba6f08bad85d936456",
+    ".nvmrc": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc",
+    ".gitignore": "ed7504b92abfd85c16d3826ca01494e09680828fbf8550675c9bd16485f4ff0a",
+    "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/2026-11-02-interface-candidate.json": "3e4be8d86339ca850af1c745aa8afc84bf5d701e708b1ea272a9fda20836a9a6",
+    "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/2026-11-02-interface-acceptance.json": "7f9fd9509d6020113baf8617f0c31979e1d0c3cbaf3965582d3b47033ee93895"
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0"
+  },
+  "acceptance": {
+    "AC-01": "PASS: all six D003 implementation criteria map to current local results in Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/2026-11-02-interface-acceptance.json",
+    "AC-02": "PASS: languages, project shortcuts, metadata, ordinary page navigation and FD brand work together on one unchanged source snapshot; 30 accessibility page/locale/viewport scenarios pass."
+  },
+  "commands": [
+    {
+      "command": "npm run check",
+      "result": "PASS: 39 files, zero diagnostics"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS: static output"
+    },
+    {
+      "command": "npm run verify:languages",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:brand",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:portal",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:site",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:accessibility",
+      "result": "PASS: 30 scenarios"
+    },
+    {
+      "command": "npm run verify:browser",
+      "result": "PASS"
+    },
+    {
+      "command": "node Tasks/tools/verify-ledger.mjs",
+      "result": "PASS: 24 records"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS; Git checkout CRLF notices only"
+    }
+  ],
+  "visuals": [
+    {
+      "path": "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/screenshots/de-1440.png",
+      "sha256": "b2b67c32b131862f00cb4ac1feb4b9bec2f0508fc6ee185943178ae24dd993ab",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/screenshots/de-360.png",
+      "sha256": "bea372486d5cbb88b16a094e5bb3ab92c52ff0c8ca029a22d1accd1a8d605dd2",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/screenshots/en-1440.png",
+      "sha256": "a0f309ce4dad72a6352909818975e61112c8919ab2b31abb12e655cf5609e649",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/screenshots/en-360.png",
+      "sha256": "62eac1ce6fe245f84fd751bf30262563cc8c014cbcd712951cd09e84a3d20405",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/screenshots/ru-1440.png",
+      "sha256": "9a5ef7af04f59f4cb4c63eac5b2d93c85d9422f05f7f54fb1c69c2e31e4eeebb",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/quality/FDWEB-019-multilingual-portal-gate/evidence/screenshots/ru-360.png",
+      "sha256": "84d18442a824c69e045f2bf7e2d0997d2a7ec87367c0bebe08f3e85ac30b2d18",
+      "inspected": true
+    }
+  ],
+  "limitations": [
+    "Independent review FDWEB-020 remains open. D001 prior gate is correctly invalidated because the interface candidate changed."
+  ],
+  "reviewer": "Codex author self-review; not independent Epic review",
+  "cleanup": "Temporary fixtures removed; dist and node_modules ignored; original icons unchanged.",
+  "checkpoint": {
+    "task_identity": "FDWEB-019",
+    "accepted_state": "Done",
+    "next_task": "FDWEB-020",
+    "next_action": "Read next task and parent, revalidate dependencies/rule sources, implement and verify.",
+    "authority": "Owner requested all tasks sequentially; external deployment still requires exact target and authorization.",
+    "resource_status": "One implementation workspace; no delegated agents."
+  }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://update.fedrv.de/sitemap.xml

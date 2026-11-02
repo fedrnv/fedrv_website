@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Getting started · FDUpdate</title><meta name="description" content="FDUpdate Getting started documentation."><link rel="canonical" href="https://update.fedrv.de/docs/getting-started/"><link rel="stylesheet" href="/assets/site/site.css"><script src="/assets/site/site.js" defer></script></head><body><header><nav aria-label="Main"><a class="brand" href="/">FD<span>Update</span></a><a href="/docs/">Docs</a><a href="/docs/client-integration/">FDUpdater</a><a href="/docs/self-hosting/">Server</a><span class="nav-end"><a href="https://github.com/fedrnv/FDUpdate">GitHub</a><a class="button" href="/docs/getting-started/">Get started</a></span></nav></header><main class="docs-layout"><aside class="docs-nav"><input class="search" data-search aria-label="Search documentation" placeholder="Search docs"><div id="search-results" aria-live="polite"></div><a href="/docs/getting-started/">Getting started</a><a href="/docs/architecture/">Architecture</a><a href="/docs/client-integration/">Client integration</a><a href="/docs/application-managed-updates/">Application-managed updates</a><a href="/docs/enrollment/">Enrollment</a><a href="/docs/self-hosting/">Self-hosting</a><a href="/docs/operator-api/">Operator API</a><a href="/docs/security/">Security</a><a href="/docs/backup-and-recovery/">Backup and recovery</a><a href="/docs/versioning/">Versioning</a><a href="/docs/cot-integration/">COT integration</a><a href="/docs/license/">License</a><a href="/docs/contributing/">Contributing</a><a href="/docs/support/">Support</a><a href="/docs/architecture-release-storage-fdfiles-v2/">FDUpdate release storage architecture — FDFiles protected object interface</a><a href="/docs/architecture-release-storage-replication-v1/">FDUpdate release storage architecture — primary S3, future mirror, VPS latest-copy cache</a><a href="/docs/architecture-saas-foundations/">SaaS-ready foundations</a><a href="/docs/client-feedback/">Client feedback</a><a href="/docs/cot-notifications/">COT service notifications</a><a href="/docs/daf-validation-flow/">DAF validation publication and update flow</a><a href="/docs/enrollment-code-panel/">Enrollment codes and installation identities</a><a href="/docs/github-actions-publication/">GitHub Actions publication</a><a href="/docs/governance-open-source-publication-readiness/">Open-source publication readiness</a><a href="/docs/installation-accounts/">Installation Accounts</a><a href="/docs/installation-dashboard/">Installation dashboard</a><a href="/docs/migration-fdos-to-fdupdater/">Migrating FDOS to external FDUpdater</a><a href="/docs/migration-fdos-updater-baseline/">FDOS updater baseline inventory</a><a href="/docs/operations-public-route-baseline/">update.fedrv.de public route baseline</a><a href="/docs/packaging/">FDUpdater native packages</a><a href="/docs/plans-fdupdate-unified-distribution-fleet-plan/">FDUpdate unified release distribution and updater fleet — planned FDTasks D009</a><a href="/docs/public-update-catalog/">Public update catalog</a><a href="/docs/release-inventory-panel/">Release inventory panel</a><a href="/docs/release-publication/">Manual release publication</a><a href="/docs/release-retention/">Release retention</a><a href="/docs/repository-administration/">Repository administration</a><a href="/docs/runtime-operations/">FDUpdater runtime operations</a><a href="/docs/server-application-managed-flow/">Server flow for application-managed updates</a><a href="/docs/server-delivery-authorization/">Metadata and artifact delivery authorization</a><a href="/docs/server-deployment/">FDUpdate Server foundation deployment</a><a href="/docs/server-registry/">FDUpdate Server registry</a><a href="/docs/server-rollouts/">Server rollout policy</a><a href="/docs/server-self-update/">FDUpdate Server self-update</a><a href="/docs/unified-release-protocol/">Unified release protocol</a><a href="/docs/validation-stand-promotion/">Validation-stand promotion</a></aside><article class="prose"><h1>FDUpdate</h1>
+<p>FDUpdate is a secure, product-neutral update platform for Windows and Linux.</p>
+<ul>
+<li><strong>FDUpdater</strong> is a Rust service, CLI, and embeddable contract library. It</li>
+<p>verifies signed releases, stages and atomically activates updates, checks health, and rolls back safely.</p>
+</ul>
+<ul>
+<li><strong>FDUpdate Server</strong> is a self-hosted release, enrollment, rollout, and feedback</li>
+<p>service built around Eclipse hawkBit. Its gateway keeps hawkBit, databases, signing keys, and administration private.</p>
+</ul>
+<p>The protocol works with any compatible self-hosted endpoint; the client has no vendor-controlled dependency. <code>update.fedrv.de</code> currently serves the owner's internal installations. A managed public cloud service is not offered today.</p>
+<h2>Use cases</h2>
+<p>FDUpdate supports standalone background updates, applications retaining their own installer/UI, public and private repositories, scoped installation grants, staged rollout/rollback, one-time download sharing, server self-update, and COT service Telegram notifications for configured operators.</p>
+<h2>Quick start</h2>
+<p>Install the pinned Rust 1.98 toolchain, then:</p>
+<pre><code>
+git clone https://github.com/fedrnv/FDUpdate.git
+
+cd FDUpdate
+
+cargo build --workspace --all-targets --locked
+
+cargo test --workspace --locked
+
+cargo run -p fdupdater --bin FDUpdater -- --version
+
+</code></pre>
+<p>All supported operations use CLI commands; an IDE is optional. Start with the <a href="/docs/client-integration/">integration guide</a>, <a href="/docs/application-managed-updates/">application-managed guide</a>, or <a href="/docs/self-hosting/">self-hosting guide</a>.</p>
+<h2>Architecture and trust</h2>
+<p>Remote metadata never grants local paths, services, or keys. Product-scoped Ed25519 signatures, compatibility, replay, rollout and rollback checks run before staging. Activation preserves the prior version with deterministic recovery. Server delivery rechecks installation identity, repository grant, scope and rollout. See <a href="/docs/architecture/">architecture</a> and <a href="https://github.com/fedrnv/FDUpdate/blob/main/SECURITY.md">security</a>.</p>
+<h2>Documentation</h2>
+<ul>
+<li><a href="/docs/client-integration/">FDUpdater integration</a></li>
+<li><a href="/docs/unified-release-protocol/">Unified release protocol</a></li>
+<li><a href="/docs/enrollment/">Enrollment</a></li>
+<li><a href="/docs/self-hosting/">Server self-hosting</a></li>
+<li><a href="/docs/operator-api/">Operator API</a></li>
+<li><a href="/docs/backup-and-recovery/">Backup and recovery</a></li>
+<li><a href="/docs/versioning/">Compatibility and versioning</a></li>
+<li><a href="/docs/cot-integration/">COT integration</a></li>
+<li><a href="/docs/contributing/">Contributing</a>, <a href="/docs/support/">support</a>, and <a href="https://github.com/fedrnv/FDUpdate/blob/main/CHANGELOG.md">changelog</a></li>
+</ul>
+<p>FDUpdate is licensed under <a href="https://github.com/fedrnv/FDUpdate/blob/main/LICENSE">Apache License 2.0</a>. See <a href="https://github.com/fedrnv/FDUpdate/blob/main/THIRD_PARTY_NOTICES.md">third-party notices</a>.</p></article></main><footer><span>FDUpdate 0.0.13.0 · Apache-2.0</span><span>Self-hosted today. Managed cloud is not currently offered.</span></footer></body></html>

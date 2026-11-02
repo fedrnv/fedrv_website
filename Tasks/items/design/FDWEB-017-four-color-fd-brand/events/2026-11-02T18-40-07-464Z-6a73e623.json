@@ -1,0 +1,18 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-d3837e9e-3a74-4768-9e01-0829633d9bfc",
+  "subject_id": "FDWEB-017",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T18:40:07.464Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-80978be4-44be-472c-b16c-d3b37d5d2ed5",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Done",
+    "reason": "Declared acceptance criteria have current local verification.",
+    "evidence": [
+      "Tasks/items/design/FDWEB-017-four-color-fd-brand/evidence/2026-11-02T18-40-07-440Z-closure.json"
+    ],
+    "evidence_sha256": "100d9866ba91e660bf881816a0223f4c78a47906aca0a30581cda1f24741fb12"
+  }
+}

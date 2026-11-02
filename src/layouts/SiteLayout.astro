@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { messages, t, type Messages } from '../i18n/messages';
+import ProjectLaunchers from '../components/ProjectLaunchers.astro';
 interface Props {
   title: string;
   description: string;
@@ -24,7 +25,7 @@ const translations = Object.fromEntries((['en', 'de', 'ru'] as const).map(langua
     <title data-i18n="page.title">{translations.en['page.title']}</title>
     <meta name="description" content={translations.en['page.description']} data-i18n-content="page.description" />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=fd" />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="FEDRV" />
@@ -47,6 +48,7 @@ const translations = Object.fromEntries((['en', 'de', 'ru'] as const).map(langua
         </nav>
         <label class="language-picker"><span data-i18n="language">{t('language')}</span><select id="language" name="language"><option value="en">EN</option><option value="de">DE</option><option value="ru">RU</option></select></label>
       </div>
+      <ProjectLaunchers />
     </header>
     <main class="container site-main" id="main" tabindex="-1"><slot /></main>
     <footer class="site-footer"><div class="container footer-inner"><p><a class="wordmark" href="/">FEDRV<span>.DE</span></a></p><p>Forschung, Entwicklung, DRIVE.<br /><span data-i18n="footer">{t('footer')}</span></p></div></footer>

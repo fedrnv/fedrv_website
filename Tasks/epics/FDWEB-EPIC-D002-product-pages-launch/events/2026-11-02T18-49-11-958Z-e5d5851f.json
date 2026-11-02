@@ -1,0 +1,15 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-335adc38-6e59-4b19-a069-5b548441f76f",
+  "subject_id": "FDWEB-EPIC-D002",
+  "event_type": "scheduling_exception",
+  "created_at": "2026-11-02T18:49:11.958Z",
+  "actor": "Codex",
+  "base_event_id": null,
+  "payload": {
+    "authorized_task": "FDWEB-009",
+    "reason": "Owner explicitly requested copying the live FDUpdate information before rebuilding that source page; execute this dependency-ready task now without treating D001/D003 independent review as completed.",
+    "authority": "Current owner message of 2026-11-02",
+    "scope": "FDWEB-009 only; no deployment or Epic closure authorized."
+  }
+}

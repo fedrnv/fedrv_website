@@ -10,6 +10,8 @@ import ExternalLinks from '../components/ExternalLinks.astro';
 import Button from '../components/Button.astro';
 import { t } from '../i18n/messages';
 import { localizedProject, projectMessages } from '../i18n/projects';
+import UpdateOverview from '../components/UpdateOverview.astro';
+import { updateMessages } from '../i18n/update';
 
 export async function getStaticPaths() {
   return (await publicProjects()).map(project => ({ params: { slug: project.data.slug }, props: { project } }));
@@ -20,6 +22,7 @@ const { Content } = await render(project);
 const data = localizedProject(project.data);
 const pageMessages = projectMessages([project.data]);
 for (const language of ['en', 'de', 'ru'] as const) pageMessages[language]['page.description'] = localizedProject(project.data, language).summary;
+if (data.detailsSource === 'fdupdate-site') for (const language of ['en', 'de', 'ru'] as const) Object.assign(pageMessages[language], updateMessages[language]);
 const prefix = `project.${data.slug}`;
 ---
 <SiteLayout title={data.name} description={data.summary} pageMessages={pageMessages}>
@@ -33,7 +36,7 @@ const prefix = `project.${data.slug}`;
     </div>
     {data.icon && <img class="project-emblem" src={data.icon} alt="" width="112" height="112" />}
   </div>
-  <div class="project-body">
+  {data.detailsSource === 'fdupdate-site' ? <UpdateOverview /> : <div class="project-body">
     <div>
       <section class="prose" aria-labelledby="purpose"><h2 id="purpose" data-i18n="purpose">{t('purpose')}</h2><p data-i18n={`${prefix}.purpose`}>{data.purpose}</p></section>
       {data.capabilities.length > 0 && <section class="prose"><h2 data-i18n="capabilities">{t('capabilities')}</h2><ul>{data.capabilities.map(item => <li>{item}</li>)}</ul></section>}
@@ -43,7 +46,7 @@ const prefix = `project.${data.slug}`;
       {data.documentation.length > 0 && <section class="prose"><h2 data-i18n="materials">{t('materials')}</h2><ExternalLinks links={data.documentation} /></section>}
     </div>
     <aside aria-label={t('mediaLabel')} data-i18n-aria-label="mediaLabel"><ProjectMedia image={data.image} /></aside>
-  </div>
+  </div>}
 </SiteLayout>
 <style>
   .project-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; padding-bottom: 3rem; border-bottom: 1px solid var(--line); }

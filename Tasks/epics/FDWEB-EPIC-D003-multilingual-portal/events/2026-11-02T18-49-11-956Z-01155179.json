@@ -1,0 +1,14 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-f451d242-e5c4-4f22-9f07-9a9e1ca3f30c",
+  "subject_id": "FDWEB-EPIC-D003",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T18:49:11.956Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-43fa6a29-d8cd-4586-8cff-78944b120306",
+  "payload": {
+    "status_from": "Active",
+    "status_to": "Blocked",
+    "reason": "Owner prioritized FDUpdate source-preservation migration. Interface implementation/gate remain verified; independent review still pending."
+  }
+}
