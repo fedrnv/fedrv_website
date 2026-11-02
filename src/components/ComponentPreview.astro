@@ -1,0 +1,18 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+import Button from './Button.astro';
+import ProductCard from './ProductCard.astro';
+import ProjectMedia from './ProjectMedia.astro';
+import ExternalLinks from './ExternalLinks.astro';
+---
+<section id="sample" class="section">
+  <Breadcrumbs current="Образцы компонентов" />
+  <h2>Образцы компонентов</h2>
+  <div class="card-grid">
+    <ProductCard name="Пример" href="#sample" summary="Демонстрационная карточка без изображения и внешнего портала." status="planned" />
+    <ProductCard name="Очень длинное название демонстрационного проекта" href="#sample" summary="Длинный текст остаётся внутри карточки и переносится на узком экране без горизонтальной прокрутки." status="development" icon="/icons/fd-update.svg" />
+    <ProductCard name="Образец" href="#sample" summary="Этот образец показывает состояние компонента и не обозначает готовность реального продукта." status="available" />
+  </div>
+  <div class="actions"><Button href="#sample">Основное действие</Button><Button href="#sample" secondary>Дополнительное действие</Button></div>
+  <div class="section"><ProjectMedia /><ExternalLinks links={[]} /></div>
+</section>

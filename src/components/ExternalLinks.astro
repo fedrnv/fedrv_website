@@ -1,0 +1,7 @@
+---
+interface Props { links: { label: string; url: string }[]; }
+const { links } = Astro.props;
+---
+{links.length > 0 && <div class="external-links">
+  {links.map(link => <a class="external-link" href={link.url}>{link.label} <span aria-hidden="true">↗</span></a>)}
+</div>}

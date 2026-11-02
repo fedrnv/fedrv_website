@@ -1,0 +1,17 @@
+{
+  "schema": "fdtasks-verification/v1",
+  "created_at": "2026-11-02T14:48:02.713Z",
+  "subject_id": "FDWEB-007",
+  "result": "FAIL",
+  "passed": [
+    "Clean byte-matched snapshot: npm ci, check, build, bootstrap, site",
+    "Content positive and negative build fixtures",
+    "Initial ledger check and four ledger tests"
+  ],
+  "failed": [
+    "Browser home/accessibility/responsive commands failed in cleanup: taskkill.exe status 128"
+  ],
+  "clean_manifest_sha256": "22f2237ab7b15adffe2e03202460c6bf7604e002a13e612d8dd8541e63793258",
+  "correction": "FDWEB-015",
+  "next_action": "Repair owned browser process lifecycle; run affected checks sequentially; resume this gate without accepting the failed browser results."
+}

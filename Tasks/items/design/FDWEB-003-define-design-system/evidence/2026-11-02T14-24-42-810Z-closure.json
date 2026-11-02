@@ -1,0 +1,131 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "work_item_id": "FDWEB-003",
+  "created_at": "2026-11-02T14:24:42.811Z",
+  "source_sha": "4b279027e60adb7f4669e28ad299f5c6ba8fb0d0",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "66e83e6d3e328084e94370902c8203e69867321f0d7eca4364199d9c87f2736f",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+    "Tasks/items/design/FDWEB-003-define-design-system/TASK.md": "66e83e6d3e328084e94370902c8203e69867321f0d7eca4364199d9c87f2736f"
+  },
+  "dependencies": [
+    {
+      "id": "FDWEB-002",
+      "task_sha256": "f8cd626ad0e502abba98d15cf1c2ea951a87fe08d2f57e1d789622d17c003b28",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-100cbaab-9ce4-4cb2-b0b1-404d80a8a935",
+        "subject_id": "FDWEB-002",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:21:34.034Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-533008fe-2980-41ef-9f61-eb95e80cb6b9",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-002-bootstrap-astro-site/evidence/2026-11-02T14-21-34-006Z-closure.json"
+          ],
+          "evidence_sha256": "b8508a275b42d2f24aa36a9a7b6190db361ee9e52af1deb6f7bda311b9a50311"
+        }
+      }
+    }
+  ],
+  "atomicity": {
+    "outcomes": [
+      "Implement one restrained, responsive visual system for the home page and project pages."
+    ],
+    "packets": [
+      "One cohesive implementation and verification packet"
+    ],
+    "independent_acceptance": false,
+    "boundary_reason": "The work delivers one independently acceptable result: Implement one restrained, responsive visual system for the home page and project pages."
+  },
+  "candidate_files": {
+    "src/styles/global.css": "b9ad9d8b5212b002a52ad0d0ba4bce1245862e017bca7e406e8e3b301423f5d6",
+    "src/layouts/SiteLayout.astro": "5dbdbd32fdf00cd4c62a0a264b9d6a704cbad913f76f6e5c02657a5fec87a63a",
+    "src/components/StatusBadge.astro": "0388e75893ff4a04780ec5fddf027c4c0affb28d554eb0f6fe0328dbc5b294a5",
+    "src/components/Button.astro": "2dcee16d0939ef9e8b80ef4af744a2d443d56420396bf88581464bee0e423f0e",
+    "src/components/Breadcrumbs.astro": "9f48a6b720cb01da5cc448fcd2b9a113b6be28fa44953c55638f19bf386ff26d",
+    "src/components/ExternalLinks.astro": "66d803f41e0845f8e4f100b9b52930f2cdef91c10dfceddf8bc5e313bd961bd8",
+    "src/components/ProjectMedia.astro": "eaffcb38cbeea2b3c0d20f31e5c847130f266681570a46ca663fe9845ec9c5d8",
+    "src/components/ProductCard.astro": "8375bb3aed4670b5f364bb74075b03d649cf037fdf5d9484428da35c8197d7af",
+    "src/components/ComponentPreview.astro": "e5d5f36faaca2a7a8b43a90193dbb3069b16837c1546ad8f8dcaa2297e8f45e2",
+    "src/pages/index.astro": "6676c20f3874c47cf7d416cd3699bf55f4cb0d652ab5eb37a050bda6a2688318",
+    "scripts/browser.mjs": "b897b88084ec73b499e40c6c71c48074678015d6eb3ed7a5ba7cb2bc1a3c495b",
+    "scripts/verify-browser.mjs": "1d30f236f0ad796da3dc9fd6b57e14215b95723e63e2121b254a9659b37316e4",
+    "docs/design.md": "8e2f10ea2ca9c559df66eb9f996d7094bbc8bc544ec01f8b878f641aefc9a673"
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0"
+  },
+  "acceptance": {
+    "AC-01": "PASS: neutral white/gray/blue tokens, shared shell/buttons/cards/breadcrumbs/status/media/link components; visible 3px keyboard focus verified.",
+    "AC-02": "PASS: inspected 360px and 1440px component fixture with long titles, planned/available states and missing imagery; browser asserts no horizontal overflow."
+  },
+  "commands": [
+    {
+      "command": "FDWEB_COMPONENT_FIXTURE=1 npm run build",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:browser (FDWEB_SCREENSHOTS=.local/screenshots/design)",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS: zero diagnostics"
+    },
+    {
+      "command": "npm run build (fixture disabled)",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "visuals": [
+    {
+      "path": "Tasks/items/design/FDWEB-003-define-design-system/evidence/screenshots/404-1440.png",
+      "sha256": "ece5612b5eb1037b3ed35f7912642e25d83cbedbf163a6df7aea5856b0decfc4",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/design/FDWEB-003-define-design-system/evidence/screenshots/404-360.png",
+      "sha256": "1e07cfc32187c72a22a72e7d87801078e56d2e9477b2b41d4d7451999b3babcd",
+      "inspected": false
+    },
+    {
+      "path": "Tasks/items/design/FDWEB-003-define-design-system/evidence/screenshots/home-1440.png",
+      "sha256": "f1f08d25da4fdcb17bd51d18939b4e33a3ed81b186e78b6e1bfac21b774bb532",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/design/FDWEB-003-define-design-system/evidence/screenshots/home-360.png",
+      "sha256": "ac0551a095121ff3fd37fbf544a85ac94ea2a29088035a7e5d021b4e8f74d417",
+      "inspected": true
+    }
+  ],
+  "limitations": [
+    "Fixture examples are local-only and excluded from the normal static build. No dedicated COT icon was supplied; a text monogram is used."
+  ],
+  "reviewer": "Codex author self-review; not independent Epic review",
+  "cleanup": "Temporary fixtures removed; dist and node_modules ignored; original icons unchanged.",
+  "checkpoint": {
+    "task_identity": "FDWEB-003",
+    "accepted_state": "Done",
+    "next_task": "FDWEB-004",
+    "next_action": "Read next task and parent, revalidate dependencies/rule sources, implement and verify.",
+    "authority": "Owner requested all tasks sequentially; external deployment still requires exact target and authorization.",
+    "resource_status": "One implementation workspace; no delegated agents."
+  }
+}

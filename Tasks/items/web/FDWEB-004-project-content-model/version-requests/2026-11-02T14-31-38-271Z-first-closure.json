@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "08f6726b-2463-4097-a017-683a8e8408f6",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D001",
+  "work_item_id": "FDWEB-004",
+  "summary": "Create the product content model and shared project page",
+  "verification": [
+    "Tasks/items/web/FDWEB-004-project-content-model/evidence/2026-11-02T14-31-38-236Z-closure.json"
+  ]
+}

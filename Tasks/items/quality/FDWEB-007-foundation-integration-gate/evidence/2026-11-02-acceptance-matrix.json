@@ -1,0 +1,75 @@
+{
+  "schema": "fdweb-gate-matrix/v1",
+  "subject_id": "FDWEB-007",
+  "candidate": "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02-frozen-candidate.json",
+  "candidate_sha256": "8adcf0e690c7e65791062fbb7fd5cceb11e950a858311c90f2324e929d3738fa",
+  "result": "PASS",
+  "criteria": {
+    "FDWEB-002/AC-01": {
+      "result": "PASS",
+      "command": "npm ci --no-audit --no-fund",
+      "evidence": "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02-clean-snapshot.json"
+    },
+    "FDWEB-002/AC-02": {
+      "result": "PASS",
+      "command": "npm run build; npm run verify:bootstrap",
+      "evidence": "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02-clean-snapshot.json"
+    },
+    "FDWEB-002/AC-03": {
+      "result": "PASS",
+      "evidence": "Reviewed current README/DEVELOPMENT CLI commands; clean snapshot executes documented commands."
+    },
+    "FDWEB-003/AC-01": {
+      "result": "PASS",
+      "evidence": "Shared CSS/components plus FDWEB-003 inspected fixtures; current keyboard and axe checks verify final components."
+    },
+    "FDWEB-003/AC-02": {
+      "result": "PASS",
+      "command": "npm run verify:browser",
+      "evidence": "Current 360/1440px no-overflow and focus checks; final screenshots in FDWEB-006 evidence."
+    },
+    "FDWEB-004/AC-01": {
+      "result": "PASS",
+      "command": "npm run verify:content",
+      "evidence": "Real fixture build generates both project route and matching card."
+    },
+    "FDWEB-004/AC-02": {
+      "result": "PASS",
+      "command": "npm run verify:content",
+      "evidence": "Missing name, unsafe URL and duplicate slug builds rejected; absent optional sections hidden."
+    },
+    "FDWEB-005/AC-01": {
+      "result": "PASS",
+      "evidence": "Editorial review of final Russian positioning/approach and docs/content-sources.md."
+    },
+    "FDWEB-005/AC-02": {
+      "result": "PASS",
+      "command": "npm run verify:home",
+      "evidence": "Real Chromium clicks all three cards and checks page names and verified portal URL."
+    },
+    "FDWEB-006/AC-01": {
+      "result": "PASS",
+      "command": "npm run verify:site",
+      "evidence": "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02-clean-snapshot.json"
+    },
+    "FDWEB-006/AC-02": {
+      "result": "PASS",
+      "command": "npm run verify:accessibility; npm run verify:browser",
+      "evidence": "All five pages pass at both widths; static head/link checks and real HTTP 404 passed."
+    },
+    "FDWEB-015/AC-01": {
+      "result": "PASS",
+      "command": "npm run verify:browser-lifecycle",
+      "evidence": "Missing-executable diagnostic, callback error preservation and real success lifecycle verified."
+    },
+    "FDWEB-015/AC-02": {
+      "result": "PASS",
+      "command": "npm run verify:home; npm run verify:accessibility; npm run verify:browser; node Tasks/tools/verify-ledger.mjs; node --test Tasks/tools/verify-ledger.test.mjs",
+      "evidence": "All corrected browser checks and six ledger tests pass."
+    }
+  },
+  "limitations": [
+    "Detailed D002 product-page acceptance is not substituted by the qualified D001 route summaries.",
+    "FDStorage source clarification, independent review and deployment inputs are still required."
+  ]
+}

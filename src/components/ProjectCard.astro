@@ -1,0 +1,8 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProductCard from './ProductCard.astro';
+import { localizedProject } from '../i18n/projects';
+interface Props { project: CollectionEntry<'projects'>; }
+const { project } = Astro.props;
+---
+<ProductCard {...localizedProject(project.data)} href={`/${project.data.slug}`} />

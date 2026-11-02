@@ -1,0 +1,71 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ComponentPreview from '../components/ComponentPreview.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { publicProjects } from '../lib/projects';
+import Button from '../components/Button.astro';
+import Text from '../components/TranslatedText.astro';
+import { t } from '../i18n/messages';
+import { projectMessages } from '../i18n/projects';
+const projects = await publicProjects();
+const portal = projects.find(project => project.data.slug === 'update')?.data.portal;
+const pageMessages = projectMessages(projects.map(project => project.data));
+for (const language of ['en', 'de', 'ru'] as const) {
+  pageMessages[language]['page.title'] = t('home.title', language) + ' — FEDRV';
+  pageMessages[language]['page.description'] = t('home.description', language);
+}
+---
+<SiteLayout title={t('home.title')} description={t('home.description')} pageMessages={pageMessages}>
+  <section class="hero" aria-labelledby="hero-title">
+    <div>
+      <p class="eyebrow">FEDRV — Forschung, Entwicklung, DRIVE.</p>
+      <h1 id="hero-title"><Text k="hero.line1" /><br /><Text k="hero.line2" /><br /><Text class="hero-accent" k="hero.line3" /></h1>
+      <Text as="p" class="lead" k="hero.lead" />
+      <div class="actions"><Button href="#projects"><Text k="hero.browse" /> <span aria-hidden="true">↓</span></Button><Button href="#approach" secondary><Text k="hero.approach" /></Button></div>
+    </div>
+    <aside class="hero-note" aria-label={t('hero.noteLabel')} data-i18n-aria-label="hero.noteLabel">
+      <span class="note-number" aria-hidden="true">FD</span>
+      <p class="note-heading">Fast Development</p>
+      <Text as="p" k="hero.note" />
+      <div class="note-rule"></div>
+      <Text as="p" class="note-small" k="hero.audience" />
+    </aside>
+  </section>
+  {projects.length > 0 && <section class="section projects" id="projects" aria-labelledby="projects-title">
+    <div class="section-heading"><div><Text as="p" class="eyebrow" k="catalog.eyebrow" /><h2 id="projects-title" data-i18n="catalog.title">{t('catalog.title')}</h2></div><Text as="p" class="section-caption" k="catalog.caption" /></div>
+    <div class="card-grid">{projects.map(project => <ProjectCard project={project} />)}</div>
+    {portal && <p class="portal-note"><a href={portal.url}><Text k="catalog.portal" /> <span aria-hidden="true">↗</span></a> <Text k="catalog.materials" /></p>}
+  </section>}
+  <section class="section approach" id="approach" aria-labelledby="approach-title">
+    <div><Text as="p" class="eyebrow" k="approach.eyebrow" /><h2 id="approach-title"><Text k="approach.title" /><br /><Text class="approach-muted" k="approach.subtitle" /></h2></div>
+    <div class="approach-copy"><Text as="p" k="approach.p1" /><Text as="p" k="approach.p2" /><Text as="p" k="approach.p3" /></div>
+  </section>
+  {import.meta.env.FDWEB_COMPONENT_FIXTURE === '1' && <ComponentPreview />}
+</SiteLayout>
+<style>
+  .hero { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: 5rem; align-items: center; padding-block: 1rem 3rem; }
+  h1 :global(.hero-accent) { color: var(--accent); }
+  .hero .lead { max-width: 36rem; font-size: 1.15rem; }
+  .hero-note { border-left: 1px solid var(--line); padding-left: 2.5rem; color: var(--muted); font-size: .95rem; }
+  .note-number { display: block; font-size: 5rem; font-weight: 650; letter-spacing: -.07em; color: #61799c; line-height: 1; margin-bottom: 1.75rem; }
+  .note-heading { color: var(--ink); font-size: 1.1rem; font-weight: 600; margin-bottom: .75rem; }
+  .note-rule { height: 1px; background: var(--line); margin-block: 1.75rem; }
+  .note-small { font-size: .8rem; margin: 0; }
+  .projects { padding-top: 3rem; border-top: 1px solid var(--line); }
+  .section-heading .eyebrow { margin-bottom: .75rem; }
+  .section-caption { color: var(--muted); font-size: .85rem; margin: 0; }
+  .portal-note { font-size: .8rem; color: var(--muted); margin-top: 1.5rem; }
+  .approach { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; padding-block: 3.5rem 1rem; border-top: 1px solid var(--line); }
+  .approach h2 { font-size: 2rem; line-height: 1.35; }
+  .approach h2 :global(.approach-muted) { color: var(--muted); }
+  .approach-copy { color: var(--muted); font-size: .95rem; }
+  .approach-copy p:last-child { margin-bottom: 0; }
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 0; }
+    .hero-note { padding-left: 1.25rem; }
+    .note-number { font-size: 3rem; margin-bottom: 1rem; }
+    .approach { grid-template-columns: 1fr; gap: 1rem; padding-top: 2.5rem; }
+    .approach h2 { font-size: 1.8rem; }
+    .projects { padding-top: 2rem; }
+  }
+</style>

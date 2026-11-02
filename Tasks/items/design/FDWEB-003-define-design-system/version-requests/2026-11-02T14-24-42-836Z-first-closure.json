@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "5b1e9144-178d-4d6d-9962-bd0a8288c9f2",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D001",
+  "work_item_id": "FDWEB-003",
+  "summary": "Define the FEDRV.DE design system and shared components",
+  "verification": [
+    "Tasks/items/design/FDWEB-003-define-design-system/evidence/2026-11-02T14-24-42-810Z-closure.json"
+  ]
+}

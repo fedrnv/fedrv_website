@@ -1,0 +1,120 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "work_item_id": "FDWEB-002",
+  "created_at": "2026-11-02T14:21:34.007Z",
+  "source_sha": "4b279027e60adb7f4669e28ad299f5c6ba8fb0d0",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "f8cd626ad0e502abba98d15cf1c2ea951a87fe08d2f57e1d789622d17c003b28",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+    "Tasks/items/web/FDWEB-002-bootstrap-astro-site/TASK.md": "f8cd626ad0e502abba98d15cf1c2ea951a87fe08d2f57e1d789622d17c003b28"
+  },
+  "dependencies": [],
+  "atomicity": {
+    "outcomes": [
+      "Create a clean-buildable Astro + TypeScript static site foundation with documented local commands and route-ready shared layout."
+    ],
+    "packets": [
+      "One cohesive implementation and verification packet"
+    ],
+    "independent_acceptance": false,
+    "boundary_reason": "The work delivers one independently acceptable result: Create a clean-buildable Astro + TypeScript static site foundation with documented local commands and route-ready shared layout."
+  },
+  "candidate_files": {
+    "package.json": "50edd20a1d365950a7e10f426a61147deaf658b17ee6c586c90aee47a409e9f1",
+    "package-lock.json": "27837252718b98b481ff21eb85f5581b670f6f2b13ff635583400a99bd80eee4",
+    ".nvmrc": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc",
+    ".npmrc": "3b88d1057add6f92ec23dc22dd017e312ded13a042deb0ba6f08bad85d936456",
+    ".gitignore": "ed7504b92abfd85c16d3826ca01494e09680828fbf8550675c9bd16485f4ff0a",
+    "astro.config.mjs": "a171a9f446eab545bf23d81f5ea0116803f3acd4164887eace45550294affb88",
+    "tsconfig.json": "dc9ab377cf2b9561b35f615a8fc674d7bf5fd4d6781a90d09e169344a501641e",
+    "src/content.config.ts": "20d615f1a3a908788059301928bcbf29ee4fc339c16d852f1a210f6db9b15087",
+    "src/layouts/SiteLayout.astro": "db5ae7d072804e65e256372bf82f0274bb835f185e1da24b70c564bc5281cba9",
+    "src/pages/index.astro": "06f36b7849f3a1ea7bed6a8e905efca6a9adbc9d2dbd9c65117d8547bb51e5e9",
+    "src/pages/404.astro": "94690c929dc4bc7c5a9cc7ee1889cbadbe9a762ee2dedb867fc3c70f682077a7",
+    "src/content/projects/foundation-fixture.md": "ed15a359d7b43416bdaa49484de44341b2eea38f119f531653588ffd36619918",
+    "scripts/verify-bootstrap.mjs": "adeb19f901cb87a440b4ac86b96cce02cfb56cad0a789b8d8045dc1ee7f10a45",
+    "scripts/browser.mjs": "12540ea87f1d68e5df3fe1276fa106e5ae060dc944a2334452b9cc77f33254b5",
+    "scripts/verify-browser.mjs": "27cfe533572c8b99289028a059c66a7fc6439867ef7168182c2cefe71717e53f",
+    "README.md": "8b76cc8441335bda4f571c5e7ee987c131a9d54f41fc6eebaed09cdcc81c2ba8",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632"
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0"
+  },
+  "acceptance": {
+    "AC-01": "PASS: clean npm ci on Node 24.19.0/npm 11.17.0 with Astro 6.3.8 lockfile.",
+    "AC-02": "PASS: static home and 404 include shared shell; fixture unpublished; all five icons match source; browser keyboard and 360/1440px checks pass.",
+    "AC-03": "PASS: README and DEVELOPMENT list actual CLI setup, check/build, preview, content and browser verification commands."
+  },
+  "commands": [
+    {
+      "command": "npm ci --no-audit --no-fund",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS: 0 errors, warnings and hints"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS: 2 static pages"
+    },
+    {
+      "command": "npm run verify:bootstrap",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run verify:browser",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "visuals": [
+    {
+      "path": "Tasks/items/web/FDWEB-002-bootstrap-astro-site/evidence/screenshots/404-1440.png",
+      "sha256": "6e96b179d80e876ee7fd58f32a00f6a6c77346847d4e012ddfaac08b52214144",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-002-bootstrap-astro-site/evidence/screenshots/404-360.png",
+      "sha256": "d3181faccf35f016983a7e6974aab4a9601d40527da588b6544b7d20dae27e29",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-002-bootstrap-astro-site/evidence/screenshots/home-1440.png",
+      "sha256": "de3ccabd74b700028e4e9ced8a5b3278c5dd16d01c451be9788eed80f2e709dc",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-002-bootstrap-astro-site/evidence/screenshots/home-360.png",
+      "sha256": "0c72cecc7bf955a61af1322315ba43d44fc1a678b7321ef77ee4f65eb716a727",
+      "inspected": true
+    }
+  ],
+  "limitations": [
+    "Astro 7 candidate failed loading the Windows satteri binary; replaced by verified Astro 6.3.8.",
+    "One npm ci attempt failed while Astro preview held a Windows native DLL; preview was stopped and the clean install passed.",
+    "Browser helper initially left a locked disposable profile after forced shutdown; fixed graceful Browser.close and removed its owned fixture.",
+    "No live deployment or product detail implementation is claimed."
+  ],
+  "reviewer": "Codex author self-review; not independent Epic review",
+  "cleanup": "Temporary fixtures removed; dist and node_modules ignored; original icons unchanged.",
+  "checkpoint": {
+    "task_identity": "FDWEB-002",
+    "accepted_state": "Done",
+    "next_task": "FDWEB-003",
+    "next_action": "Read next task and parent, revalidate dependencies/rule sources, implement and verify.",
+    "authority": "Owner requested all tasks sequentially; external deployment still requires exact target and authorization.",
+    "resource_status": "One implementation workspace; no delegated agents."
+  }
+}

@@ -1,0 +1,6 @@
+---
+interface Props { status: 'planned' | 'development' | 'available' | 'information'; }
+import { t } from '../i18n/messages';
+const { status } = Astro.props;
+---
+<span class="badge" data-status={status} data-i18n={`status.${status}`}>{t(`status.${status}`)}</span>

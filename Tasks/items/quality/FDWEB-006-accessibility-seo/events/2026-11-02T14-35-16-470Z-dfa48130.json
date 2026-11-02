@@ -1,0 +1,110 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-25d9b724-2572-4199-887e-8d67cc11f6b0",
+  "subject_id": "FDWEB-006",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T14:35:16.470Z",
+  "actor": "Codex",
+  "base_event_id": null,
+  "payload": {
+    "status_from": "Planned",
+    "status_to": "In Progress",
+    "reason": "Owner explicitly requested continuous sequential development until all tasks close; task handoffs remain durable without waiting for another user prompt.",
+    "source_sha": "4b279027e60adb7f4669e28ad299f5c6ba8fb0d0",
+    "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "task_sha256": "1e5bed8f97edcaea51a8a2e2096494a9cff5778e890611814c96bc2675f1005e",
+    "rule_sources": {
+      "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+      "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+      "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+      "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+      "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+      "Tasks/items/quality/FDWEB-006-accessibility-seo/TASK.md": "1e5bed8f97edcaea51a8a2e2096494a9cff5778e890611814c96bc2675f1005e"
+    },
+    "dependencies": [
+      {
+        "id": "FDWEB-003",
+        "task_sha256": "66e83e6d3e328084e94370902c8203e69867321f0d7eca4364199d9c87f2736f",
+        "event": {
+          "schema": "fdtasks-event/v4",
+          "event_id": "EVT-b69c006d-450f-4f1d-9dac-6b23b137eda7",
+          "subject_id": "FDWEB-003",
+          "event_type": "status_changed",
+          "created_at": "2026-11-02T14:24:42.834Z",
+          "actor": "Codex",
+          "base_event_id": "EVT-6287a10d-76f3-4e29-9ea7-0c4e86e31107",
+          "payload": {
+            "status_from": "In Progress",
+            "status_to": "Done",
+            "reason": "Declared acceptance criteria have current local verification.",
+            "evidence": [
+              "Tasks/items/design/FDWEB-003-define-design-system/evidence/2026-11-02T14-24-42-810Z-closure.json"
+            ],
+            "evidence_sha256": "1a2a4bbcb54be6ce40e14c839c9e3033f130b76ac9dcd806f2c650b0efb738eb"
+          }
+        }
+      },
+      {
+        "id": "FDWEB-004",
+        "task_sha256": "e6b6dbc715f68e5c75281c66a1b9bfcef537187c45d78890c704948c4ae28ae2",
+        "event": {
+          "schema": "fdtasks-event/v4",
+          "event_id": "EVT-e8d44c48-8af0-4901-b872-854ffee57661",
+          "subject_id": "FDWEB-004",
+          "event_type": "status_changed",
+          "created_at": "2026-11-02T14:31:38.269Z",
+          "actor": "Codex",
+          "base_event_id": "EVT-ae07bf61-fb5b-4ad1-8536-1607a744aa42",
+          "payload": {
+            "status_from": "In Progress",
+            "status_to": "Done",
+            "reason": "Declared acceptance criteria have current local verification.",
+            "evidence": [
+              "Tasks/items/web/FDWEB-004-project-content-model/evidence/2026-11-02T14-31-38-236Z-closure.json"
+            ],
+            "evidence_sha256": "515cb6b6f3687d38ba90b36c365a35f7e1e1368f2142cdc26a0a129e06a0de94"
+          }
+        }
+      },
+      {
+        "id": "FDWEB-005",
+        "task_sha256": "ead151fe361ced4a700b0f4394ebfc2f9cb85debac6835e71f96035f12d7931f",
+        "event": {
+          "schema": "fdtasks-event/v4",
+          "event_id": "EVT-e420740f-aea1-474b-805e-2e5bda22cee5",
+          "subject_id": "FDWEB-005",
+          "event_type": "status_changed",
+          "created_at": "2026-11-02T14:35:16.379Z",
+          "actor": "Codex",
+          "base_event_id": "EVT-e3c32c2e-3e74-4782-86ed-2e0272aae6bf",
+          "payload": {
+            "status_from": "In Progress",
+            "status_to": "Done",
+            "reason": "Declared acceptance criteria have current local verification.",
+            "evidence": [
+              "Tasks/items/web/FDWEB-005-build-homepage/evidence/2026-11-02T14-35-16-352Z-closure.json"
+            ],
+            "evidence_sha256": "e355672616754c3becfef7bd58c50f8a0c1980639030c9ca622502f2a6c6420b"
+          }
+        }
+      }
+    ],
+    "atomicity": {
+      "outcomes": [
+        "Ensure each initial site route is navigable, shareable and discoverable with correct metadata and basic accessibility."
+      ],
+      "packets": [
+        "One cohesive implementation and verification packet"
+      ],
+      "independent_acceptance": false,
+      "boundary_reason": "The work delivers one independently acceptable result: Ensure each initial site route is navigable, shareable and discoverable with correct metadata and basic accessibility."
+    },
+    "commands": [
+      "npm run check",
+      "npm run build",
+      "npm run verify:site",
+      "npm run verify:accessibility",
+      "npm run verify:browser"
+    ]
+  }
+}

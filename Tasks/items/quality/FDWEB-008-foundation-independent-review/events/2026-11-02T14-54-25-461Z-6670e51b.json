@@ -1,0 +1,26 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-e64e8d26-a32c-487a-9bfc-4c2960c4bd83",
+  "subject_id": "FDWEB-008",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T14:54:25.461Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-7e3ef2f1-47b1-4a0e-b027-05b7fe9dfe78",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Blocked",
+    "reason": "Independent review requires another person or fresh model session. Owner permission to delegate is pending; author self-review cannot satisfy FDWEB-008.",
+    "request": "Tasks/epics/FDWEB-EPIC-D001-site-foundation/reviews/2026-11-02-foundation/REQUEST.md",
+    "request_sha256": "269fe4f9d6f1801d29fd97468d45acc4752ba92fa8906c40bd732d099310fca5",
+    "restart_predicate": "Owner authorizes an independent review agent, or a different human supplies an exact-candidate review result.",
+    "checkpoint": {
+      "task_identity": "FDWEB-008",
+      "accepted_state": "D001 members and FDWEB-007 verified; independent review not accepted",
+      "candidate": "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02-frozen-candidate.json",
+      "candidate_sha256": "8adcf0e690c7e65791062fbb7fd5cceb11e950a858311c90f2324e929d3738fa",
+      "next_action": "Run independent read-only review against REQUEST.md; resolve findings without editing accepted records.",
+      "resources": "One implementation workspace; Astro preview at http://127.0.0.1:4321 remains available.",
+      "authority": "Local development authorized; no independent-agent delegation or live publication authorization supplied."
+    }
+  }
+}

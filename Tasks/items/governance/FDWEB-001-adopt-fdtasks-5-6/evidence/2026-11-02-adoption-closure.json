@@ -1,0 +1,93 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "work_item_id": "FDWEB-001",
+  "created_at": "2026-11-02T14:04:09.108Z",
+  "source_sha": "4b279027e60adb7f4669e28ad299f5c6ba8fb0d0",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "3c49a6b532abcb2cb8bc4b14828fdefcdb9e1628cf8d0ea07bddc92082b94f35",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "0fd82a071415fc835d8071f585f0791ad8fbe693d2b956bdec22ac54333556d3",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f"
+  },
+  "candidate_files": {
+    "Tasks/tools/verify-ledger.mjs": "8f0643cb4b14be915bf47920c6aaf466448e189104983819f8f7dc06963fa2b2",
+    "Tasks/tools/verify-ledger.test.mjs": "0003a2d28d6ded6188d8f2904b5b2825edc258a76b3c1116c2626f22c227f225",
+    "Tasks/README.md": "766148345c6ddc083acf7a298cee16976425b9f81fbab7bded59bb9a05b98809"
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "git": "git version 2.45.1.windows.1",
+    "git_executable": "C:/Program Files/Git/cmd/git.exe"
+  },
+  "acceptance": {
+    "AC-01": {
+      "result": "PASS",
+      "evidence": "Committed policy blob SHA-256 and LF-normalized working text equal the pinned upstream digest. Raw working file uses CRLF; accepted source bytes in Git are unchanged."
+    },
+    "AC-02": {
+      "result": "PASS",
+      "evidence": "Required rules, lifecycle metadata, templates and compatibility baseline exist; all four initial JSON files parse. Reviewed local rules: no FDOS product runtime/orchestration was copied."
+    },
+    "AC-03": {
+      "result": "PASS",
+      "evidence": "17 records: 14 tasks and 3 Epics. Nine unique discussion mirrors cover issues #2?#10. Local links, IDs, atomicity, dependencies/cycles, parent memberships and both gate/review topologies pass."
+    }
+  },
+  "commands": [
+    {
+      "command": "$env:FDWEB_GIT = 'C:/Program Files/Git/cmd/git.exe'; node Tasks/tools/verify-ledger.mjs",
+      "result": "PASS"
+    },
+    {
+      "command": "node --check Tasks/tools/verify-ledger.mjs",
+      "result": "PASS"
+    },
+    {
+      "command": "$env:FDWEB_GIT = 'C:/Program Files/Git/cmd/git.exe'; node --test Tasks/tools/verify-ledger.test.mjs",
+      "result": "PASS",
+      "passed": 4,
+      "failed": 0
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "review": {
+    "reviewer": "Codex, implementing session; focused self-review (not independent Epic review)",
+    "findings": "Initial validator incorrectly assumed three ACs per task; corrected to require nonempty unique stable AC IDs. Negative tests use copies and preserve accepted records.",
+    "scope": "Task adoption, metadata, links and local validation; no product UI change."
+  },
+  "limitations": [
+    "No website exists yet; Astro is FDWEB-002 scope.",
+    "GitHub mirrors were not queried or modified; canonical local mappings were checked.",
+    "This focused adoption checker is not a general event replay/admission engine.",
+    "Version allocation/publication is not implemented in this repository; only an immutable closure request is recorded."
+  ],
+  "cleanup": "Disposable test repositories removed in finally blocks; existing .idea files and product icons untouched.",
+  "continuation": {
+    "next_task": "FDWEB-002",
+    "accepted_state": "FDWEB-001 verified; no development Epic activated",
+    "evidence_sha256_files": [
+      {
+        "path": "Tasks/tools/verify-ledger.mjs",
+        "sha256": "8f0643cb4b14be915bf47920c6aaf466448e189104983819f8f7dc06963fa2b2"
+      },
+      {
+        "path": "Tasks/tools/verify-ledger.test.mjs",
+        "sha256": "0003a2d28d6ded6188d8f2904b5b2825edc258a76b3c1116c2626f22c227f225"
+      },
+      {
+        "path": "Tasks/README.md",
+        "sha256": "766148345c6ddc083acf7a298cee16976425b9f81fbab7bded59bb9a05b98809"
+      }
+    ],
+    "next_action": "In a fresh agent turn, read FDWEB-002 and D001, revalidate readiness and bootstrap Astro.",
+    "authority": "Local development authorized. No production, account or external publication action performed.",
+    "turn_boundary": "FDTasks 5.6 permits at most one task identity per agent turn."
+  }
+}

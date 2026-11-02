@@ -1,0 +1,140 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "work_item_id": "FDWEB-005",
+  "created_at": "2026-11-02T14:35:16.353Z",
+  "source_sha": "4b279027e60adb7f4669e28ad299f5c6ba8fb0d0",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "ead151fe361ced4a700b0f4394ebfc2f9cb85debac6835e71f96035f12d7931f",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+    "Tasks/items/web/FDWEB-005-build-homepage/TASK.md": "ead151fe361ced4a700b0f4394ebfc2f9cb85debac6835e71f96035f12d7931f"
+  },
+  "dependencies": [
+    {
+      "id": "FDWEB-003",
+      "task_sha256": "66e83e6d3e328084e94370902c8203e69867321f0d7eca4364199d9c87f2736f",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-b69c006d-450f-4f1d-9dac-6b23b137eda7",
+        "subject_id": "FDWEB-003",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:24:42.834Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-6287a10d-76f3-4e29-9ea7-0c4e86e31107",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/design/FDWEB-003-define-design-system/evidence/2026-11-02T14-24-42-810Z-closure.json"
+          ],
+          "evidence_sha256": "1a2a4bbcb54be6ce40e14c839c9e3033f130b76ac9dcd806f2c650b0efb738eb"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-004",
+      "task_sha256": "e6b6dbc715f68e5c75281c66a1b9bfcef537187c45d78890c704948c4ae28ae2",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-e8d44c48-8af0-4901-b872-854ffee57661",
+        "subject_id": "FDWEB-004",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:31:38.269Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-ae07bf61-fb5b-4ad1-8536-1607a744aa42",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-004-project-content-model/evidence/2026-11-02T14-31-38-236Z-closure.json"
+          ],
+          "evidence_sha256": "515cb6b6f3687d38ba90b36c365a35f7e1e1368f2142cdc26a0a129e06a0de94"
+        }
+      }
+    }
+  ],
+  "atomicity": {
+    "outcomes": [
+      "Explain FEDRV and the FD (Fast Development) approach and guide visitors to FDUpdate, COT and FDStorage."
+    ],
+    "packets": [
+      "One cohesive implementation and verification packet"
+    ],
+    "independent_acceptance": false,
+    "boundary_reason": "The work delivers one independently acceptable result: Explain FEDRV and the FD (Fast Development) approach and guide visitors to FDUpdate, COT and FDStorage."
+  },
+  "candidate_files": {
+    "src/pages/index.astro": "31f9d535570af37f67a62db119fe507f688ec7b68317a298b9df0a5b643c6887",
+    "src/layouts/SiteLayout.astro": "13e753ae3825ecd4c38221d35fdffb3d0e091686c3a18938bbe0298ae24e6e87",
+    "src/content/projects/update.md": "21ddc1610897d5c836e493aa35e758d1424f7f11517aa151f9b9be55bdbb290c",
+    "src/content/projects/cot.md": "b8228cdb6da7a5d04744c06f6244085841c4bdf6b700b3490df95a8200d091c8",
+    "src/content/projects/storage.md": "dcabfa55d57b41dc4cb0c00e2d5376ece5b379258cf1ba782d9f792dbdc579c4",
+    "scripts/verify-home.mjs": "c6c1471ab8e77c66147d8207d8c9b45a35d0471294b47bc34a4ceb0683a4abd0",
+    "package.json": "80456f99ebb001a153f36f9ed0032f57c49e216ee58321f14952d1c9433f36d6",
+    "README.md": "b069091ca1d5aced4ec43643f7e0fc30df9dae94637bee7b270cc1c2a160e9b7",
+    "docs/content-sources.md": "4021f12eb7dce28e43042ca7482e51bf420b8eb335c0494e678688a7c31cd848"
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0"
+  },
+  "acceptance": {
+    "AC-01": "PASS: inspected Russian hero/approach explaining FEDRV, Fast Development components and human-defined goals/requirements/review of AI-assisted work. Owner positioning preserved.",
+    "AC-02": "PASS: three Markdown-driven product cards navigate to /update, /cot and /storage and match the page names; verified FDUpdate website link."
+  },
+  "commands": [
+    {
+      "command": "npm run build",
+      "result": "PASS: 5 routes"
+    },
+    {
+      "command": "npm run verify:home",
+      "result": "PASS: clicked all three cards in Chromium"
+    },
+    {
+      "command": "FDWEB_ROUTES=/,/404,/cot,/update,/storage npm run verify:browser",
+      "result": "PASS: all routes at 360/1440px"
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS: zero diagnostics"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "visuals": [
+    {
+      "path": "Tasks/items/web/FDWEB-005-build-homepage/evidence/screenshots/home-360.png",
+      "sha256": "9267c675a6561175d1cc2fc31b8066f7d248bcced021f41da07a011470524857",
+      "inspected": true
+    },
+    {
+      "path": "Tasks/items/web/FDWEB-005-build-homepage/evidence/screenshots/home-1440.png",
+      "sha256": "825107b64558d0a3fab2f9a366064cde6ee30dfec72c65ecc0f2e5c8e8fc3236",
+      "inspected": true
+    }
+  ],
+  "limitations": [
+    "FDStorage has a deliberately qualified baseline description, no inferred architecture and no unavailable external link. Detailed FDWEB-011 acceptance remains pending current source evidence.",
+    "Detailed product pages remain owned by D002 tasks."
+  ],
+  "reviewer": "Codex author self-review; not independent Epic review",
+  "cleanup": "Temporary fixtures removed; dist and node_modules ignored; original icons unchanged.",
+  "checkpoint": {
+    "task_identity": "FDWEB-005",
+    "accepted_state": "Done",
+    "next_task": "FDWEB-006",
+    "next_action": "Read next task and parent, revalidate dependencies/rule sources, implement and verify.",
+    "authority": "Owner requested all tasks sequentially; external deployment still requires exact target and authorization.",
+    "resource_status": "One implementation workspace; no delegated agents."
+  }
+}

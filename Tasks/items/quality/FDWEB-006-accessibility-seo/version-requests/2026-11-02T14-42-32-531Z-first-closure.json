@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "dbd35631-f787-42f1-8778-3cc9ae168c91",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D001",
+  "work_item_id": "FDWEB-006",
+  "summary": "Add accessibility and search metadata",
+  "verification": [
+    "Tasks/items/quality/FDWEB-006-accessibility-seo/evidence/2026-11-02T14-42-32-499Z-closure.json"
+  ]
+}

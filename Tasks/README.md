@@ -21,3 +21,19 @@ Issues #2–#10 are discussion mirrors for the initial backlog. Their correspond
 - [FDWEB-001](items/governance/FDWEB-001-adopt-fdtasks-5-6/TASK.md): establish and verify the repository task rules and migrate the initial backlog.
 - Development Epic D001: site foundation and reusable project catalog.
 - Development Epic D002: product pages and manual VPS launch.
+
+## Local ledger verification
+
+Run `node Tasks/tools/verify-ledger.mjs` from a Git checkout with Node.js 24 and Git on PATH. No package install or IDE is needed. If Git is outside PATH, set `FDWEB_GIT` to the Git executable first; in PowerShell, for example:
+
+```powershell
+$env:FDWEB_GIT = 'C:/Program Files/Git/cmd/git.exe'
+node Tasks/tools/verify-ledger.mjs
+node --test Tasks/tools/verify-ledger.test.mjs
+```
+
+The command checks the FDWEB-001 adoption baseline: pinned policy bytes in Git and the working tree, required rule sources, JSON parsing, task identities and atomicity, local links, dependency cycles, Epic membership, gate/review dependencies and the unique issue #2–#10 mappings. A failed assertion exits with a nonzero status. Git for Windows CRLF checkout conversion is accounted for by comparing the committed blob and LF-normalized working text separately; accepted policy files are never rewritten.
+
+This is a local adoption check, not a status projection, version allocator or general FDTasks admission engine. Later lifecycle changes must extend the applicable checks through their own accepted task.
+
+The test command uses disposable local Git repositories to check the baseline and rejection of a modified policy, an unknown dependency and a duplicate issue mirror. It removes only its own temporary fixtures. Run both commands locally; they are not hosted workflow stages.

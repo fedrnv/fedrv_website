@@ -1,0 +1,18 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-e420740f-aea1-474b-805e-2e5bda22cee5",
+  "subject_id": "FDWEB-005",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T14:35:16.379Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-e3c32c2e-3e74-4782-86ed-2e0272aae6bf",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Done",
+    "reason": "Declared acceptance criteria have current local verification.",
+    "evidence": [
+      "Tasks/items/web/FDWEB-005-build-homepage/evidence/2026-11-02T14-35-16-352Z-closure.json"
+    ],
+    "evidence_sha256": "e355672616754c3becfef7bd58c50f8a0c1980639030c9ca622502f2a6c6420b"
+  }
+}

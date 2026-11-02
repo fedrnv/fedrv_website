@@ -1,0 +1,18 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-5554a9ad-5076-40bc-927b-cf05185f0c9f",
+  "subject_id": "FDWEB-007",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T14:54:25.353Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-0999c243-c41b-4272-a8e9-a3b7ab4b3178",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Done",
+    "reason": "Declared acceptance criteria have current local verification.",
+    "evidence": [
+      "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02T14-54-25-319Z-closure.json"
+    ],
+    "evidence_sha256": "08ed19df4d5c2971a6a0bda4589ea0b239ebca7b2f18954c3eac295a71fe8e8e"
+  }
+}

@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { t, type Messages } from '../i18n/messages';
+const pageMessages: Messages = { en: {}, de: {}, ru: {} };
+for (const language of ['en', 'de', 'ru'] as const) pageMessages[language] = {
+  'page.title': t('error.title', language) + ' — FEDRV', 'page.description': t('error.description', language),
+};
+---
+<SiteLayout title={t('error.title')} description={t('error.description')} pageMessages={pageMessages} noindex>
+  <p data-i18n="error.code">{t('error.code')}</p>
+  <h1 data-i18n="error.title">{t('error.title')}</h1>
+  <p data-i18n="error.copy">{t('error.copy')}</p>
+  <a href="/" data-i18n="error.back">{t('error.back')}</a>
+</SiteLayout>

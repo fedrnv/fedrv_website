@@ -1,0 +1,284 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "work_item_id": "FDWEB-007",
+  "created_at": "2026-11-02T14:54:25.319Z",
+  "source_sha": "4b279027e60adb7f4669e28ad299f5c6ba8fb0d0",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "4abd89c2db67e8dc781ca7550eeafef1fa2826262efa75f440b49f7664c26f48",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+    "Tasks/items/quality/FDWEB-007-foundation-integration-gate/TASK.md": "4abd89c2db67e8dc781ca7550eeafef1fa2826262efa75f440b49f7664c26f48"
+  },
+  "dependencies": [
+    {
+      "id": "FDWEB-002",
+      "task_sha256": "f8cd626ad0e502abba98d15cf1c2ea951a87fe08d2f57e1d789622d17c003b28",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-100cbaab-9ce4-4cb2-b0b1-404d80a8a935",
+        "subject_id": "FDWEB-002",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:21:34.034Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-533008fe-2980-41ef-9f61-eb95e80cb6b9",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-002-bootstrap-astro-site/evidence/2026-11-02T14-21-34-006Z-closure.json"
+          ],
+          "evidence_sha256": "b8508a275b42d2f24aa36a9a7b6190db361ee9e52af1deb6f7bda311b9a50311"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-003",
+      "task_sha256": "66e83e6d3e328084e94370902c8203e69867321f0d7eca4364199d9c87f2736f",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-b69c006d-450f-4f1d-9dac-6b23b137eda7",
+        "subject_id": "FDWEB-003",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:24:42.834Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-6287a10d-76f3-4e29-9ea7-0c4e86e31107",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/design/FDWEB-003-define-design-system/evidence/2026-11-02T14-24-42-810Z-closure.json"
+          ],
+          "evidence_sha256": "1a2a4bbcb54be6ce40e14c839c9e3033f130b76ac9dcd806f2c650b0efb738eb"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-004",
+      "task_sha256": "e6b6dbc715f68e5c75281c66a1b9bfcef537187c45d78890c704948c4ae28ae2",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-e8d44c48-8af0-4901-b872-854ffee57661",
+        "subject_id": "FDWEB-004",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:31:38.269Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-ae07bf61-fb5b-4ad1-8536-1607a744aa42",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-004-project-content-model/evidence/2026-11-02T14-31-38-236Z-closure.json"
+          ],
+          "evidence_sha256": "515cb6b6f3687d38ba90b36c365a35f7e1e1368f2142cdc26a0a129e06a0de94"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-005",
+      "task_sha256": "ead151fe361ced4a700b0f4394ebfc2f9cb85debac6835e71f96035f12d7931f",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-e420740f-aea1-474b-805e-2e5bda22cee5",
+        "subject_id": "FDWEB-005",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:35:16.379Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-e3c32c2e-3e74-4782-86ed-2e0272aae6bf",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-005-build-homepage/evidence/2026-11-02T14-35-16-352Z-closure.json"
+          ],
+          "evidence_sha256": "e355672616754c3becfef7bd58c50f8a0c1980639030c9ca622502f2a6c6420b"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-006",
+      "task_sha256": "1e5bed8f97edcaea51a8a2e2096494a9cff5778e890611814c96bc2675f1005e",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-d9352d3f-132c-4929-b36b-8a82b1182523",
+        "subject_id": "FDWEB-006",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:42:32.529Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-25d9b724-2572-4199-887e-8d67cc11f6b0",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/quality/FDWEB-006-accessibility-seo/evidence/2026-11-02T14-42-32-499Z-closure.json"
+          ],
+          "evidence_sha256": "90115b044ff82fc7b2c75035eda9d6b07147904095f6af4bf6d9a407648d4fff"
+        }
+      }
+    },
+    {
+      "id": "FDWEB-015",
+      "task_sha256": "53277ed3fedbf5326ad79f47bb8667117ad594b66eee545901e86629b3fa9ff6",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-c34b527e-19d7-4a17-8a81-21b7b382b35e",
+        "subject_id": "FDWEB-015",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:52:12.038Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-61e823bd-4971-4f08-bce5-bdcd2b42daec",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/quality/FDWEB-015-browser-verification-lifecycle/evidence/2026-11-02T14-52-12-009Z-closure.json"
+          ],
+          "evidence_sha256": "4c7102c8147c204565bd0623156f326d7ca7a7f471c3d44a6ef2319a648f445c"
+        }
+      }
+    }
+  ],
+  "atomicity": {
+    "outcomes": [
+      "Verify the D001 foundation candidate as one integrated static site before independent review."
+    ],
+    "packets": [
+      "One cohesive implementation and verification packet"
+    ],
+    "independent_acceptance": false,
+    "boundary_reason": "The work delivers one independently acceptable result: Verify the D001 foundation candidate as one integrated static site before independent review."
+  },
+  "candidate_files": {
+    "src/components/Breadcrumbs.astro": "9f48a6b720cb01da5cc448fcd2b9a113b6be28fa44953c55638f19bf386ff26d",
+    "src/components/Button.astro": "2dcee16d0939ef9e8b80ef4af744a2d443d56420396bf88581464bee0e423f0e",
+    "src/components/ComponentPreview.astro": "e5d5f36faaca2a7a8b43a90193dbb3069b16837c1546ad8f8dcaa2297e8f45e2",
+    "src/components/ExternalLinks.astro": "66d803f41e0845f8e4f100b9b52930f2cdef91c10dfceddf8bc5e313bd961bd8",
+    "src/components/ProductCard.astro": "8375bb3aed4670b5f364bb74075b03d649cf037fdf5d9484428da35c8197d7af",
+    "src/components/ProjectCard.astro": "99430dfbb0c94d9bf8a2ba9f9d42417373f6600e1e919d7cd88cb7017f47069a",
+    "src/components/ProjectMedia.astro": "eaffcb38cbeea2b3c0d20f31e5c847130f266681570a46ca663fe9845ec9c5d8",
+    "src/components/StatusBadge.astro": "0388e75893ff4a04780ec5fddf027c4c0affb28d554eb0f6fe0328dbc5b294a5",
+    "src/content/projects/cot.md": "b8228cdb6da7a5d04744c06f6244085841c4bdf6b700b3490df95a8200d091c8",
+    "src/content/projects/foundation-fixture.md": "e8ad0831c2d5294deaced26ac6d9a88285fd418efe2b9367b0d052725fa18d38",
+    "src/content/projects/storage.md": "dcabfa55d57b41dc4cb0c00e2d5376ece5b379258cf1ba782d9f792dbdc579c4",
+    "src/content/projects/update.md": "21ddc1610897d5c836e493aa35e758d1424f7f11517aa151f9b9be55bdbb290c",
+    "src/content.config.ts": "c2911cf6c0bb85f4bc30cdc7afecb976911744fb9a78dffbb5c85232c56f7440",
+    "src/layouts/SiteLayout.astro": "4b751dd426690544aa1fb2cbfe6d5ec3952a2c723430fb6cade63147576cfbb7",
+    "src/lib/project-schema.ts": "8a3add8536e5a3d8be1718d2d5d126f2b6d5137b3f021540b77b1464a641709f",
+    "src/lib/projects.ts": "fe58284256ac19f7d93d870cc74497a15d620a8a3ad1a0272fc2a89bb9921c97",
+    "src/pages/404.astro": "38af85962d5aa344fb6ab85b167072c998dd3631e697a49bff0255d90ea36030",
+    "src/pages/index.astro": "ce6368868da8586032f63f5367609e50a4b36ff67b68a1195eb9b1f8ced7adb5",
+    "src/pages/robots.txt.ts": "6f256bb3ff201b1c6783fe49d919871e1de41ec76fbb50dede65854cd03899fd",
+    "src/pages/sitemap.xml.ts": "52f5ffbb63e03854f9910559e394a34441f74e764c46c65f8d430b50238397d6",
+    "src/pages/[slug].astro": "2d8d131d3728a034d9fa8d729843841afcf6312c911bf240b16741b994c2d177",
+    "src/styles/global.css": "b9ad9d8b5212b002a52ad0d0ba4bce1245862e017bca7e406e8e3b301423f5d6",
+    "public/favicon.svg": "1ac415638143d7cad18d7a18dfd4a99c8cf56dbed8ad1ec567b008f7f7efaf4b",
+    "public/icons/fd-agent.svg": "f50e8d066e492f987b5617e07bfe381e4939ab26c1977a6d877a07f162f3347b",
+    "public/icons/fd-remote-desktop.svg": "e93de963a571e3669edee6d8b3e7c866180d8867ad7bf2e446aef33105f3e5de",
+    "public/icons/fd-storage.svg": "2b183b4801454cd5ab82d3638cc634145b9303b9740963db1df055ca5b7554c4",
+    "public/icons/fd-update.svg": "8fef5afd86ea1a0e8e51f992620e33cbf56767af92de09313bc0937b3ee83544",
+    "public/icons/fd-vpn.svg": "c5f706bc0f3fc0517d8d7bcd7bac51aba6cdc570df126f3cc48c4c68e8ef29da",
+    "public/social-card.png": "dfa8002ada84f27b239a6abc4db8b861622599e89d4b21e122adf7d0777486cc",
+    "scripts/browser.mjs": "b58931348962ce96f8bf441dc68fead13df3ba5cc05bc05f8185f9e114538a45",
+    "scripts/generate-social.mjs": "cf8de307c8926549b2d2e0c0c1b328956ca42730b7cb40e3741f9772b42c23ae",
+    "scripts/verify-accessibility.mjs": "fcd001e7e313581554700812b66570b8b31e46e4fa6b10b0a4793b27cf619ebd",
+    "scripts/verify-bootstrap.mjs": "adeb19f901cb87a440b4ac86b96cce02cfb56cad0a789b8d8045dc1ee7f10a45",
+    "scripts/verify-browser-lifecycle.mjs": "d38a4d3e453e229db7a466e4fa1ebacbce5d915cb0e6bbbb8a7462d1e924d952",
+    "scripts/verify-browser.mjs": "270768656cb2336d5a57f12a6a5a53bbea9afe23f03cc0814bde6b1a99b6f420",
+    "scripts/verify-clean.mjs": "491332b44c4092172e8e38b0796c1cac9c23c87acba7ec3cd02b26a2f87231a8",
+    "scripts/verify-content.mjs": "acbae45616a0299c3902d1ad39929f3f5ae82e18de00ebde23aa9a88f5d365cf",
+    "scripts/verify-home.mjs": "c6c1471ab8e77c66147d8207d8c9b45a35d0471294b47bc34a4ceb0683a4abd0",
+    "scripts/verify-site.mjs": "60c61f96e5f49f02ec7c699e93bd7ce4572da27ba35543129290b0a5b3fa5ec1",
+    "docs/content-sources.md": "4021f12eb7dce28e43042ca7482e51bf420b8eb335c0494e678688a7c31cd848",
+    "docs/content.md": "9da0204750fcd2fa38f36cc9d263bec995afcf2375756b528d191da1ada7f479",
+    "docs/design.md": "8e2f10ea2ca9c559df66eb9f996d7094bbc8bc544ec01f8b878f641aefc9a673",
+    "docs/verification.md": "3527fbb3620f9d10084e7308f330a05ca8ea549cff89912f3372c05dc36bcc17",
+    "package.json": "6e60c52906504e253299aea5f39a7e799cedd12ea0956ad80f09bc5103ad94aa",
+    "package-lock.json": "8fc327e00cfd2e3e9d8a30790a040006326b40e6f341d94c9f2a4842a751a02f",
+    ".npmrc": "3b88d1057add6f92ec23dc22dd017e312ded13a042deb0ba6f08bad85d936456",
+    ".nvmrc": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc",
+    ".gitignore": "ed7504b92abfd85c16d3826ca01494e09680828fbf8550675c9bd16485f4ff0a",
+    "astro.config.mjs": "fa74df30e2a8fce6270640c7a2d3efe14e6dbd54a9e73ccb64680d1bae3b100e",
+    "tsconfig.json": "dc9ab377cf2b9561b35f615a8fc674d7bf5fd4d6781a90d09e169344a501641e",
+    "README.md": "e07855ad788393774c18a5f4c680672bcebf80da3c6081f456d5021938151c1c",
+    "DEVELOPMENT.md": "b14b92cce490bc66d2aff77a458b4372afcdb613bf9da6ef3bca7d707fba9632",
+    "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02-clean-snapshot.json": "22f2237ab7b15adffe2e03202460c6bf7604e002a13e612d8dd8541e63793258",
+    "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02-frozen-candidate.json": "8adcf0e690c7e65791062fbb7fd5cceb11e950a858311c90f2324e929d3738fa",
+    "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02-acceptance-matrix.json": "a2ad74a8a8b2220788e971f276fe68d80b09815c490e5f103468c96a50077d44"
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "v24.19.0",
+    "npm": "11.17.0"
+  },
+  "acceptance": {
+    "AC-01": "PASS: all 13 member acceptance criteria map to current checks/evidence in Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02-acceptance-matrix.json",
+    "AC-02": "PASS: home/card/project navigation, shared shell, unique metadata, internal links and custom HTTP 404 operate together."
+  },
+  "commands": [
+    {
+      "command": "npm run verify:clean",
+      "result": "PASS; exact clean source snapshot preserved, unaffected build/lock inputs verified unchanged after browser correction"
+    },
+    {
+      "command": "npm run verify:content",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS: 31 files, zero diagnostics on corrected candidate"
+    },
+    {
+      "command": "npm run verify:browser-lifecycle",
+      "result": "PASS after source correction FDWEB-015"
+    },
+    {
+      "command": "npm run verify:home",
+      "result": "PASS after source correction FDWEB-015"
+    },
+    {
+      "command": "npm run verify:accessibility",
+      "result": "PASS after source correction FDWEB-015"
+    },
+    {
+      "command": "npm run verify:browser",
+      "result": "PASS after source correction FDWEB-015"
+    },
+    {
+      "command": "node Tasks/tools/verify-ledger.mjs; node --test Tasks/tools/verify-ledger.test.mjs",
+      "result": "PASS: 18 records, 6 tests"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "visuals": [
+    {
+      "path": "Tasks/items/quality/FDWEB-006-accessibility-seo/evidence/screenshots",
+      "source": "Inspected final visitor-facing source unchanged from FDWEB-006; corrections affect local verification only."
+    }
+  ],
+  "limitations": [
+    "The first gate attempt failed; it remains immutable. FDWEB-015 repaired the harness and all affected checks passed.",
+    "This is foundation acceptance only; the Epic remains open pending FDWEB-008 independent review."
+  ],
+  "reviewer": "Codex author self-review; not independent Epic review",
+  "cleanup": "Temporary fixtures removed; dist and node_modules ignored; original icons unchanged.",
+  "checkpoint": {
+    "task_identity": "FDWEB-007",
+    "accepted_state": "Done",
+    "next_task": "FDWEB-008",
+    "next_action": "Read next task and parent, revalidate dependencies/rule sources, implement and verify.",
+    "authority": "Owner requested all tasks sequentially; external deployment still requires exact target and authorization.",
+    "resource_status": "One implementation workspace; no delegated agents."
+  }
+}

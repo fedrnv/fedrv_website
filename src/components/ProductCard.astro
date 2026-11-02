@@ -1,0 +1,23 @@
+---
+import StatusBadge from './StatusBadge.astro';
+import { t } from '../i18n/messages';
+interface Props {
+  name: string;
+  href: string;
+  summary: string;
+  status: 'planned' | 'development' | 'available' | 'information';
+  icon?: string;
+  slug?: string;
+}
+const { name, href, summary, status, icon, slug } = Astro.props;
+---
+<article class="product-card">
+  <div class="card-top">
+    {icon ? <img class="product-icon" src={icon} alt="" width="48" height="48" /> :
+      <span class="product-icon monogram" aria-hidden="true">{name.slice(0, 3)}</span>}
+    <StatusBadge status={status} />
+  </div>
+  <h3>{name}</h3>
+  <p data-i18n={slug ? `project.${slug}.summary` : undefined}>{summary}</p>
+  <a class="card-link" href={href}><span data-i18n={slug ? `project.${slug}.read` : undefined}>{t('readProject').replace('{name}', name)}</span><span aria-hidden="true">↗</span></a>
+</article>

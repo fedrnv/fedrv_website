@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import { messages, t, type Messages } from '../i18n/messages';
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+  pageMessages?: Messages;
+}
+const { title, description, noindex = false, pageMessages } = Astro.props;
+if (!title.trim() || !description.trim()) throw new Error('Page title and description are required');
+const fullTitle = `${title} — FEDRV`;
+const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', Astro.site);
+const socialImage = new URL('/social-card.png', Astro.site);
+const translations = Object.fromEntries((['en', 'de', 'ru'] as const).map(language => [language, {
+  ...messages[language], 'page.title': fullTitle, 'page.description': description, ...pageMessages?.[language],
+}]));
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="page.title">{translations.en['page.title']}</title>
+    <meta name="description" content={translations.en['page.description']} data-i18n-content="page.description" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FEDRV" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={translations.en['page.title']} data-i18n-content="page.title" />
+    <meta property="og:description" content={translations.en['page.description']} data-i18n-content="page.description" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={t('socialAlt')} data-i18n-content="socialAlt" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip">{t('skip')}</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="wordmark" href="/" aria-label={t('homeLabel')} data-i18n-aria-label="homeLabel">FEDRV<span>.DE</span></a>
+        <nav class="main-nav" aria-label={t('navigation')} data-i18n-aria-label="navigation">
+          <a href="/#projects" data-i18n="projects">{t('projects')}</a><a href="/#approach" data-i18n="approach">{t('approach')}</a>
+        </nav>
+        <label class="language-picker"><span data-i18n="language">{t('language')}</span><select id="language" name="language"><option value="en">EN</option><option value="de">DE</option><option value="ru">RU</option></select></label>
+      </div>
+    </header>
+    <main class="container site-main" id="main" tabindex="-1"><slot /></main>
+    <footer class="site-footer"><div class="container footer-inner"><p><a class="wordmark" href="/">FEDRV<span>.DE</span></a></p><p>Forschung, Entwicklung, DRIVE.<br /><span data-i18n="footer">{t('footer')}</span></p></div></footer>
+    <script id="language-messages" type="application/json" set:html={JSON.stringify(translations).replace(/</g, '\\u003c')} />
+    <script>
+      import '../i18n/client';
+    </script>
+  </body>
+</html>

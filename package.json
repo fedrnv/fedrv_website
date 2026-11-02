@@ -1,0 +1,36 @@
+{
+  "name": "fedrv-website",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.17.0",
+  "engines": {
+    "node": ">=24.19.0 <25",
+    "npm": "11.17.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "verify:bootstrap": "node scripts/verify-bootstrap.mjs",
+    "verify:browser": "node scripts/verify-browser.mjs",
+    "verify:content": "node scripts/verify-content.mjs",
+    "verify:home": "node scripts/verify-home.mjs",
+    "verify:site": "node scripts/verify-site.mjs",
+    "verify:accessibility": "node scripts/verify-accessibility.mjs",
+    "generate:social": "node scripts/generate-social.mjs",
+    "verify:clean": "node scripts/verify-clean.mjs",
+    "verify:browser-lifecycle": "node scripts/verify-browser-lifecycle.mjs",
+    "verify:languages": "node scripts/verify-languages.mjs"
+  },
+  "dependencies": {
+    "astro": "6.3.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@types/node": "24.10.0",
+    "axe-core": "4.14.0",
+    "typescript": "5.9.3"
+  }
+}

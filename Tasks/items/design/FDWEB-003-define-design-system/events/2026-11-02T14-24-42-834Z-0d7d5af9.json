@@ -1,0 +1,18 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-b69c006d-450f-4f1d-9dac-6b23b137eda7",
+  "subject_id": "FDWEB-003",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T14:24:42.834Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-6287a10d-76f3-4e29-9ea7-0c4e86e31107",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Done",
+    "reason": "Declared acceptance criteria have current local verification.",
+    "evidence": [
+      "Tasks/items/design/FDWEB-003-define-design-system/evidence/2026-11-02T14-24-42-810Z-closure.json"
+    ],
+    "evidence_sha256": "1a2a4bbcb54be6ce40e14c839c9e3033f130b76ac9dcd806f2c650b0efb738eb"
+  }
+}

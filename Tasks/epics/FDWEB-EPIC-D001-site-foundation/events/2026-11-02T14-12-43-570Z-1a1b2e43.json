@@ -1,0 +1,14 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-fef84cf5-207a-4ed7-b065-5d180505ff48",
+  "subject_id": "FDWEB-EPIC-D001",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T14:12:43.570Z",
+  "actor": "Codex",
+  "base_event_id": null,
+  "payload": {
+    "status_from": "Planned",
+    "status_to": "Active",
+    "reason": "Owner requested continuous sequential implementation of all open tasks; no live deployment authorized."
+  }
+}

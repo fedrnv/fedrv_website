@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "17ae1375-4c46-42f4-8c0b-30cab9f0c4ac",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D001",
+  "work_item_id": "FDWEB-005",
+  "summary": "Build the FEDRV.DE home page",
+  "verification": [
+    "Tasks/items/web/FDWEB-005-build-homepage/evidence/2026-11-02T14-35-16-352Z-closure.json"
+  ]
+}

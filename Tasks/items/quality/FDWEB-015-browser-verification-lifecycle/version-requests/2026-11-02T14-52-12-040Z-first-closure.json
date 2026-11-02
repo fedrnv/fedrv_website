@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "e4a09818-2ffd-4ad5-969f-72ba01439c79",
+  "type": "bug_closed",
+  "epic_id": "FDWEB-EPIC-D001",
+  "work_item_id": "FDWEB-015",
+  "summary": "Make foundation browser verification report recoverable results",
+  "verification": [
+    "Tasks/items/quality/FDWEB-015-browser-verification-lifecycle/evidence/2026-11-02T14-52-12-009Z-closure.json"
+  ]
+}

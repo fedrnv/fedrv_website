@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v2",
+  "request_id": "de2f5bfd-6dc2-487b-a90f-f654e13cab16",
+  "type": "correction_closed",
+  "epic_id": "FDWEB-EPIC-S001",
+  "work_item_id": "FDWEB-001",
+  "summary": "Verified the FDTasks 5.6 adoption and canonical website backlog with documented local checks.",
+  "verification": [
+    "Tasks/items/governance/FDWEB-001-adopt-fdtasks-5-6/evidence/2026-11-02-adoption-closure.json"
+  ]
+}

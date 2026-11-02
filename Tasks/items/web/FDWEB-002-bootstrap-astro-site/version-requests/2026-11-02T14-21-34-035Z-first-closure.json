@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "1446c91f-0a53-4acc-b410-739035736f36",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D001",
+  "work_item_id": "FDWEB-002",
+  "summary": "Set up the Astro and TypeScript site foundation",
+  "verification": [
+    "Tasks/items/web/FDWEB-002-bootstrap-astro-site/evidence/2026-11-02T14-21-34-006Z-closure.json"
+  ]
+}

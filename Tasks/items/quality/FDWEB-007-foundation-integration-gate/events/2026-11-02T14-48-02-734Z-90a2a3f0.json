@@ -1,0 +1,17 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-068c363f-0826-4cb1-ab94-f019915bd6c6",
+  "subject_id": "FDWEB-007",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T14:48:02.734Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-6c73f2a4-445d-4f9b-b795-bf8d6de317ef",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Blocked",
+    "reason": "Browser cleanup masked original execution results; FDWEB-015 is required before gate acceptance.",
+    "evidence": [
+      "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02-first-gate-attempt.json"
+    ]
+  }
+}

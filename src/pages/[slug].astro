@@ -1,0 +1,56 @@
+---
+import type { InferGetStaticPropsType } from 'astro';
+import { render } from 'astro:content';
+import { publicProjects } from '../lib/projects';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+import ProjectMedia from '../components/ProjectMedia.astro';
+import ExternalLinks from '../components/ExternalLinks.astro';
+import Button from '../components/Button.astro';
+import { t } from '../i18n/messages';
+import { localizedProject, projectMessages } from '../i18n/projects';
+
+export async function getStaticPaths() {
+  return (await publicProjects()).map(project => ({ params: { slug: project.data.slug }, props: { project } }));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { project } = Astro.props;
+const { Content } = await render(project);
+const data = localizedProject(project.data);
+const pageMessages = projectMessages([project.data]);
+for (const language of ['en', 'de', 'ru'] as const) pageMessages[language]['page.description'] = localizedProject(project.data, language).summary;
+const prefix = `project.${data.slug}`;
+---
+<SiteLayout title={data.name} description={data.summary} pageMessages={pageMessages}>
+  <Breadcrumbs current={data.name} />
+  <div class="project-heading">
+    <div>
+      <div class="project-label"><StatusBadge status={data.status} /></div>
+      <h1>{data.name}</h1>
+      <p class="lead" data-i18n={`${prefix}.summary`}>{data.summary}</p>
+      {data.portal && <div class="actions"><Button href={data.portal.url}><span data-i18n={`${prefix}.portal`}>{data.portalLabel || data.portal.label}</span> <span aria-hidden="true">↗</span></Button></div>}
+    </div>
+    {data.icon && <img class="project-emblem" src={data.icon} alt="" width="112" height="112" />}
+  </div>
+  <div class="project-body">
+    <div>
+      <section class="prose" aria-labelledby="purpose"><h2 id="purpose" data-i18n="purpose">{t('purpose')}</h2><p data-i18n={`${prefix}.purpose`}>{data.purpose}</p></section>
+      {data.capabilities.length > 0 && <section class="prose"><h2 data-i18n="capabilities">{t('capabilities')}</h2><ul>{data.capabilities.map(item => <li>{item}</li>)}</ul></section>}
+      {data.benefits.length > 0 && <section class="prose"><h2 data-i18n="benefits">{t('benefits')}</h2><ul>{data.benefits.map(item => <li>{item}</li>)}</ul></section>}
+      {project.body?.trim() && <div class="prose project-details"><Content /></div>}
+      {data.plannedCapabilities.length > 0 && <section class="prose"><h2 data-i18n="plans">{t('plans')}</h2><p class="muted" data-i18n="plansNote">{t('plansNote')}</p><ul>{data.plannedCapabilities.map(item => <li>{item}</li>)}</ul></section>}
+      {data.documentation.length > 0 && <section class="prose"><h2 data-i18n="materials">{t('materials')}</h2><ExternalLinks links={data.documentation} /></section>}
+    </div>
+    <aside aria-label={t('mediaLabel')} data-i18n-aria-label="mediaLabel"><ProjectMedia image={data.image} /></aside>
+  </div>
+</SiteLayout>
+<style>
+  .project-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; padding-bottom: 3rem; border-bottom: 1px solid var(--line); }
+  .project-label { margin-bottom: 1.5rem; }
+  .project-emblem { width: 7rem; height: 7rem; border-radius: 1.5rem; }
+  .project-body { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 4rem; padding-top: 1rem; }
+  .project-body aside { padding-top: 2.5rem; }
+  .project-details { margin-top: 2.5rem; }
+  @media (max-width: 760px) { .project-body { grid-template-columns: 1fr; gap: 0; } .project-emblem { width: 3.5rem; height: 3.5rem; border-radius: .75rem; } .project-heading { gap: 1rem; } }
+</style>

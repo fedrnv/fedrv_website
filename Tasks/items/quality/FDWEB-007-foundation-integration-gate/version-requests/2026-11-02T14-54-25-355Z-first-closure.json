@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "b7278904-2169-404f-ab67-7ee10e9ddf66",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D001",
+  "work_item_id": "FDWEB-007",
+  "summary": "Run the site-foundation integration gate",
+  "verification": [
+    "Tasks/items/quality/FDWEB-007-foundation-integration-gate/evidence/2026-11-02T14-54-25-319Z-closure.json"
+  ]
+}
