@@ -1,0 +1,14 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-140e72e7-7c5c-46d2-83fc-dc501b9415c5",
+  "subject_id": "FDWEB-EPIC-D001",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T18:28:59.550Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-0db52820-9041-489c-8db7-661e1e37cdfa",
+  "payload": {
+    "status_from": "Active",
+    "status_to": "Blocked",
+    "reason": "Owner explicitly prioritized new multilingual/brand/navigation scope. D003 reuses completed components; D001 review must be refreshed after changed source."
+  }
+}
