@@ -37,3 +37,7 @@ See [local verification](docs/verification.md) for metadata/link checks (`npm ru
 The header includes COT, FDUpdate, FDFiles, FDTasks and FDOS shortcuts to the owner-specified subdomains. See [portal navigation](docs/portal-navigation.md) for icon provenance and `npm run verify:portal`. The current visual identity uses dark gray, light blue, white and black, with an **FD** favicon.
 
 FDUpdate information is preserved at `/update` with 45 local documentation pages under `/update/docs`. The [migration record](docs/fdupdate-migration.md) documents the immutable source snapshot, canonical recovery of unavailable documents and offline `npm run import:update` / `npm run verify:update` commands.
+
+## Update the hosted site
+
+Use **Actions → Update website → Run workflow → main** after configuring the target Variables and SSH Secrets in the GitHub `production` environment. The workflow is manual-only; pushing commits does not deploy. See [deployment setup, CLI commands and rollback](docs/deployment.md). Run `npm run build` and `npm run verify:deployment` locally for the publisher's focused checks; production target qualification remains FDWEB-012.

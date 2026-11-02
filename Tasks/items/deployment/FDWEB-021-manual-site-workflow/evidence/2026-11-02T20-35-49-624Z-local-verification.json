@@ -1,0 +1,100 @@
+{
+  "schema": "fdtasks-verification/v1",
+  "work_item_id": "FDWEB-021",
+  "created_at": "2026-11-02T20:35:49.625Z",
+  "source_sha": "55d00576f3fc13fcbf816a2ee355f988af0c3753",
+  "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+  "task_sha256": "e966c552c4c4a67302a6e75e449039494dddef5f6e8b389efe8ae8ff1db24387",
+  "rule_sources": {
+    "AGENTS.md": "fd742b3c245b07bfb00e259cf132055d605b99fe8d634959268337e49d171471",
+    "DEVELOPMENT.md": "d6d401cda06ae204330b9022f477246d3ebabad1da785a9ea84cec106e20ab9c",
+    "Tasks/AGENTS.md": "f0a9668c2158b12d8d5f68554f3491f59a3b1eaab2aedcaa6de4496e35cb645b",
+    "Tasks/lifecycle.json": "44468006c85008bb5321a23e288d362af9487c3834a535d76ef697cc1ce7c2f0",
+    "Tasks/project-profile.json": "e2b145df7fff06365533de63637fc0b2b7611ecb0b1fe0dcb3e94fc07b57619f",
+    "Tasks/items/deployment/FDWEB-021-manual-site-workflow/TASK.md": "e966c552c4c4a67302a6e75e449039494dddef5f6e8b389efe8ae8ff1db24387"
+  },
+  "dependencies": [
+    {
+      "id": "FDWEB-002",
+      "task_sha256": "f8cd626ad0e502abba98d15cf1c2ea951a87fe08d2f57e1d789622d17c003b28",
+      "event": {
+        "schema": "fdtasks-event/v4",
+        "event_id": "EVT-100cbaab-9ce4-4cb2-b0b1-404d80a8a935",
+        "subject_id": "FDWEB-002",
+        "event_type": "status_changed",
+        "created_at": "2026-11-02T14:21:34.034Z",
+        "actor": "Codex",
+        "base_event_id": "EVT-533008fe-2980-41ef-9f61-eb95e80cb6b9",
+        "payload": {
+          "status_from": "In Progress",
+          "status_to": "Done",
+          "reason": "Declared acceptance criteria have current local verification.",
+          "evidence": [
+            "Tasks/items/web/FDWEB-002-bootstrap-astro-site/evidence/2026-11-02T14-21-34-006Z-closure.json"
+          ],
+          "evidence_sha256": "b8508a275b42d2f24aa36a9a7b6190db361ee9e52af1deb6f7bda311b9a50311"
+        }
+      }
+    }
+  ],
+  "atomicity": {
+    "outcomes": [
+      "Provide an owner-invoked GitHub Actions workflow that builds repository source and safely updates a configured SSH static-site target."
+    ],
+    "packets": [
+      "One cohesive workflow, publisher, local verification and documentation packet"
+    ],
+    "independent_acceptance": false,
+    "boundary_reason": "A usable site-update workflow requires its build, publication and recovery contract together; target provisioning remains in FDWEB-012."
+  },
+  "candidate_files": {
+    ".github/workflows/update-site.yml": "1f2f341633c18392f5f36b84fa4aa36646c834becb157839ef15fd5659a75fb9",
+    "scripts/deploy/deployment.test.mjs": "3d3b7dda6c54674ea5a5bfd103ff508d15a8c3e309e6d63424091486847a04c1",
+    "scripts/deploy/policy.mjs": "b688f62ee1e21800b8d2ef729855ff5ecfbaf33b77b2f2988bf2e5c5f4e434d8",
+    "scripts/deploy/publish.mjs": "4c0ac0fb6eb28dbb6fa913b68c89ca336c7aa296d82296104ddf26e7818e8c78",
+    "scripts/deploy/remote.sh": "b81ec1e2a47bf176854375a62249a80ff25545d0efa00a85409ca4ade3ec3f64",
+    "docs/deployment.md": "0f59b4f2cae000ce216c90b22f27c65162be8e36446f5418c4351aa79630784c",
+    "README.md": "b3da4571ab1d81820f9ef5ee2a2ecb772159d2ace190f89779f4b2d8846a965b",
+    "DEVELOPMENT.md": "d6d401cda06ae204330b9022f477246d3ebabad1da785a9ea84cec106e20ab9c",
+    "package.json": "57c1597a090b81f92f899ed7b5154a910c785a85fff3385051bd6b7765f6b4df",
+    "package-lock.json": "2ef3f803eeed23dec6afae0c9afbb254e8b044c32a144d5047bc0fd190b37618",
+    ".gitattributes": "821e3266d85ac3c8a5b556101a465bc5ade789159ddbf913cf3233f85f154775"
+  },
+  "commands": [
+    {
+      "command": "npm run verify:deployment",
+      "result": "PASS: 3 tests; real Bash/archive/filesystem activation and recovery; network transport substituted"
+    },
+    {
+      "command": "npm run check",
+      "result": "PASS: 49 files, zero errors/warnings/hints"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS: 50 static pages"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "limitations": [
+    "No real SSH connection, workflow dispatch or live staging/production deployment performed. Target configuration and credentials must be supplied before first use.",
+    "Filesystem scenarios ran on Windows with Git Bash and native symlinks; live Linux/server qualification remains FDWEB-012."
+  ],
+  "review": "Author reviewed workflow, publisher, recovery ownership and documentation. Initial fixture cleanup EISDIR was corrected before the passing final run.",
+  "hosted_graph": [
+    "checkout",
+    "setup-node",
+    "npm install pinned npm",
+    "npm ci",
+    "astro build",
+    "publish.mjs",
+    "remote.sh"
+  ],
+  "acceptance": {
+    "AC-01": "PASS",
+    "AC-02": "PASS",
+    "AC-03": "Local build/documentation PASS; source push still pending"
+  }
+}

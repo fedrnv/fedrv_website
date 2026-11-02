@@ -1,0 +1,13 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-629eea25-58db-4c69-b4c1-11c3cd441706",
+  "subject_id": "FDWEB-EPIC-D002",
+  "event_type": "scheduling_exception",
+  "created_at": "2026-11-02T20:18:57.205Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-2e8fee96-cb1a-4433-99af-d6c49cfcfbda",
+  "payload": {
+    "authorized_task": "FDWEB-021",
+    "reason": "Current owner request prioritizes manual workflow creation now, without dispatching production or accepting pending independent reviews."
+  }
+}

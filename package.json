@@ -26,7 +26,8 @@
     "verify:brand": "node scripts/verify-brand.mjs",
     "verify:portal": "node scripts/verify-portal.mjs",
     "import:update": "node scripts/import-update.mjs",
-    "verify:update": "node scripts/verify-update.mjs"
+    "verify:update": "node scripts/verify-update.mjs",
+    "verify:deployment": "node --test scripts/deploy/deployment.test.mjs"
   },
   "dependencies": {
     "astro": "6.3.8"
@@ -35,6 +36,7 @@
     "@astrojs/check": "0.9.12",
     "@types/node": "24.10.0",
     "axe-core": "4.14.0",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "yaml": "2.9.1"
   }
 }

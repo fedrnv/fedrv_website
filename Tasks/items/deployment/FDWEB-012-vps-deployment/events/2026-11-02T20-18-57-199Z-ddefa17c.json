@@ -1,0 +1,19 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-027b8c56-d0c7-40db-a688-fb52bc2e3534",
+  "subject_id": "FDWEB-012",
+  "event_type": "dependencies_changed",
+  "created_at": "2026-11-02T20:18:57.199Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-905874e1-84f3-49a6-a727-1988f2784dc1",
+  "payload": {
+    "dependencies": [
+      "FDWEB-007",
+      "FDWEB-009",
+      "FDWEB-010",
+      "FDWEB-011",
+      "FDWEB-021"
+    ],
+    "reason": "Consume the independently verified manual workflow before target qualification."
+  }
+}

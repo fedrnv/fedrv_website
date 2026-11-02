@@ -1,0 +1,16 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-f49d9282-c309-4af4-a549-e84b307d44bd",
+  "subject_id": "FDWEB-021",
+  "event_type": "verification_recorded",
+  "created_at": "2026-11-02T20:35:49.775Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-ea71c599-5e03-4dee-b690-59ef8d8224b1",
+  "payload": {
+    "evidence": [
+      "Tasks/items/deployment/FDWEB-021-manual-site-workflow/evidence/2026-11-02T20-35-49-624Z-local-verification.json"
+    ],
+    "evidence_sha256": "81d6605180227eede93df8bf9d69ff421cac1cbb2d93635b2502270f241ce02c",
+    "status": "In Progress; publication pending"
+  }
+}

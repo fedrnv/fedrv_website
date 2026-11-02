@@ -1,0 +1,13 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-2e8fee96-cb1a-4433-99af-d6c49cfcfbda",
+  "subject_id": "FDWEB-EPIC-D002",
+  "event_type": "membership_added",
+  "created_at": "2026-11-02T20:18:57.184Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-33741186-c1e1-4dc8-a13e-c404d0fc6361",
+  "payload": {
+    "member_id": "FDWEB-021",
+    "reason": "Owner explicitly requested a bounded manual workflow implementation task."
+  }
+}

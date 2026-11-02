@@ -1,0 +1,14 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-905874e1-84f3-49a6-a727-1988f2784dc1",
+  "subject_id": "FDWEB-012",
+  "event_type": "scope_refined",
+  "created_at": "2026-11-02T20:18:57.188Z",
+  "actor": "Codex",
+  "base_event_id": null,
+  "payload": {
+    "workflow_implementation": "FDWEB-021",
+    "retained_scope": "VPS/web-server provisioning, canonical redirects/TLS, authorized staging/failure/rollback qualification and production HTTPS acceptance remain FDWEB-012.",
+    "reason": "Separate the owner-requested workflow deliverable from live deployment without changing the accepted TASK.md."
+  }
+}
