@@ -1,0 +1,18 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-b4875563-46b4-4625-b102-8de3a4d212fe",
+  "subject_id": "FDWEB-021",
+  "event_type": "status_changed",
+  "created_at": "2026-11-02T20:38:48.556Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-f49d9282-c309-4af4-a549-e84b307d44bd",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Done",
+    "reason": "Declared acceptance criteria have current local verification.",
+    "evidence": [
+      "Tasks/items/deployment/FDWEB-021-manual-site-workflow/evidence/2026-11-02T20-38-48-536Z-closure.json"
+    ],
+    "evidence_sha256": "f47279b6b12ce61281be48d7cde273fd060ec96b46825f057ab0889d67ff0ce5"
+  }
+}

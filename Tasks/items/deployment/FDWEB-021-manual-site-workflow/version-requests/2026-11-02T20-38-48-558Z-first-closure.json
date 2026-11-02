@@ -1,0 +1,11 @@
+{
+  "schema": "fdtasks-version-request/v1",
+  "request_id": "053aea7f-fba9-4029-a323-8ae0294d2df0",
+  "type": "task_closed",
+  "epic_id": "FDWEB-EPIC-D002",
+  "work_item_id": "FDWEB-021",
+  "summary": "Publish a manually dispatched static-site update workflow",
+  "verification": [
+    "Tasks/items/deployment/FDWEB-021-manual-site-workflow/evidence/2026-11-02T20-38-48-536Z-closure.json"
+  ]
+}

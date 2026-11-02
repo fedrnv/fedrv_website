@@ -1,0 +1,12 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-55105521-e105-481a-8d9e-64902d3aa197",
+  "subject_id": "FDWEB-021",
+  "event_type": "verification_corrected",
+  "created_at": "2026-11-02T20:38:56.823Z",
+  "actor": "Codex",
+  "base_event_id": "EVT-b4875563-46b4-4625-b102-8de3a4d212fe",
+  "payload": {
+    "reason": "Publication transport clarification: local git push failed because CLI credentials were unavailable. Source was published through the authorized GitHub connector create_tree/create_commit/update_ref APIs without force. Publication receipt and closure commands listing git push PASS must be read as API publication PASS; git ls-remote verified c923be931b353cd61e480a0aa5a96137eb256fb8 and fetched tree exactly matches the locally verified tree 4e375f7c333093b83475296d0ae7b9915745c039. An initially truncated API lockfile transfer was repaired before closure; no workflow was dispatched."
+  }
+}
