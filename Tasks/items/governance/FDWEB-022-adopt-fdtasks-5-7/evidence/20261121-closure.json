@@ -1,0 +1,81 @@
+{
+  "schema": "fdtasks-closure/v1",
+  "closure_id": "CLS-c1e0169d-469f-4d8f-ab37-59b36310d2a5",
+  "task_id": "FDWEB-022",
+  "epic_id": "FDWEB-EPIC-S001",
+  "item_type": "Correction",
+  "source": {
+    "base_commit": "74ce0f25a905b8ca0fa6a5d38c4f5d4e4fe34e26",
+    "tree": "024a7d26af430cfce85f6e2fcfe0e59f424a6613",
+    "policy_sha256": "ddb4f644496956b9fd2ba45752a62e3fd6800412ef477aeb882f4214c46a8403",
+    "candidate_artifacts": [
+      {
+        "path": "AGENTS.md",
+        "sha256": "36a66358a94b03d3e57dec3693ba5ec9ccbb883936052dabcef243ac34ba00ac"
+      },
+      {
+        "path": "DEVELOPMENT.md",
+        "sha256": "01813f85ddc2e4415b7af900fabc529569223ead17a9475fcf3a76520b6e4a3a"
+      },
+      {
+        "path": "Tasks/AGENTS.md",
+        "sha256": "533e9a7a1d5c12df13898223ddcda76b58a687c338d1afd9c61b1de62ea8231b"
+      },
+      {
+        "path": "Tasks/FDTasks_5_7_ADOPTION.md",
+        "sha256": "38f46e3cbd43e92c609ae71c4192598162dcb5875ac2c06b464dbbb1566ca454"
+      },
+      {
+        "path": "Tasks/FORMAT.md",
+        "sha256": "5613a4ac6bc7259e633cc950f19af46d31bba3405856aa35e7806ca44389d504"
+      },
+      {
+        "path": "Tasks/LIFECYCLE_VERSION_HISTORY.md",
+        "sha256": "3bebb312057a1e47c9fae024a036736fb6cf81eae59e33da75a17e4d1edca155"
+      },
+      {
+        "path": "Tasks/developer-policy.json",
+        "sha256": "331f3006975cb22e06808908681da1de305fb9108217cf6abdeb76e45a716a69"
+      },
+      {
+        "path": "Tasks/tasks_file_structure_v5_7.md",
+        "sha256": "b7c6929e7bbf540ec19cf23beeca24d47030c7654ba5501e019ce5938b137dd8"
+      }
+    ],
+    "lifecycle_version": "5.6",
+    "developer_policy_version": "5.7",
+    "developer_policy_sha256": "b7c6929e7bbf540ec19cf23beeca24d47030c7654ba5501e019ce5938b137dd8"
+  },
+  "status_event": "Tasks/items/governance/FDWEB-022-adopt-fdtasks-5-7/events/20261121-02-verified-done.json",
+  "acceptance": [
+    {
+      "ac_id": "AC-01",
+      "verdict": "pass",
+      "evidence": [
+        "Tasks/items/governance/FDWEB-022-adopt-fdtasks-5-7/evidence/20261121-fdtasks57-verification.json"
+      ]
+    },
+    {
+      "ac_id": "AC-02",
+      "verdict": "pass",
+      "evidence": [
+        "Tasks/items/governance/FDWEB-022-adopt-fdtasks-5-7/evidence/20261121-fdtasks57-verification.json"
+      ]
+    },
+    {
+      "ac_id": "AC-03",
+      "verdict": "pass",
+      "evidence": [
+        "Tasks/items/governance/FDWEB-022-adopt-fdtasks-5-7/evidence/20261121-fdtasks57-verification.json"
+      ]
+    },
+    {
+      "ac_id": "AC-04",
+      "verdict": "pass",
+      "evidence": [
+        "Tasks/items/governance/FDWEB-022-adopt-fdtasks-5-7/evidence/20261121-fdtasks57-verification.json"
+      ]
+    }
+  ],
+  "cleanup": "Owned temporary bare Git fixture and both clones removed. No product build, remote deployment or unrelated workspace effects."
+}

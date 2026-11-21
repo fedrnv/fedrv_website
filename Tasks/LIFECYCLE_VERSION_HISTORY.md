@@ -9,3 +9,14 @@
 - Initial GitHub Issues #2–#10 are linked as discussion mirrors from the new task specifications. The immutable task files under `Tasks/items/` define the canonical scope.
 - New tasks use `fdtasks-spec/v4`, an atomicity declaration, one outcome, one to three implementation packets, stable AC IDs and a readiness matrix.
 - New development Epics use Dnnn IDs and include one targeted gate and one separate independent review.
+
+## 5.7 developer adoption — 2026-11-21 — FDWEB-022
+
+Imported the exact FDOS policy at `cd07d0d0f4bf0644321fd09a1375b0fd87d0bc1c`;
+SHA-256 `b7c6929e7bbf540ec19cf23beeca24d47030c7654ba5501e019ce5938b137dd8`. Current developer authority, local status mapping,
+compatibility and manual-publication qualification are recorded in
+`Tasks/FDTasks_5_7_ADOPTION.md` and `Tasks/developer-policy.json`.
+Several developers may share an Epic; only a successfully published task claim
+establishes exclusive ownership. Push each commit and verified Done immediately;
+refresh and reselect after a lost claim. Existing runtime pins and accepted
+history are preserved; document publication does not activate native features.

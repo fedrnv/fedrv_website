@@ -1,0 +1,20 @@
+{
+  "schema": "fdtasks-event/v4",
+  "event_id": "EVT-b5e04c84-14e7-426d-ab94-ef12a85a1ce8",
+  "subject_id": "FDWEB-022",
+  "event_type": "status_changed",
+  "created_at": "2026-11-21T21:14:27Z",
+  "actor": "Codex FDTasks 5.7 repository rollout",
+  "base_event_id": "EVT-579b3fef-9e6b-4eeb-adba-f4a06ff0da1e",
+  "payload": {
+    "status_from": "In Progress",
+    "status_to": "Done",
+    "owner": "Codex FDTasks 5.7 repository rollout",
+    "reason": "Verified exact 5.7 developer-policy distribution and compatibility boundary",
+    "verification": {
+      "path": "Tasks/items/governance/FDWEB-022-adopt-fdtasks-5-7/evidence/20261121-fdtasks57-verification.json",
+      "sha256": "520e37aacf4c57d452673222f59b581656c536fdb9e2a80645963ed5077b38f8"
+    },
+    "closure_manifest": "Tasks/items/governance/FDWEB-022-adopt-fdtasks-5-7/evidence/20261121-closure.json"
+  }
+}

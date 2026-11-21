@@ -1,0 +1,24 @@
+{
+  "schema": "fdtasks-developer-policy/v1",
+  "version": "5.7",
+  "task_id": "FDWEB-022",
+  "scope": "human_and_owner_authorized_manual_ai_development",
+  "policy_path": "Tasks/tasks_file_structure_v5_7.md",
+  "policy_sha256": "b7c6929e7bbf540ec19cf23beeca24d47030c7654ba5501e019ce5938b137dd8",
+  "adoption_path": "Tasks/FDTasks_5_7_ADOPTION.md",
+  "adoption_sha256": "38f46e3cbd43e92c609ae71c4192598162dcb5875ac2c06b464dbbb1566ca454",
+  "source": {
+    "repository": "fedrnv/FDOS",
+    "commit": "cd07d0d0f4bf0644321fd09a1375b0fd87d0bc1c",
+    "path": "Tasks/tasks_file_structure_v5_7.md",
+    "git_blob_sha": "269124fdc48926c0c5fb1a53b0ffa47f78699aed",
+    "sha256": "b7c6929e7bbf540ec19cf23beeca24d47030c7654ba5501e019ce5938b137dd8"
+  },
+  "status_mapping": {
+    "Planned": "Planned",
+    "In Progress": "In Progress",
+    "Done": "Done"
+  },
+  "native_activation": false,
+  "accepted_history": "preserve_byte_for_byte"
+}
